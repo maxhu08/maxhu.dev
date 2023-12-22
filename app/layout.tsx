@@ -3,6 +3,7 @@ import { Fira_Mono } from "next/font/google"
 import "./globals.scss"
 import { cn } from "~/utils/cn"
 import { ThemeProvider } from "~/components/providers/theme-provider"
+import { Navbar } from "~/components/navbar"
 
 const fira = Fira_Mono({ subsets: ["latin"], weight: "400" })
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body className={(cn(fira.className), "bg-neutral-900")} dir="ltr">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
