@@ -2,6 +2,7 @@ import { NextPage } from "next"
 import { Technologies } from "~/components/technologies"
 import styles from "~/app/page.module.scss"
 import { cn } from "~/utils/cn"
+import { ContactMeButton } from "~/components/contact-me-button"
 
 const Page: NextPage = () => {
   return (
@@ -15,9 +16,13 @@ const Page: NextPage = () => {
             Hi! I&apos;m <span className="special-text">Max Hu</span>
           </span>
         </div>
+
         <div className="grid place-items-center grid-flow-row gap-1">
           <span className={cn("text-zinc-500 dark:text-zinc-400k !delay-300", styles["fade-in-left"])}>technologies i&apos;m learning</span>
           <Technologies />
+        </div>
+        <div>
+          <ContactMeButton />
         </div>
       </div>
     </div>
