@@ -12,7 +12,7 @@ export const ThemeToggle: FC = () => {
     <div>
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
-          <div>
+          <div className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white duration-200 ease-in-out cursor-pointer">
             <SunMoon className="w-6 h-6" />
           </div>
         </DropdownMenuTrigger>
