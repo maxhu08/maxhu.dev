@@ -7,14 +7,14 @@ import { cn } from "~/utils/cn"
 
 export const ContactMeButton: FC = () => {
   const openEmail = () => {
-    const recipientEmail = "recep"
+    const recipientEmail = "hello@maxhu.dev"
     const mailtoLink = `mailto:${recipientEmail}`
     window.location.href = mailtoLink
   }
 
   return (
     <button onClick={openEmail} className={styles.button}>
-      <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 bg-emerald-500 hover:bg-emerald-700 duration-300 ease-in-out p-2 rounded-md">
+      <div className="text-white grid grid-cols-[max-content_max-content] place-items-center gap-1 bg-emerald-500 hover:bg-emerald-700 duration-300 ease-in-out p-2 rounded-md">
         <ChevronRight className={cn("w-4 h-4", styles.arrow)} />
         <span>contact me</span>
       </div>
