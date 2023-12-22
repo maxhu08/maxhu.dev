@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={(cn(fira.className), "bg-neutral-900")} dir="ltr">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <body className={(cn(fira.className), "bg-neutral-200 dark:bg-neutral-900")} dir="ltr">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <Navbar />
           {children}
         </ThemeProvider>
