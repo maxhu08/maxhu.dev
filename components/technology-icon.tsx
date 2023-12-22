@@ -22,7 +22,7 @@ export const Icon: FC<IconProps> = ({ name, icon, iconLight, delay, ...props }) 
     setIsMounted(true)
   }, [])
 
-  if (!isMounted) return null
+  if (!isMounted) return <div className="w-8 h-8"></div>
 
   return (
     <ActionTooltip label={name} side="bottom">
