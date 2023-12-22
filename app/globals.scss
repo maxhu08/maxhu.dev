@@ -33,14 +33,31 @@ body {
 $gradient-start: #4da5fe;
 $gradient-end: #d041c2;
 
-.special-text {
-  background-image: linear-gradient(45deg, $gradient-start 0%, $gradient-end 100%);
-  background-image: -webkit-linear-gradient(45deg, $gradient-start 0%, $gradient-end 100%);
-  background-image: -moz-linear-gradient(45deg, $gradient-start 0%, $gradient-end 100%);
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0px 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0px 50%;
+  }
+}
 
+.special-text {
+  background: linear-gradient(-45deg, $gradient-start, $gradient-start, $gradient-end, $gradient-end);
+  background: -moz-linear-gradient(-45deg, $gradient-start, $gradient-start, $gradient-end, $gradient-end);
+  background: -webkit-gradient(-45deg, $gradient-start, $gradient-start, $gradient-end, $gradient-end);
+
+  background-size: 300%;
   -webkit-background-clip: text;
+  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 10s ease-in-out infinite;
+  -moz-animation: gradientAnimation 10s ease-in-out infinite;
+  -webkit-animation: gradientAnimation 10s ease-in-out infinite;
 
   &::selection {
     color: #fff;
