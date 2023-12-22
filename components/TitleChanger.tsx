@@ -5,20 +5,23 @@ import { websiteName } from "~/config"
 
 export const TitleChanger: FC = () => {
   const [stateIndex, setStateIndex] = useState(0)
-  const states = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
 
   useEffect(() => {
+    console.log("\x1b[34m 🌴 welcome to my website")
+  }, [])
+
+  useEffect(() => {
+    const states = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+
     const interval = setInterval(() => {
       if (stateIndex === states.length - 1) setStateIndex(0)
       else setStateIndex(prev => prev + 1)
-
-      console.log(states[stateIndex], stateIndex)
 
       document.title = `${websiteName} ${states[stateIndex]}`
     }, 200)
 
     return () => clearInterval(interval)
-  })
+  }, [stateIndex])
 
   return null
 }
