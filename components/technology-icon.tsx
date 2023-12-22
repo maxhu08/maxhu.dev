@@ -5,6 +5,7 @@ import { FC, useEffect, useState } from "react"
 import { cn } from "~/utils/cn"
 import styles from "./technology-icon.module.scss"
 import { useTheme } from "next-themes"
+import { ActionTooltip } from "~/components/action-tooltip"
 
 export interface IconProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -24,8 +25,10 @@ export const Icon: FC<IconProps> = ({ name, icon, iconLight, delay, ...props }) 
   if (!isMounted) return null
 
   return (
-    <div className={cn("w-8 h-8 relative", styles["fade-in-right"])} style={{ animationDelay: `${delay.toString()}ms !important` }} {...props}>
-      {iconLight && theme === "light" ? <Image src={iconLight} alt={name} fill /> : <Image src={icon} alt={name} fill />}
-    </div>
+    <ActionTooltip label={name} side="bottom">
+      <div className={cn("w-8 h-8 relative cursor-pointer", styles["fade-in-right"])} style={{ animationDelay: `${delay.toString()}ms !important` }} {...props}>
+        {iconLight && theme === "light" ? <Image src={iconLight} alt={name} fill /> : <Image src={icon} alt={name} fill />}
+      </div>
+    </ActionTooltip>
   )
 }

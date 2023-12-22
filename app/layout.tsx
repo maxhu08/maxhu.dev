@@ -4,6 +4,7 @@ import "./globals.scss"
 import { cn } from "~/utils/cn"
 import { ThemeProvider } from "~/components/providers/theme-provider"
 import { Navbar } from "~/components/navbar"
+import { Footer } from "~/components/footer"
 
 const fira = Fira_Mono({ subsets: ["latin"], weight: "400" })
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
