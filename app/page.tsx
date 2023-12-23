@@ -17,7 +17,7 @@ const Page: NextPage = () => {
             Hi! I&apos;m <span className="special-text">Max Hu</span>
           </span>
         </div>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-[max-content_max-content] gap-2">
           <div className={cn("pt-2", styles["bouncing-animation"])} style={{ animationDelay: "1000ms" }}>
             <ContactMeButton />
           </div>
