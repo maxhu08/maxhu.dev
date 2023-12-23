@@ -26,7 +26,11 @@ export const Icon: FC<IconProps> = ({ name, icon, iconLight, delay, ...props }) 
 
   return (
     <ActionTooltip label={name} side="bottom">
-      <div className={cn("w-6 h-6 md:w-8 md:h-8 relative cursor-pointer", styles["fade-in-right"])} style={{ animationDelay: `${delay.toString()}ms` }} {...props}>
+      <div
+        className={cn("w-6 h-6 md:w-8 md:h-8 relative cursor-pointer !aspect-square", styles["fade-in-right"])}
+        style={{ animationDelay: `${delay.toString()}ms` }}
+        {...props}
+      >
         {iconLight && theme === "light" ? <Image src={iconLight} alt={name} fill /> : <Image src={icon} alt={name} fill />}
       </div>
     </ActionTooltip>
