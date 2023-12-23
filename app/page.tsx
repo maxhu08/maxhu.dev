@@ -16,7 +16,7 @@ const Page: NextPage = () => {
             Hi! I&apos;m <span className="special-text">Max Hu</span>
           </span>
         </div>
-        <div className="pt-2">
+        <div className={cn("pt-2", styles["bouncing-animation"])}>
           <ContactMeButton />
         </div>
         <div className="grid place-items-center grid-flow-row gap-1 pt-10 md:pt-20">
