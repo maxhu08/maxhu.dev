@@ -17,12 +17,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: red;
+  background: #00000000;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: darkgray;
+  background: #10b981;
 }
 
 ::selection {
