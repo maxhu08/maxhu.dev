@@ -15,7 +15,7 @@ export const technologies = [
   {
     name: "nextjs",
     icon: "/assets/technologies/nextjs_dark.svg",
-    iconDark: "/assets/technologies/nextjs_light.svg"
+    iconLight: "/assets/technologies/nextjs_light.svg"
   },
   { name: "graphql", icon: "/assets/technologies/graphql.svg" },
   { name: "apollo", icon: "/assets/technologies/apollo.svg" },
@@ -38,7 +38,7 @@ export const Technologies: FC = () => {
         <TechnologyIcon
           name={item.name}
           icon={item.icon}
-          iconLight={item.iconDark}
+          iconLight={item.iconLight}
           key={`techonology-${item.name}`}
           delay={index * 50 + 600}
         />
