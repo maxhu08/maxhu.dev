@@ -7,14 +7,20 @@ import styles from "./technology-icon.module.scss"
 import { useTheme } from "next-themes"
 import { ActionTooltip } from "~/components/action-tooltip"
 
-export interface IconProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface TechnologyIconProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
   icon: string
   iconLight?: string
   delay: number
 }
 
-export const Icon: FC<IconProps> = ({ name, icon, iconLight, delay, ...props }) => {
+export const TechnologyIcon: FC<TechnologyIconProps> = ({
+  name,
+  icon,
+  iconLight,
+  delay,
+  ...props
+}) => {
   const { theme } = useTheme()
   const [isMounted, setIsMounted] = useState(false)
 
@@ -26,8 +32,20 @@ export const Icon: FC<IconProps> = ({ name, icon, iconLight, delay, ...props }) 
 
   return (
     <ActionTooltip label={name} side="bottom">
-      <div className={cn("w-8 h-8 relative cursor-pointer !aspect-square", styles["fade-in-right"])} style={{ animationDelay: `${delay.toString()}ms` }} {...props}>
-        {iconLight && theme === "light" ? <Image src={iconLight} alt={name} fill /> : <Image src={icon} alt={name} fill />}
+      <div
+        {...props}
+        className={cn(
+          "w-8 h-8 relative cursor-pointer !aspect-square",
+          styles["fade-in-right"],
+          props.className
+        )}
+        style={{ animationDelay: `${delay.toString()}ms` }}
+      >
+        {iconLight && theme === "light" ? (
+          <Image src={iconLight} alt={name} fill />
+        ) : (
+          <Image src={icon} alt={name} fill />
+        )}
       </div>
     </ActionTooltip>
   )

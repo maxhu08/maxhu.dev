@@ -56,7 +56,7 @@ export const Navbar: FC = () => {
 
   return (
     <nav className="fixed z-20 w-full top-0 ease-in-out backdrop-blur-lg">
-      <div className="py-2 px-4 grid grid-cols-[1fr_auto_1fr] w-full">
+      <div className="py-2 px-2 md:px-4 grid grid-cols-[1fr_auto_1fr] w-full">
         <div className="w-max">{navigationControls()}</div>
         {currentPage()}
         <div className="ml-auto">
