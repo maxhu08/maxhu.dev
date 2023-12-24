@@ -5,6 +5,8 @@
 
 * {
   font-family: "Fira Code", monospace;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 html,
@@ -46,9 +48,27 @@ $gradient-end: #d041c2;
 }
 
 .special-text {
-  background: linear-gradient(-45deg, $gradient-start, $gradient-start, $gradient-end, $gradient-end);
-  background: -moz-linear-gradient(-45deg, $gradient-start, $gradient-start, $gradient-end, $gradient-end);
-  background: -webkit-gradient(-45deg, $gradient-start, $gradient-start, $gradient-end, $gradient-end);
+  background: linear-gradient(
+    -45deg,
+    $gradient-start,
+    $gradient-start,
+    $gradient-end,
+    $gradient-end
+  );
+  background: -moz-linear-gradient(
+    -45deg,
+    $gradient-start,
+    $gradient-start,
+    $gradient-end,
+    $gradient-end
+  );
+  background: -webkit-gradient(
+    -45deg,
+    $gradient-start,
+    $gradient-start,
+    $gradient-end,
+    $gradient-end
+  );
 
   background-size: 300%;
   -webkit-background-clip: text;
