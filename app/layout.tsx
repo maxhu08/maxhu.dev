@@ -23,7 +23,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <TitleChanger />
           <Navbar />
           {children}
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

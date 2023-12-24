@@ -15,9 +15,7 @@ const Page: NextPage = () => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add(styles["project-shown"])
-        else {
-          entry.target.classList.remove(styles["project-shown"])
-        }
+        else entry.target.classList.remove(styles["project-shown"])
       })
     })
 
@@ -25,8 +23,36 @@ const Page: NextPage = () => {
   }, [setIsMounted, isMounted])
 
   return (
-    <div className="w-full h-screen grid place-items-center">
+    <div className="w-full h-screen grid place-items-center overflow-x-hidden">
       <main className="grid grid-flow-row gap-2 w-full sm:w-[60%] md:w-[50%] lg:w-[40%] h-full pt-10">
+        <ProjectCard
+          className={styles["project"]}
+          info={{
+            title: "todo: add later",
+            technologies: ["typescript", "nodejs"]
+          }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ProjectCard>
+        <ProjectCard
+          className={styles["project"]}
+          info={{
+            title: "todo: add later",
+            technologies: ["typescript", "nodejs"]
+          }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </ProjectCard>
         <ProjectCard
           className={styles["project"]}
           info={{
