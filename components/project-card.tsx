@@ -1,7 +1,7 @@
 "use client"
 
 import { useTheme } from "next-themes"
-import { FC } from "react"
+import { FC, useEffect, useState } from "react"
 import Markdown from "react-markdown"
 import { ActionTooltip } from "~/components/action-tooltip"
 import { Separator } from "~/components/separator"
@@ -16,14 +16,22 @@ interface ProjectCardProps {
     technologies: string[]
   }
   children: string
+  className?: string
 }
 
-export const ProjectCard: FC<ProjectCardProps> = ({ info, children }) => {
+export const ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
+  const [isMounted, setIsMounted] = useState(false)
   const { theme } = useTheme()
   let technologiesIndex = 0
 
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) return null
+
   return (
-    <div className="p-2">
+    <div className={cn("p-2", className)}>
       <p className="text-2xl">{info.title}</p>
       <div className="grid grid-flow-col gap-1 w-max place-items-center">
         <span className="text-zinc-500">made with</span>
@@ -37,7 +45,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info, children }) => {
                     "w-6 h-6 relative cursor-pointer !aspect-square",
                     styles["technology-fade-in"]
                   )}
-                  style={{ animationDelay: `${renderedIndex * 100}ms` }}
+                  style={{ animationDelay: `${renderedIndex * 100 + 500}ms` }}
                 >
                   {technology.iconLight && theme === "light" ? (
                     <Image src={technology.iconLight} alt={technology.name} fill />

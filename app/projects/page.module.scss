@@ -1,0 +1,20 @@
+.project {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateX(-100%);
+  transition: all ease-in-out 500ms;
+
+  &:nth-child(even) {
+    transform: translateX(100%);
+  }
+}
+
+.project-shown {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+
+  &:nth-child(even) {
+    transform: translateX(0);
+  }
+}
