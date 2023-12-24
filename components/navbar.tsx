@@ -1,6 +1,7 @@
 "use client"
 
 import { ChevronLeft, Webhook, Zap } from "lucide-react"
+import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { FC } from "react"
 import { ThemeToggle } from "~/components/theme-toggle"
@@ -17,7 +18,7 @@ export const Navbar: FC = () => {
           <span>maxhu.dev</span>
         </div>
       )
-    } else {
+    } else if (pathname === "/projects") {
       return (
         <button onClick={() => router.back()} className="cursor-pointer">
           <div className="grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
@@ -25,6 +26,15 @@ export const Navbar: FC = () => {
             <span>Back</span>
           </div>
         </button>
+      )
+    } else {
+      return (
+        <Link href="/">
+          <div className="grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
+            <ChevronLeft className="w-4 h-4" />
+            <span>Home</span>
+          </div>
+        </Link>
       )
     }
   }
@@ -39,6 +49,8 @@ export const Navbar: FC = () => {
           <span>projects</span>
         </div>
       )
+    } else {
+      return <div></div>
     }
   }
 
