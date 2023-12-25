@@ -9,6 +9,7 @@ import { cn } from "~/utils/cn";
 import Image from "next/image";
 import styles from "~/components/shared.module.scss";
 import { Code2, Paperclip } from "lucide-react";
+import { useMediaQuery } from "react-responsive";
 
 interface ProjectCardProps {
   info: {
@@ -27,6 +28,8 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
+  const isMdOrLarger = useMediaQuery({ minWidth: 768 });
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -42,7 +45,9 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
 
   return (
     <div ref={cardRef} className={cn("p-2", className)}>
-      <p className={cn("text-2xl", isVisible && styles["fade-in-bounce"])}>{info.title}</p>
+      <p className={cn("text-2xl", isVisible && isMdOrLarger && styles["fade-in-bounce"])}>
+        {info.title}
+      </p>
       <div className="grid grid-flow-col gap-1 w-max place-items-center">
         <span className="text-zinc-500">made with</span>
         {technologies.map((technology, index) => {
@@ -53,7 +58,7 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
                 <div
                   className={cn(
                     "w-6 h-6 relative cursor-pointer !aspect-square",
-                    isVisible && styles["fade-in-bounce"]
+                    isVisible && isMdOrLarger && styles["fade-in-bounce"]
                   )}
                   style={{ animationDelay: `${renderedIndex * 100 + 500}ms` }}
                 >
