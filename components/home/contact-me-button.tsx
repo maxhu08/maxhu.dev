@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { ChevronRight } from "lucide-react"
-import { FC } from "react"
-import { ActionTooltip } from "~/components/action-tooltip"
-import styles from "~/components/home/contact-me-button.module.scss"
-import { cn } from "~/utils/cn"
+import { ChevronRight } from "lucide-react";
+import { FC } from "react";
+import { ActionTooltip } from "~/components/action-tooltip";
+import styles from "~/components/home/contact-me-button.module.scss";
+import { cn } from "~/utils/cn";
 
 export const ContactMeButton: FC = () => {
   const openEmail = () => {
-    const recipientEmail = "hello@maxhu.dev"
-    const mailtoLink = `mailto:${recipientEmail}`
-    window.location.href = mailtoLink
-  }
+    const recipientEmail = "hello@maxhu.dev";
+    const mailtoLink = `mailto:${recipientEmail}`;
+    window.location.href = mailtoLink;
+  };
 
   return (
     <ActionTooltip label="email hello@maxhu.dev" side="bottom">
@@ -22,5 +22,5 @@ export const ContactMeButton: FC = () => {
         </div>
       </button>
     </ActionTooltip>
-  )
-}
+  );
+};

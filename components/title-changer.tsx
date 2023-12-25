@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import { FC, useEffect, useState } from "react"
-import { websiteName } from "~/constants/website-name"
+import { FC, useEffect, useState } from "react";
+import { websiteName } from "~/constants/website-name";
 
 export const TitleChanger: FC = () => {
-  const [stateIndex, setStateIndex] = useState(0)
+  const [stateIndex, setStateIndex] = useState(0);
 
   useEffect(() => {
-    console.log("\x1b[34m 🌴 welcome to my website")
-  }, [])
+    console.log("\x1b[34m 🌴 welcome to my website");
+  }, []);
 
   useEffect(() => {
-    const states = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+    const states = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
 
     const interval = setInterval(() => {
-      if (stateIndex === states.length - 1) setStateIndex(0)
-      else setStateIndex(prev => prev + 1)
+      if (stateIndex === states.length - 1) setStateIndex(0);
+      else setStateIndex(prev => prev + 1);
 
-      document.title = `${websiteName} ${states[stateIndex]}`
-    }, 200)
+      document.title = `${websiteName} ${states[stateIndex]}`;
+    }, 200);
 
-    return () => clearInterval(interval)
-  }, [stateIndex])
+    return () => clearInterval(interval);
+  }, [stateIndex]);
 
-  return null
-}
+  return null;
+};

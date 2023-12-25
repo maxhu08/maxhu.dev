@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { ChevronLeft, Webhook, Zap } from "lucide-react"
-import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
-import { FC } from "react"
-import { ThemeToggle } from "~/components/theme-toggle"
+import { ChevronLeft, Webhook, Zap } from "lucide-react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { FC } from "react";
+import { ThemeToggle } from "~/components/theme-toggle";
 
 export const Navbar: FC = () => {
-  const pathname = usePathname()
-  const router = useRouter()
+  const pathname = usePathname();
+  const router = useRouter();
 
   const navigationControls = () => {
     if (pathname === "/") {
@@ -17,7 +17,7 @@ export const Navbar: FC = () => {
           <Zap className="w-4 h-4" />
           <span>maxhu.dev</span>
         </div>
-      )
+      );
     } else if (pathname === "/projects") {
       return (
         <button onClick={() => router.back()} className="cursor-pointer">
@@ -26,7 +26,7 @@ export const Navbar: FC = () => {
             <span>Back</span>
           </div>
         </button>
-      )
+      );
     } else {
       return (
         <Link href="/">
@@ -35,24 +35,24 @@ export const Navbar: FC = () => {
             <span>Home</span>
           </div>
         </Link>
-      )
+      );
     }
-  }
+  };
 
   const currentPage = () => {
     if (pathname === "/") {
-      return <div></div>
+      return <div></div>;
     } else if (pathname === "/projects") {
       return (
         <div className="grid grid-cols-[max-content_max-content] gap-1 place-items-center">
           <Webhook className="w-4 h-4" />
           <span>projects</span>
         </div>
-      )
+      );
     } else {
-      return <div></div>
+      return <div></div>;
     }
-  }
+  };
 
   return (
     <nav className="fixed z-20 w-full top-0 ease-in-out backdrop-blur-lg">
@@ -64,5 +64,5 @@ export const Navbar: FC = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};

@@ -17,4 +17,4 @@ export const technologies = [
   { name: "trpc", icon: "/assets/technologies/trpc.svg" },
   { name: "prisma", icon: "/assets/technologies/prisma.svg" },
   { name: "java", icon: "/assets/technologies/java.svg" }
-]
+];

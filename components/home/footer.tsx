@@ -1,5 +1,5 @@
-import { FC } from "react"
-import { Socials } from "~/components/home/socials"
+import { FC } from "react";
+import { Socials } from "~/components/home/socials";
 
 export const Footer: FC = () => {
   return (
@@ -8,5 +8,5 @@ export const Footer: FC = () => {
         <Socials />
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,10 +1,10 @@
-import { NextPage } from "next"
-import { Technologies } from "~/components/home/technologies"
-import styles from "~/app/(home)/page.module.scss"
-import { cn } from "~/utils/cn"
-import { ContactMeButton } from "~/components/home/contact-me-button"
-import { ProjectsButton } from "~/components/home/projects-button"
-import { Footer } from "~/components/home/footer"
+import { NextPage } from "next";
+import { Technologies } from "~/components/home/technologies";
+import styles from "~/app/(home)/page.module.scss";
+import { cn } from "~/utils/cn";
+import { ContactMeButton } from "~/components/home/contact-me-button";
+import { ProjectsButton } from "~/components/home/projects-button";
+import { Footer } from "~/components/home/footer";
 
 const Page: NextPage = () => {
   return (
@@ -53,7 +53,7 @@ const Page: NextPage = () => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

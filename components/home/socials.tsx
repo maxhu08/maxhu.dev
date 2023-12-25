@@ -1,11 +1,19 @@
-import { Github, Youtube } from "lucide-react"
-import { FC } from "react"
-import { ActionTooltip } from "~/components/action-tooltip"
+import { Github, Youtube } from "lucide-react";
+import { FC } from "react";
+import { ActionTooltip } from "~/components/action-tooltip";
 
 const socials = [
-  { name: "github", icon: <Github className="w-6 h-6 text-blue-500 hover:text-blue-600" />, href: "https://github.com/maxhu08" },
-  { name: "youtube", icon: <Youtube className="w-6 h-6 text-blue-500 hover:text-blue-600" />, href: "https://www.youtube.com/@maxhudotdev" }
-]
+  {
+    name: "github",
+    icon: <Github className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
+    href: "https://github.com/maxhu08"
+  },
+  {
+    name: "youtube",
+    icon: <Youtube className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
+    href: "https://www.youtube.com/@maxhudotdev"
+  }
+];
 
 export const Socials: FC = () => {
   return (
@@ -17,8 +25,8 @@ export const Socials: FC = () => {
               {social.icon}
             </a>
           </ActionTooltip>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
