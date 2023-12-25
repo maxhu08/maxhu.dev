@@ -10,6 +10,7 @@ const learning = [
   "sass",
   "tailwindcss",
   "javascript",
+  "typescript",
   "tailwind",
   "nodejs",
   "react",
