@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "cbuild": "pnpm contentlayer build",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
@@ -21,6 +22,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "contentlayer": "^0.3.4",
     "lucide-react": "^0.300.0",
     "million": "^2.6.4",
     "next": "14.0.4",
