@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { FancyImage } from "~/components/fancy-image";
+import { SimpleImage } from "~/components/simple-image";
 
 interface MarkdownProps {
   children: string;
@@ -41,7 +41,7 @@ export const Content: FC<MarkdownProps> = ({ children }) => {
 
           console.log("img", props);
 
-          return <FancyImage src={src ?? ""} alt={alt ?? ""} />;
+          return <SimpleImage src={src ?? ""} alt={alt ?? ""} />;
         }
       }}
     >

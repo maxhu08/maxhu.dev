@@ -18,7 +18,7 @@ interface ProjectCardProps {
     codeLink?: string;
     demoLink?: string;
   };
-  children: string;
+  children: React.ReactNode;
   className?: string;
 }
 
@@ -72,7 +72,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info, children, className })
           })}
       </div>
       <Separator orientation="horizontal" className="my-2" />
-      <Content>{children}</Content>
+      {children}
       <div className="pt-2 grid grid-flow-col w-max gap-4 ml-auto">
         {info.demoLink && (
           <a href={info.demoLink} target="_blank">
