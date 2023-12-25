@@ -11,6 +11,7 @@ import { websiteName } from "~/constants/website-name";
 const fira = Fira_Mono({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://maxhu.dev/"),
   title: `🌴 ${websiteName}`,
   description: "This is my website",
   openGraph: {
