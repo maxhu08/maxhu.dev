@@ -7,7 +7,7 @@ import { Separator } from "~/components/separator";
 import { technologies } from "~/constants/technologies";
 import { cn } from "~/utils/cn";
 import Image from "next/image";
-import styles from "~/components/projects/project-card.module.scss";
+import styles from "~/components/shared.module.scss";
 import { Code2, Paperclip } from "lucide-react";
 import { Content } from "~/lib/content";
 
@@ -44,7 +44,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info, children, className })
 
   return (
     <div ref={cardRef} className={cn("p-2", className)}>
-      <p className="text-2xl">{info.title}</p>
+      {isVisible && <p className={cn("text-2xl", styles["fade-in-bounce"])}>{info.title}</p>}
       <div className="grid grid-flow-col gap-1 w-max place-items-center">
         <span className="text-zinc-500">made with</span>
         {isVisible &&
@@ -56,7 +56,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info, children, className })
                   <div
                     className={cn(
                       "w-6 h-6 relative cursor-pointer !aspect-square",
-                      styles["technology-fade-in"]
+                      styles["fade-in-bounce"]
                     )}
                     style={{ animationDelay: `${renderedIndex * 100 + 500}ms` }}
                   >
