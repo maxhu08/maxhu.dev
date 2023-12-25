@@ -35,7 +35,6 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info, children, className })
       })
     })
 
-    console.log(cardRef.current)
     if (cardRef.current) observer.observe(cardRef.current)
 
     return () => {

@@ -20,6 +20,10 @@ const Page: NextPage = () => {
     })
 
     hiddenElements.forEach(el => observer.observe(el))
+
+    return () => {
+      observer.disconnect()
+    }
   }, [setIsMounted, isMounted])
 
   return (
