@@ -2,7 +2,7 @@
 
 import { NextPage } from "next"
 import { useEffect, useState } from "react"
-import { ProjectCard } from "~/components/project-card"
+import { ProjectCard } from "~/components/projects/project-card"
 import styles from "~/app/projects/page.module.scss"
 
 const Page: NextPage = () => {

@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Socials } from "~/components/socials"
+import { Socials } from "~/components/home/socials"
 
 export const Footer: FC = () => {
   return (

@@ -1,10 +1,10 @@
 import { NextPage } from "next"
-import { Technologies } from "~/components/technologies"
-import styles from "~/app/page.module.scss"
+import { Technologies } from "~/components/home/technologies"
+import styles from "~/app/(home)/page.module.scss"
 import { cn } from "~/utils/cn"
-import { ContactMeButton } from "~/components/contact-me-button"
-import { ProjectsButton } from "~/components/projects-button"
-import { Footer } from "~/components/footer"
+import { ContactMeButton } from "~/components/home/contact-me-button"
+import { ProjectsButton } from "~/components/home/projects-button"
+import { Footer } from "~/components/home/footer"
 
 const Page: NextPage = () => {
   return (

@@ -3,7 +3,7 @@
 import { ChevronRight } from "lucide-react"
 import { FC } from "react"
 import { ActionTooltip } from "~/components/action-tooltip"
-import styles from "~/components/contact-me-button.module.scss"
+import styles from "~/components/home/contact-me-button.module.scss"
 import { cn } from "~/utils/cn"
 
 export const ContactMeButton: FC = () => {

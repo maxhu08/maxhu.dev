@@ -5,10 +5,10 @@ import { FC, useEffect, useRef, useState } from "react"
 import Markdown from "react-markdown"
 import { ActionTooltip } from "~/components/action-tooltip"
 import { Separator } from "~/components/separator"
-import { technologies } from "~/components/technologies"
+import { technologies } from "~/components/home/technologies"
 import { cn } from "~/utils/cn"
 import Image from "next/image"
-import styles from "~/components/project-card.module.scss"
+import styles from "~/components/projects/project-card.module.scss"
 import { Code2, Paperclip } from "lucide-react"
 
 interface ProjectCardProps {
