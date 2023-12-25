@@ -43,14 +43,15 @@ const Page: NextPage = () => {
             This is a project I made as my final project for java class. It is a tomb of the mask
             style game where you collect the keys to go through the portal and progress to the next
             level. There are eight worlds in total. You can also collect coins, which increase your
-            score. You can find the download for the game
+            score. You can find the download for the game&nbsp;
+            <a
+              href="https://github.com/maxhu08/tomb-of-the-mask-clone/blob/master/tomb-of-the-mask-clone.exe"
+              className="text-blue-500 hover:text-blue-700 duration-300 ease-in-out underline"
+            >
+              here
+            </a>
           </p>
-          <a
-            href="https://github.com/maxhu08/tomb-of-the-mask-clone/blob/master/tomb-of-the-mask-clone.exe"
-            className="text-blue-500 hover:text-blue-700 duration-300 ease-in-out underline"
-          >
-            here
-          </a>
+
           <SimpleImage src="assets/projects/tomb-of-the-mask-clone/demo-1.png" alt="demo" />
           <SimpleImage src="assets/projects/tomb-of-the-mask-clone/demo-2.png" alt="demo" />
         </ProjectCard>
