@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { TechnologyIcon } from "~/components/technology-icon"
-import styles from "~/components/technologies.module.scss"
+import { TechnologyIcon } from "~/components/home/technology-icon"
+import styles from "~/components/home/technologies.module.scss"
 import { cn } from "~/utils/cn"
 
 export const technologies = [

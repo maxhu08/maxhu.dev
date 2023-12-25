@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FC } from "react"
 import { ActionTooltip } from "~/components/action-tooltip"
 import { cn } from "~/utils/cn"
-import styles from "~/components/projects-button.module.scss"
+import styles from "~/components/home/projects-button.module.scss"
 
 export const ProjectsButton: FC = () => {
   return (
