@@ -11,8 +11,14 @@ import { websiteName } from "~/constants/website-name";
 const fira = Fira_Mono({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-  title: websiteName,
-  description: "This is my website"
+  title: `🌴 ${websiteName}`,
+  description: "This is my website",
+  openGraph: {
+    title: `🌴 ${websiteName}`,
+    description: "This is my website",
+    images: "/assets/palm_tree.png"
+  },
+  authors: [{ name: "Max Huj", url: "https://maxhu.dev" }]
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
