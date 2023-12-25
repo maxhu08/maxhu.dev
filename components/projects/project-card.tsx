@@ -80,12 +80,11 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
       <Separator orientation="horizontal" className="my-2" />
       <div
         ref={contentRef}
-        className={cn("relative w-full overflow-hidden", !!expanded ? "h-max" : "max-h-60")}
+        className={cn("relative w-full overflow-hidden", !expanded && "max-h-60")}
       >
         {children}
-        {/* 240 = h-60 */}
         {contentRef.current?.clientHeight === 240 && (
-          <div className={cn("w-full h-full", !!expanded && "hidden")}>
+          <div className={cn("w-full h-full", expanded && "hidden")}>
             <div className="absolute bottom-0 left-0 bg-gradient-to-t from-neutral-200 dark:from-neutral-900 to-transparent w-full h-48"></div>
             <div className="absolute grid w-full place-items-center bottom-0 left-0 h-20">
               <button
@@ -103,7 +102,7 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
       </div>
 
       <div className="pt-2 grid grid-flow-col w-max gap-4 ml-auto">
-        {!!expanded && (
+        {expanded && (
           <button onClick={() => setExpanded(false)} className="cursor-pointer">
             <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out">
               <FoldVertical className="w-4 h-4" />
