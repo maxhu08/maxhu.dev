@@ -2,13 +2,12 @@
 
 import { ChevronLeft, Webhook, Zap } from "lucide-react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { FC } from "react";
 import { ThemeToggle } from "~/components/theme-toggle";
 
 export const Navbar: FC = () => {
   const pathname = usePathname();
-  const router = useRouter();
 
   const navigationControls = () => {
     if (pathname === "/") {

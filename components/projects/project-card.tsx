@@ -8,7 +8,7 @@ import { technologies } from "~/constants/technologies";
 import { cn } from "~/utils/cn";
 import Image from "next/image";
 import styles from "~/components/shared.module.scss";
-import { Code2, Paperclip } from "lucide-react";
+import { Code2, Expand, FoldVertical, Paperclip } from "lucide-react";
 import { useMediaQuery } from "react-responsive";
 
 interface ProjectCardProps {
@@ -26,6 +26,7 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
   const { theme } = useTheme();
   let technologiesIndex = 0;
   const cardRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const isMdOrLarger = useMediaQuery({ minWidth: 768 });
@@ -38,10 +39,13 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
     });
 
     if (cardRef.current) observer.observe(cardRef.current);
+
     return () => {
       observer.disconnect();
     };
   }, [cardRef.current]);
+
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div ref={cardRef} className={cn("p-2", className)}>
@@ -74,8 +78,38 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
         })}
       </div>
       <Separator orientation="horizontal" className="my-2" />
-      {children}
+      <div
+        ref={contentRef}
+        className={cn("relative w-full overflow-hidden", !expanded && "max-h-60")}
+      >
+        {children}
+        {contentRef.current && contentRef.current?.clientHeight >= 240 && (
+          <div className={cn("w-full h-full", expanded ? "hidden" : "block")}>
+            <div className="absolute bottom-0 left-0 bg-gradient-to-t from-neutral-200 dark:from-neutral-900 to-transparent w-full h-48"></div>
+            <div className="absolute grid w-full place-items-center bottom-0 left-0 h-20">
+              <button
+                onClick={() => setExpanded(true)}
+                className="p-1 bg-cyan-500 hover:bg-cyan-700 ease-in-out duration-300 cursor-pointer rounded-md"
+              >
+                <div className="grid grid-cols-[max-content_max-content] gap-1 place-items-center text-white">
+                  <Expand className="w-4 h-4" />
+                  <span>Expand</span>
+                </div>
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
       <div className="pt-2 grid grid-flow-col w-max gap-4 ml-auto">
+        {expanded && (
+          <button onClick={() => setExpanded(false)} className="cursor-pointer">
+            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out">
+              <FoldVertical className="w-4 h-4" />
+              <span>Collapse</span>
+            </div>
+          </button>
+        )}
         {info.demoLink && (
           <a href={info.demoLink} target="_blank">
             <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out">
