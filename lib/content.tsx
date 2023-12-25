@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { FancyImage } from "~/components/fancy-image";
 
 interface MarkdownProps {
   children: string;
@@ -38,13 +39,9 @@ export const Content: FC<MarkdownProps> = ({ children }) => {
         img: props => {
           const { src, alt } = props;
 
-          return (
-            <a href={`/${src}`} target="_blank">
-              <div className="my-2 rounded-md md:rounded-lg overflow-hidden">
-                <img src={`/${src!}`} alt={alt ?? ""} />
-              </div>
-            </a>
-          );
+          console.log("img", props);
+
+          return <FancyImage src={src ?? ""} alt={alt ?? ""} />;
         }
       }}
     >

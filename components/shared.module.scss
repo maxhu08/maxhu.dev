@@ -1,6 +1,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
+    filter: blur(2px);
     transform: translateY(20px);
   }
   25% {
@@ -14,12 +15,13 @@
   }
   to {
     opacity: 1;
+    filter: blur(0);
     transform: translateY(0);
   }
 }
 
-.technology-fade-in {
+.fade-in-bounce {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateY(0);
   animation: fadeIn 1s ease-in-out forwards;
 }
