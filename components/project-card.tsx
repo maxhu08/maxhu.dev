@@ -9,11 +9,14 @@ import { technologies } from "~/components/technologies"
 import { cn } from "~/utils/cn"
 import Image from "next/image"
 import styles from "~/components/project-card.module.scss"
+import { Code2, Paperclip } from "lucide-react"
 
 interface ProjectCardProps {
   info: {
     title: string
     technologies: string[]
+    codeLink?: string
+    demoLink?: string
   }
   children: string
   className?: string
@@ -60,6 +63,24 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info, children, className })
       </div>
       <Separator orientation="horizontal" className="my-2" />
       <Markdown className="leading-6">{children}</Markdown>
+      <div className="pt-2 grid grid-cols-2 w-max gap-4 ml-auto">
+        {info.demoLink && (
+          <a href={info.demoLink} target="_blan">
+            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out">
+              <Paperclip className="w-4 h-4" />
+              <span>View demo</span>
+            </div>
+          </a>
+        )}
+        {info.codeLink && (
+          <a href={info.codeLink} target="_blank">
+            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out">
+              <Code2 className="w-4 h-4" />
+              <span>View code</span>
+            </div>
+          </a>
+        )}
+      </div>
     </div>
   )
 }
