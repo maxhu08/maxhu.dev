@@ -6,7 +6,7 @@ import { ThemeProvider } from "~/components/providers/theme-provider"
 import { Navbar } from "~/components/navbar"
 import { Footer } from "~/components/home/footer"
 import { TitleChanger } from "~/components/title-changer"
-import { websiteName } from "~/config"
+import { websiteName } from "~/constants/website-name"
 
 const fira = Fira_Mono({ subsets: ["latin"], weight: "400" })
 

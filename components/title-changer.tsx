@@ -1,7 +1,7 @@
 "use client"
 
 import { FC, useEffect, useState } from "react"
-import { websiteName } from "~/config"
+import { websiteName } from "~/constants/website-name"
 
 export const TitleChanger: FC = () => {
   const [stateIndex, setStateIndex] = useState(0)
