@@ -1,34 +1,51 @@
-"use client"
+"use client";
 
-import { NextPage } from "next"
-import { useEffect, useState } from "react"
-import { ProjectCard } from "~/components/projects/project-card"
-import styles from "~/app/projects/page.module.scss"
+import { NextPage } from "next";
+import { useEffect, useState } from "react";
+import { ProjectCard } from "~/components/projects/project-card";
+import styles from "~/app/projects/page.module.scss";
 
 const Page: NextPage = () => {
-  const [isMounted, setIsMounted] = useState(false)
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true)
+    setIsMounted(true);
 
-    const hiddenElements = document.querySelectorAll(`.${styles["project"]}`)
+    const hiddenElements = document.querySelectorAll(`.${styles["project"]}`);
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add(styles["project-shown"])
-        else entry.target.classList.remove(styles["project-shown"])
-      })
-    })
+        if (entry.isIntersecting) entry.target.classList.add(styles["project-shown"]);
+        else entry.target.classList.remove(styles["project-shown"]);
+      });
+    });
 
-    hiddenElements.forEach(el => observer.observe(el))
+    hiddenElements.forEach(el => observer.observe(el));
 
     return () => {
-      observer.disconnect()
-    }
-  }, [setIsMounted, isMounted])
+      observer.disconnect();
+    };
+  }, [setIsMounted, isMounted]);
 
   return (
     <div className="w-full h-screen grid place-items-center overflow-x-hidden pb-10">
       <main className="grid grid-flow-row gap-2 w-full sm:w-[60%] md:w-[50%] lg:w-[40%] h-full pt-10">
+        {/* prettier-ignore */}
+        <ProjectCard
+          className={styles["project"]}
+          info={{
+            title: "tomb-of-the-mask-clone",
+            technologies: ["java"],
+            codeLink: "https://github.com/maxhu08/maxhu.dev"
+          }}
+        >
+          This is a project I made as my final project for java class. It is a tomb of the mask
+          style game where you collect the keys to go through the portal and progress to the next
+          level. There are eight worlds in total. You can also collect coins, which increase your score. You can find the download for the game
+          [here](https://github.com/maxhu08/tomb-of-the-mask-clone/blob/master/tomb-of-the-mask-clone.exe)
+
+          ![demo](assets/projects/tomb-of-the-mask-clone/demo-1.png)
+          ![demo](assets/projects/tomb-of-the-mask-clone/demo-2.png)
+        </ProjectCard>
         <ProjectCard
           className={styles["project"]}
           info={{
@@ -49,7 +66,9 @@ const Page: NextPage = () => {
           className={styles["project"]}
           info={{
             title: "todo: add later",
-            technologies: ["typescript", "nodejs"]
+            technologies: ["typescript", "nodejs"],
+            codeLink: "https://github.com/maxhu08/maxhu.dev",
+            demoLink: "https://maxhu.dev/"
           }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -63,7 +82,9 @@ const Page: NextPage = () => {
           className={styles["project"]}
           info={{
             title: "todo: add later",
-            technologies: ["typescript", "nodejs"]
+            technologies: ["typescript", "nodejs"],
+            codeLink: "https://github.com/maxhu08/maxhu.dev",
+            demoLink: "https://maxhu.dev/"
           }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -75,7 +96,7 @@ const Page: NextPage = () => {
         </ProjectCard>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

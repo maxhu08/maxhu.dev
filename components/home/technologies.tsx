@@ -2,28 +2,27 @@ import { FC } from "react"
 import { TechnologyIcon } from "~/components/home/technology-icon"
 import styles from "~/components/home/technologies.module.scss"
 import { cn } from "~/utils/cn"
+import { technologies } from "~/constants/technologies"
 
-export const technologies = [
-  { name: "html", icon: "/assets/technologies/html.svg" },
-  { name: "css", icon: "/assets/technologies/css.svg" },
-  { name: "sass", icon: "/assets/technologies/sass.svg" },
-  { name: "tailwindcss", icon: "/assets/technologies/tailwindcss.svg" },
-  { name: "javascript", icon: "/assets/technologies/javascript.svg" },
-  { name: "typescript", icon: "/assets/technologies/typescript.svg" },
-  { name: "nodejs", icon: "/assets/technologies/nodejs.svg" },
-  { name: "react", icon: "/assets/technologies/react.svg" },
-  {
-    name: "nextjs",
-    icon: "/assets/technologies/nextjs_dark.svg",
-    iconLight: "/assets/technologies/nextjs_light.svg"
-  },
-  { name: "graphql", icon: "/assets/technologies/graphql.svg" },
-  { name: "apollo", icon: "/assets/technologies/apollo.svg" },
-  { name: "trpc", icon: "/assets/technologies/trpc.svg" },
-  { name: "prisma", icon: "/assets/technologies/prisma.svg" }
+const learning = [
+  "html",
+  "css",
+  "sass",
+  "tailwindcss",
+  "javascript",
+  "tailwind",
+  "nodejs",
+  "react",
+  "nextjs",
+  "graphql",
+  "apollo",
+  "trpc",
+  "prisma"
 ]
 
 export const Technologies: FC = () => {
+  let technologiesIndex = 0
+
   return (
     <div
       className={cn(
@@ -34,15 +33,20 @@ export const Technologies: FC = () => {
       {/* {[...items, ...items].map((item, index) => (
             <Icon name={item.name} icon={item.icon} iconLight={item.iconDark} key={`techonology-${item.name}`} delay={index * 50 + 600} />
           ))} */}
-      {technologies.map((item, index) => (
-        <TechnologyIcon
-          name={item.name}
-          icon={item.icon}
-          iconLight={item.iconLight}
-          key={`techonology-${item.name}`}
-          delay={index * 50 + 600}
-        />
-      ))}
+      {technologies.map((technology, index) => {
+        const renderedIndex = technologiesIndex++
+
+        if (learning.includes(technology.name))
+          return (
+            <TechnologyIcon
+              name={technology.name}
+              icon={technology.icon}
+              iconLight={technology.iconLight}
+              key={`techonology-${technology.name}`}
+              delay={renderedIndex * 50 + 600}
+            />
+          )
+      })}
     </div>
   )
 }
