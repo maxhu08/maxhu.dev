@@ -1,1 +1,1 @@
-export const websiteName = "maxhu.dev"
+export const websiteName = "maxhu.dev";

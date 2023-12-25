@@ -1,8 +1,8 @@
-import { FC } from "react"
-import { TechnologyIcon } from "~/components/home/technology-icon"
-import styles from "~/components/home/technologies.module.scss"
-import { cn } from "~/utils/cn"
-import { technologies } from "~/constants/technologies"
+import { FC } from "react";
+import { TechnologyIcon } from "~/components/home/technology-icon";
+import styles from "~/components/home/technologies.module.scss";
+import { cn } from "~/utils/cn";
+import { technologies } from "~/constants/technologies";
 
 const learning = [
   "html",
@@ -18,10 +18,10 @@ const learning = [
   "apollo",
   "trpc",
   "prisma"
-]
+];
 
 export const Technologies: FC = () => {
-  let technologiesIndex = 0
+  let technologiesIndex = 0;
 
   return (
     <div
@@ -34,7 +34,7 @@ export const Technologies: FC = () => {
             <Icon name={item.name} icon={item.icon} iconLight={item.iconDark} key={`techonology-${item.name}`} delay={index * 50 + 600} />
           ))} */}
       {technologies.map((technology, index) => {
-        const renderedIndex = technologiesIndex++
+        const renderedIndex = technologiesIndex++;
 
         if (learning.includes(technology.name))
           return (
@@ -45,8 +45,8 @@ export const Technologies: FC = () => {
               key={`techonology-${technology.name}`}
               delay={renderedIndex * 50 + 600}
             />
-          )
+          );
       })}
     </div>
-  )
-}
+  );
+};

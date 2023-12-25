@@ -1,12 +1,17 @@
-"use client"
+"use client";
 
-import { Moon, Settings, Sun, SunMoon } from "lucide-react"
-import { useTheme } from "next-themes"
-import { FC } from "react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "~/components/ui/dropdown-menu"
+import { Moon, Settings, Sun, SunMoon } from "lucide-react";
+import { useTheme } from "next-themes";
+import { FC } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from "~/components/ui/dropdown-menu";
 
 export const ThemeToggle: FC = () => {
-  const { setTheme } = useTheme()
+  const { setTheme } = useTheme();
 
   return (
     <div>
@@ -38,5 +43,5 @@ export const ThemeToggle: FC = () => {
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  )
-}
+  );
+};

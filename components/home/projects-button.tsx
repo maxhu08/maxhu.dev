@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { Webhook } from "lucide-react"
-import Link from "next/link"
-import { FC } from "react"
-import { ActionTooltip } from "~/components/action-tooltip"
-import { cn } from "~/utils/cn"
-import styles from "~/components/home/projects-button.module.scss"
+import { Webhook } from "lucide-react";
+import Link from "next/link";
+import { FC } from "react";
+import { ActionTooltip } from "~/components/action-tooltip";
+import { cn } from "~/utils/cn";
+import styles from "~/components/home/projects-button.module.scss";
 
 export const ProjectsButton: FC = () => {
   return (
@@ -17,5 +17,5 @@ export const ProjectsButton: FC = () => {
         </div>
       </Link>
     </ActionTooltip>
-  )
-}
+  );
+};
