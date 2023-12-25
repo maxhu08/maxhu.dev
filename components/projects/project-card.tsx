@@ -80,11 +80,11 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
       <Separator orientation="horizontal" className="my-2" />
       <div
         ref={contentRef}
-        className={cn("relative w-full overflow-hidden", !expanded && "max-h-60")}
+        className={cn("relative w-full overflow-hidden", !expanded ? "max-h-60" : "h-max")}
       >
         {children}
         {contentRef.current && contentRef.current?.clientHeight >= 240 && (
-          <div className={cn("w-full h-full", expanded ? "hidden" : "block")}>
+          <div className={cn("w-full h-full", expanded && "hidden")}>
             <div className="absolute bottom-0 left-0 bg-gradient-to-t from-neutral-200 dark:from-neutral-900 to-transparent w-full h-48"></div>
             <div className="absolute grid w-full place-items-center bottom-0 left-0 h-20">
               <button
