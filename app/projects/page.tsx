@@ -1,7 +1,7 @@
 "use client"
 
 import { NextPage } from "next"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { ProjectCard } from "~/components/project-card"
 import styles from "~/app/projects/page.module.scss"
 
@@ -23,13 +23,15 @@ const Page: NextPage = () => {
   }, [setIsMounted, isMounted])
 
   return (
-    <div className="w-full h-screen grid place-items-center overflow-x-hidden">
+    <div className="w-full h-screen grid place-items-center overflow-x-hidden pb-10">
       <main className="grid grid-flow-row gap-2 w-full sm:w-[60%] md:w-[50%] lg:w-[40%] h-full pt-10">
         <ProjectCard
           className={styles["project"]}
           info={{
             title: "todo: add later",
-            technologies: ["typescript", "nodejs"]
+            technologies: ["typescript", "nodejs"],
+            codeLink: "https://github.com/maxhu08/maxhu.dev",
+            demoLink: "https://maxhu.dev/"
           }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
