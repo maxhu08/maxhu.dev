@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, memo, useEffect, useRef, useState } from "react";
 import { ActionTooltip } from "~/components/action-tooltip";
 import { Separator } from "~/components/separator";
 import { technologies } from "~/constants/technologies";
@@ -9,7 +9,6 @@ import { cn } from "~/utils/cn";
 import Image from "next/image";
 import styles from "~/components/shared.module.scss";
 import { Code2, Paperclip } from "lucide-react";
-import { Content } from "~/lib/content";
 
 interface ProjectCardProps {
   info: {
@@ -22,7 +21,7 @@ interface ProjectCardProps {
   className?: string;
 }
 
-export const ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
+const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
   const { theme } = useTheme();
   let technologiesIndex = 0;
   const cardRef = useRef<HTMLDivElement>(null);
@@ -36,7 +35,6 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info, children, className })
     });
 
     if (cardRef.current) observer.observe(cardRef.current);
-
     return () => {
       observer.disconnect();
     };
@@ -94,3 +92,5 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info, children, className })
     </div>
   );
 };
+
+export const ProjectCard = memo(_ProjectCard);
