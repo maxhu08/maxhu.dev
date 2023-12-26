@@ -43,7 +43,7 @@ const Page: NextPage = () => {
           </div>
           <div className="grid place-items-center grid-flow-row gap-1 pt-10 md:pt-20">
             <span
-              className={cn("text-zinc-500 dark:text-zinc-400k !delay-300", styles["fade-in-left"])}
+              className={cn("text-zinc-500 dark:text-zinc-400 !delay-300", styles["fade-in-left"])}
             >
               technologies i&apos;m learning
             </span>
