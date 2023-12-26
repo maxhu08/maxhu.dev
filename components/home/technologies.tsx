@@ -17,7 +17,6 @@ const learning = [
   "nextjs",
   "graphql",
   "apollo",
-  "trpc",
   "prisma"
 ];
 
