@@ -1,4 +1,4 @@
-import { Github, Youtube } from "lucide-react";
+import { Github, Twitter, Youtube } from "lucide-react";
 import { FC } from "react";
 import { ActionTooltip } from "~/components/action-tooltip";
 
@@ -12,6 +12,11 @@ const socials = [
     name: "youtube",
     icon: <Youtube className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
     href: "https://www.youtube.com/@maxhudotdev"
+  },
+  {
+    name: "twitter | x",
+    icon: <Twitter className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
+    href: "https://twitter.com/maxhu08"
   }
 ];
 
