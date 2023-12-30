@@ -36,7 +36,7 @@ const Page: NextPage = () => {
           info={{
             title: "tomb-of-the-mask-clone",
             technologies: ["java"],
-            codeLink: "https://github.com/maxhu08/maxhu.dev"
+            codeLink: "https://github.com/maxhu08/tomb-of-the-mask-clone"
           }}
         >
           <p>
