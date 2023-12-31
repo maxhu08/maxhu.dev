@@ -3,11 +3,28 @@
 import { ChevronLeft, Webhook, Zap } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
+import { Separator } from "~/components/separator";
 import { ThemeToggle } from "~/components/theme-toggle";
+import { cn } from "~/utils/cn";
 
 export const Navbar: FC = () => {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY === 0);
+      if (window.scrollY > 0) setScrolled(true);
+      else setScrolled(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navigationControls = () => {
     if (pathname === "/") {
@@ -19,12 +36,6 @@ export const Navbar: FC = () => {
       );
     } else if (pathname === "/projects") {
       return (
-        // <button onClick={() => router.back()} className="cursor-pointer">
-        //   <div className="grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
-        //     <ChevronLeft className="w-4 h-4" />
-        //     <span>Back</span>
-        //   </div>
-        // </button>
         <Link href="/">
           <div className="grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
             <ChevronLeft className="w-4 h-4" />
@@ -60,7 +71,9 @@ export const Navbar: FC = () => {
   };
 
   return (
-    <nav className="fixed z-20 w-full top-0 ease-in-out backdrop-blur-2xl">
+    <nav
+      className={cn("fixed z-20 w-full top-0 ease-in-out", pathname !== "/" && "backdrop-blur-2xl")}
+    >
       <div className="py-2 px-2 md:px-4 grid grid-cols-[1fr_auto_1fr] w-full">
         <div className="w-max">{navigationControls()}</div>
         {currentPage()}
@@ -68,6 +81,13 @@ export const Navbar: FC = () => {
           <ThemeToggle />
         </div>
       </div>
+      <Separator
+        orientation="horizontal"
+        className={cn(
+          "transition-all duration-500 delay-1000 mx-auto bg-gray-300 dark:bg-border",
+          scrolled ? "w-full" : "w-0"
+        )}
+      />
     </nav>
   );
 };

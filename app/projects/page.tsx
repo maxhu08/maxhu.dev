@@ -29,8 +29,8 @@ const Page: NextPage = () => {
   }, [setIsMounted, isMounted]);
 
   return (
-    <div className="w-full h-screen grid place-items-center overflow-x-hidden pb-10">
-      <main className="grid grid-flow-row gap-2 w-full sm:w-[60%] md:w-[50%] lg:w-[40%] h-full pt-10">
+    <div className="w-full h-full grid place-items-center overflow-x-clip pb-10">
+      <main className="grid grid-flow-row gap-2 w-full sm:w-[60%] md:w-[40%] h-full pt-10">
         <ProjectCard
           className={styles["project"]}
           info={{
