@@ -14,13 +14,7 @@ export interface TechnologyIconProps extends React.HTMLAttributes<HTMLDivElement
   delay: number;
 }
 
-export const TechnologyIcon: FC<TechnologyIconProps> = ({
-  name,
-  icon,
-  iconLight,
-  delay,
-  ...props
-}) => {
+export const TechnologyIcon: FC<TechnologyIconProps> = ({ name, icon, iconLight, delay, ...props }) => {
   const { theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -34,18 +28,10 @@ export const TechnologyIcon: FC<TechnologyIconProps> = ({
     <ActionTooltip label={name} side="bottom">
       <div
         {...props}
-        className={cn(
-          "w-8 h-8 relative cursor-pointer !aspect-square",
-          styles["fade-in-right"],
-          props.className
-        )}
+        className={cn("w-8 h-8 relative cursor-pointer !aspect-square", styles["fade-in-right"], props.className)}
         style={{ animationDelay: `${delay.toString()}ms` }}
       >
-        {iconLight && theme === "light" ? (
-          <Image src={iconLight} alt={name} fill />
-        ) : (
-          <Image src={icon} alt={name} fill />
-        )}
+        {iconLight && theme === "light" ? <Image src={iconLight} alt={name} fill /> : <Image src={icon} alt={name} fill />}
       </div>
     </ActionTooltip>
   );

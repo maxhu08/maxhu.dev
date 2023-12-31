@@ -14,7 +14,6 @@ export const Navbar: FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY === 0);
       if (window.scrollY > 0) setScrolled(true);
       else setScrolled(false);
     };
@@ -71,9 +70,7 @@ export const Navbar: FC = () => {
   };
 
   return (
-    <nav
-      className={cn("fixed z-20 w-full top-0 ease-in-out", pathname !== "/" && "backdrop-blur-2xl")}
-    >
+    <nav className="fixed z-20 w-full top-0 ease-in-out backdrop-blur-2xl">
       <div className="py-2 px-2 md:px-4 grid grid-cols-[1fr_auto_1fr] w-full">
         <div className="w-max">{navigationControls()}</div>
         {currentPage()}
@@ -83,10 +80,7 @@ export const Navbar: FC = () => {
       </div>
       <Separator
         orientation="horizontal"
-        className={cn(
-          "transition-all duration-500 delay-1000 mx-auto bg-gray-300 dark:bg-border",
-          scrolled ? "w-full" : "w-0"
-        )}
+        className={cn("transition-all duration-500 mx-auto bg-gray-300 dark:bg-border", scrolled ? "w-full visible" : "w-0 invisible")}
       />
     </nav>
   );
