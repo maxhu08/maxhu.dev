@@ -27,11 +27,7 @@ export const Content: FC<MarkdownProps> = ({ children }) => {
           const { href, children } = props;
 
           return (
-            <a
-              href={href}
-              target="_blank"
-              className="text-blue-500 hover:text-blue-700 duration-300 ease-in-out leading-6 underline"
-            >
+            <a href={href} target="_blank" className="text-blue-500 hover:text-blue-700 duration-300 ease-in-out leading-6 underline">
               {children}
             </a>
           );
