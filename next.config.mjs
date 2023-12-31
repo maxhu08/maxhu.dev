@@ -18,4 +18,5 @@ const millionConfig = {
   mute: true
 };
 
-export default million.next(nextConfig, millionConfig);
+// export default million.next(nextConfig, millionConfig);
+export default nextConfig;
