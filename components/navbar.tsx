@@ -78,10 +78,7 @@ export const Navbar: FC = () => {
           <ThemeToggle />
         </div>
       </div>
-      <Separator
-        orientation="horizontal"
-        className={cn("transition-all duration-500 mx-auto bg-gray-300 dark:bg-border", scrolled ? "w-full visible" : "w-0 invisible")}
-      />
+      <Separator orientation="horizontal" className={cn("transition-all duration-500 mx-auto", scrolled ? "w-full visible" : "w-0 invisible")} />
     </nav>
   );
 };
