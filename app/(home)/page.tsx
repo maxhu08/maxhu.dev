@@ -5,6 +5,7 @@ import { cn } from "~/utils/cn";
 import { ContactMeButton } from "~/components/home/contact-me-button";
 import { ProjectsButton } from "~/components/home/projects-button";
 import { Footer } from "~/components/home/footer";
+import { MoreButton } from "~/components/home/more-button";
 
 const Page: NextPage = () => {
   return (
@@ -26,6 +27,9 @@ const Page: NextPage = () => {
             <div className={cn("pt-2 z-30", styles["bouncing-animation"])} style={{ animationDelay: "1200ms" }}>
               <ProjectsButton />
             </div>
+          </div>
+          <div className={cn("pt-2 z-30", styles["bouncing-animation"])} style={{ animationDelay: "1200ms" }}>
+            <MoreButton />
           </div>
           <div className="grid place-items-center grid-flow-row gap-1 pt-10 md:pt-20">
             <span className={cn("text-zinc-500 dark:text-zinc-400 !delay-300", styles["fade-in-left"])}>technologies i&apos;m learning</span>
