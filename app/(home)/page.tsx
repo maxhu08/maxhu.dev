@@ -21,14 +21,14 @@ const Page: NextPage = () => {
             </span>
           </div>
           <div className="grid grid-cols-[max-content_max-content] gap-2">
-            <div className={cn("pt-2 z-30", styles["bouncing-animation"])} style={{ animationDelay: "1000ms" }}>
+            <div className={cn("pt-2 z-10", styles["bouncing-animation"])} style={{ animationDelay: "1000ms" }}>
               <ContactMeButton />
             </div>
-            <div className={cn("pt-2 z-30", styles["bouncing-animation"])} style={{ animationDelay: "1200ms" }}>
+            <div className={cn("pt-2 z-10", styles["bouncing-animation"])} style={{ animationDelay: "1200ms" }}>
               <ProjectsButton />
             </div>
           </div>
-          <div className={cn("pt-2 z-30", styles["bouncing-animation"])} style={{ animationDelay: "1400ms" }}>
+          <div className={cn("pt-2 z-[5]", styles["bouncing-animation"])} style={{ animationDelay: "1400ms" }}>
             <MoreButton />
           </div>
           <div className="grid place-items-center grid-flow-row gap-1 pt-10 md:pt-20">
