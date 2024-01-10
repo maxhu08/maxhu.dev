@@ -28,7 +28,7 @@ const Page: NextPage = () => {
               <ProjectsButton />
             </div>
           </div>
-          <div className={cn("pt-2 z-30", styles["bouncing-animation"])} style={{ animationDelay: "1200ms" }}>
+          <div className={cn("pt-2 z-30", styles["bouncing-animation"])} style={{ animationDelay: "1400ms" }}>
             <MoreButton />
           </div>
           <div className="grid place-items-center grid-flow-row gap-1 pt-10 md:pt-20">
