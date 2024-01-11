@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, Webhook, Zap } from "lucide-react";
+import { ChevronLeft, Sliders, Webhook, Zap } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, useEffect, useState } from "react";
@@ -64,6 +64,13 @@ export const Navbar: FC = () => {
           <span>projects</span>
         </div>
       );
+    } else if (pathname === "/other/my-configs") {
+      return (
+        <div className="grid grid-cols-[max-content_max-content] gap-1 place-items-center">
+          <Sliders className="w-4 h-4" />
+          <span>my configs</span>
+        </div>
+      );
     } else {
       return <div></div>;
     }
@@ -78,7 +85,13 @@ export const Navbar: FC = () => {
           <ThemeToggle />
         </div>
       </div>
-      <Separator orientation="horizontal" className={cn("transition-all duration-500 mx-auto", scrolled ? "w-full visible" : "w-0 invisible")} />
+      <Separator
+        orientation="horizontal"
+        className={cn(
+          "transition-all duration-500 mx-auto",
+          scrolled ? "w-full visible" : "w-0 invisible"
+        )}
+      />
     </nav>
   );
 };

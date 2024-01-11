@@ -12,32 +12,35 @@ const Page = () => {
           <p>
             this is where i keep my configs so if i switch computers i can easily reconfigure my
             setup. if you want to try my configs you can copy them from here. this page should
-            contain all my configs related my dev environment.
+            contain all my configs related my dev environment 👨‍💻.
           </p>
         </ConfigCard>
         <ConfigCard title="vscode configs">
-          <p>this is where i keep my configs related to vscode. </p>
-          <br />
-          <p>it contains: </p>
-          <ul className="list-disc mx-6 mb-6 mt-4">
-            <li>my extensions 👾</li>
-            <li>my settings.json ⚙️</li>
-            <li>my keybindings ⌨️</li>
-          </ul>
-          <p>
-            i use vim so keep in mind that some of the keybinds are going to be more suited towards
-            vim. my vim normal mode keybind is binded to kj instead of esc, if you don&apos;t use kj
-            you might want to change that. you may also need to change some of the settings
-            regarding the terminal because your terminals may be different, this config was made
-            while using windows so the primary terminal is bash.
-          </p>
-          <br />
-          <p>
-            i have a lot of extensions so i made a script to quickly install all my extensions
-            through one command
-          </p>
-          <br />
-          <p>just copy the `install-extensions.sh` file and then run this command</p>
+          <FancyContent>
+            <p>this is where i keep my configs related to vscode. </p>
+            <br />
+            <p>it contains: </p>
+            <ul className="list-disc mx-6 mb-6 mt-4">
+              <li>my extensions 🐳</li>
+              <li>my settings.json ⚙️</li>
+              <li>my keybindings ⌨️</li>
+            </ul>
+            <p>
+              i use vim so keep in mind that some of the keybinds are going to be more suited
+              towards vim. my vim normal mode keybind is binded to kj instead of esc, if you
+              don&apos;t use kj you might want to change that. you may also need to change some of
+              the settings regarding the terminal because your terminals may be different, this
+              config was made while using windows so the primary terminal is bash.
+            </p>
+            <br />
+            <p>
+              i have a lot of extensions so i made a script to quickly install all my extensions
+              through one command
+            </p>
+            <br />
+            <p>just copy the `install-extensions.sh` file and then run this command: </p>
+          </FancyContent>
+
           <div className="my-2">
             <TerminalCard text="./install-extensions.sh" />
           </div>
@@ -74,10 +77,14 @@ const Page = () => {
         <ConfigCard title="bash config">
           <FancyContent>
             <p>
-              here is my .bashrc i mainly use bash because it is easy to use compared to other
-              terminals since im on windows. i have it setup so i can use vim directly in the bash
-              terminal, just type kj to enter normal mode directly in the terminal 😎. my bashrc
-              also an alias to cd into desktop quickly with `cdd`
+              thjs is my .bashrc i mainly use bash because it is easy to use compared to other
+              terminals since im on windows.
+            </p>
+            <br />
+            <p>
+              i have it setup so i can use vim directly in the bash terminal, just type kj to enter
+              normal mode directly in the terminal 😎. my bashrc also an alias to cd into desktop
+              quickly ⚡ with `cdd`
             </p>
           </FancyContent>
           <div className="my-2">

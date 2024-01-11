@@ -1,12 +1,11 @@
 "use client";
 
 import { Check, Copy, File } from "lucide-react";
-import { useTheme } from "next-themes";
 import { useState, useEffect, FC } from "react";
 
 // syntax highlighthing
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { atomOneDark, atelierCaveLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 interface CodeCardProps {
   fileIcon?: any;
@@ -18,7 +17,6 @@ interface CodeCardProps {
 export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath, language }) => {
   const [fileContent, setFileContent] = useState("");
   const [copied, setCopied] = useState(false);
-  const { theme } = useTheme();
 
   useEffect(() => {
     const fetchFileContent = async () => {
@@ -65,7 +63,7 @@ export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath, lang
         <div className="overflow-y-scroll">
           <SyntaxHighlighter
             language={language}
-            style={theme === "dark" ? atomOneDark : atelierCaveLight}
+            style={atomOneDark}
             customStyle={{ background: "#00000000" }}
           >
             {fileContent}
