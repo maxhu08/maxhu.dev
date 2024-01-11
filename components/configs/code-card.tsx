@@ -2,15 +2,19 @@
 
 import { File } from "lucide-react";
 import { useState, useEffect, FC } from "react";
-import { Separator } from "~/components/separator";
+
+// syntax highlighthing
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 interface CodeCardProps {
   fileIcon?: any;
   fileName: string;
   codePath: string;
+  language: string;
 }
 
-export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath }) => {
+export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath, language }) => {
   const [fileContent, setFileContent] = useState("");
 
   useEffect(() => {
@@ -28,14 +32,21 @@ export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath }) =>
   }, [codePath]);
 
   return (
-    <div className="bg-neutral-300 dark:bg-neutral-800 rounded-md p-2">
-      <div className="grid grid-flow-row gap-2">
-        <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-zinc-400 dark:text-zinc-500">
+    <div className="bg-neutral-300 dark:bg-neutral-800 rounded-md overflow-hidden">
+      <div className="grid grid-flow-row gap-1">
+        <div className="bg-neutral-400 dark:bg-neutral-700 grid grid-cols-[max-content_max-content] place-items-center gap-1 text-zinc-400 dark:text-zinc-500 p-2">
           {fileIcon ? fileIcon : <File className="w-4 h-4" />}
           <span>{fileName}</span>
         </div>
-        <Separator orientation="horizontal" className="bg-zinc-400 dark:bg-zinc-500" />
-        <pre className="overflow-scroll">{fileContent}</pre>
+        <div className="overflow-y-scroll">
+          <SyntaxHighlighter
+            language={language}
+            style={atomOneDark}
+            customStyle={{ background: "#00000000" }}
+          >
+            {fileContent}
+          </SyntaxHighlighter>
+        </div>
       </div>
     </div>
   );

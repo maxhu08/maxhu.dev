@@ -23,19 +23,24 @@ const Page = () => {
             terminals may be different, this config was made while using windows so the primary
             terminal is bash.
           </p>
-          <br></br>
-          <CodeCard
-            fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
-            fileName="settings.json"
-            codePath="/my-configs/vscode/settings.json"
-          />
+          <div className="my-2">
+            <CodeCard
+              fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
+              fileName="settings.json"
+              codePath="/my-configs/vscode/settings.json"
+              language="json"
+            />
+          </div>
+          <p>here is my keybindings.json file</p>
+          <div className="my-2">
+            <CodeCard
+              fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
+              fileName="keybindings.json"
+              codePath="/my-configs/vscode/keybindings.json"
+              language="json"
+            />
+          </div>
         </ConfigCard>
-        <p>here is my keybindings.json file</p>
-        <CodeCard
-          fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
-          fileName="keybindings.json"
-          codePath="/my-configs/vscode/keybindings.json"
-        />
         <ConfigCard title="bash config">
           <p>
             here is my .bashrc i mainly use bash because it is use compared to other terminals since
@@ -43,11 +48,14 @@ const Page = () => {
             kj to enter normal mode directly in the terminal 😎. my bashrc also an alias to cd into
             desktop quickly with `cdd`
           </p>
-          <CodeCard
-            fileIcon={<FileTerminal className="w-4 h-4 text-orange-500" />}
-            fileName=".bashrc"
-            codePath="/my-configs/bash/bashrc.txt"
-          />
+          <div className="my-2">
+            <CodeCard
+              fileIcon={<FileTerminal className="w-4 h-4 text-orange-500" />}
+              fileName=".bashrc"
+              codePath="/my-configs/bash/bashrc.txt"
+              language="bash"
+            />
+          </div>
         </ConfigCard>
       </main>
     </div>

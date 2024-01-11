@@ -2,6 +2,7 @@
 
 [
   // move up and down in suggestions box
+  // ! does not work for quick fix
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
@@ -12,5 +13,4 @@
     "command": "selectPrevSuggestion",
     "when": "editorTextFocus && suggestWidgetVisible"
   }
-  // ! does not work for quick fix
 ]
