@@ -1,0 +1,75 @@
+squiggle_color='\033[38;5;87m'
+shortened_directories_color='\e[1;34m'
+current_directory_color='\e[1;34m'
+reset_color='\033[0m'
+git_branch_paren_color='\033[38;5;57m'
+git_branch_color='\033[38;5;219m'
+
+yellow_color='\033[38;5;226m'
+orange_color='\033[38;5;202m'
+red_color='\033[38;5;9m'
+
+# vim
+set -o vi
+
+# set normal mode keybind to be kj
+bind '"kj": "\e"'
+
+parse_git_branch() {
+    local branch_name
+    branch_name=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [ -n "$branch_name" ]; then
+        echo -e " ${git_branch_paren_color}(${git_branch_color}${branch_name}${git_branch_paren_color})${reset_color}"
+    fi
+}
+
+shorten_path() {
+    local path
+    path=$(pwd)
+    path=${path/$HOME/\~}  # replace the home directory with ~
+
+    # check if at the root directory
+    if [ "$path" = "~" ]; then
+        echo -n "${squiggle_color}~"
+        return
+    fi
+
+    # split path into an array of directories
+    IFS='/' read -ra dirs <<< "$path"
+    local shortened_path=""
+    local first=true
+
+    for ((i=0; i<${#dirs[@]}-1; i++)); do
+        dir="${dirs[$i]}"
+        if [ "$dir" != "~" ]; then
+            if $first; then
+                shortened_path+="${squiggle_color}~"  # ~
+                first=false
+            else
+                # shortened directories 
+                shortened_path+="${shortened_directories_color}/${dir:0:1}"
+            fi
+        fi
+    done
+
+    # last directory 
+    shortened_path+="${current_directory_color}/${dirs[-1]}"
+
+    echo -n "$shortened_path"
+}
+
+arrows="${yellow_color}❱${orange_color}❱${red_color}❱"
+
+# set prompt
+
+update_prompt() {
+    PS1="\[$(shorten_path)\]\[$(parse_git_branch)\] ${arrows} \[$reset_color\]"
+}
+
+PROMPT_COMMAND="update_prompt; $PROMPT_COMMAND"
+
+
+# ** aliases **
+alias cls="clear"
+# quick cd to desktop may need to be changed pending on desktop location
+alias cdd="cd ~/OneDrive/Desktop"

@@ -1,0 +1,16 @@
+// * keybinds to make vim easier *
+
+[
+  // move up and down in suggestions box
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "editorTextFocus && suggestWidgetVisible"
+  }
+  // ! does not work for quick fix
+]
