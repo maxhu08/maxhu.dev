@@ -1,6 +1,7 @@
 import { Braces, FileTerminal } from "lucide-react";
 import { CodeCard } from "~/components/configs/code-card";
 import { ConfigCard } from "~/components/configs/config-card";
+import { TerminalCard } from "~/components/configs/terminal-card";
 
 const Page = () => {
   return (
@@ -28,6 +29,12 @@ const Page = () => {
             i have a lot of extensions so i made a script to quickly install all my extensions
             through one command
           </p>
+          <br />
+          <p>copy the `install-extensions.sh` file and install the extensions</p>
+          <div className="my-2">
+            <TerminalCard text="./install-extensions.sh" />
+          </div>
+          <p>here is the install script</p>
           <div className="my-2">
             <CodeCard
               fileIcon={<FileTerminal className="w-4 h-4 text-orange-500" />}
