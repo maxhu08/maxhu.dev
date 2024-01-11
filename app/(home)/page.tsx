@@ -10,7 +10,7 @@ import { MoreButton } from "~/components/home/more-button";
 const Page: NextPage = () => {
   return (
     <>
-      <div className="w-full h-screen grid place-items-center overflow-hidden">
+      <main className="w-full h-screen grid place-items-center overflow-hidden">
         <div className="grid place-items-center grid-flow-row pb-[5%] h-max gap-2">
           <div className={cn("grid grid-cols-[repeat(3,max-content)] place-items-center gap-2", styles["fade-in-down"])}>
             <span className={cn("text-2xl md:text-4xl select-none", styles["wave-animation"])} style={{ animationDelay: "1800ms" }}>
@@ -36,7 +36,7 @@ const Page: NextPage = () => {
             <Technologies />
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );

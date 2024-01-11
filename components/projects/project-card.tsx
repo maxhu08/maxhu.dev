@@ -70,7 +70,7 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
 
   return (
     <div ref={cardRef} className={cn("p-2", className)}>
-      <p className={cn("text-2xl", isVisible && isMdOrLarger && styles["fade-in-bounce"])}>{info.title}</p>
+      <p className={cn("font-semibold", isVisible && isMdOrLarger && styles["fade-in-bounce"])}>{info.title}</p>
       <div className="grid grid-flow-col gap-1 w-max place-items-center">
         <span className="text-zinc-500">made with</span>
         {technologies.map((technology, index) => {
@@ -93,7 +93,7 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
           }
         })}
       </div>
-      <Separator orientation="horizontal" className="my-2" />
+      <Separator orientation="horizontal" className="my-1" />
       <div ref={contentRef} className={cn("relative w-full overflow-hidden", !expanded && "max-h-60")}>
         {children}
         {!expanded && (
