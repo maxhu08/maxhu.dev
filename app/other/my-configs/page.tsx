@@ -2,6 +2,7 @@ import { Braces, FileTerminal } from "lucide-react";
 import { CodeCard } from "~/components/configs/code-card";
 import { ConfigCard } from "~/components/configs/config-card";
 import { TerminalCard } from "~/components/configs/terminal-card";
+import { FancyContent } from "~/components/fancy-context";
 
 const Page = () => {
   return (
@@ -15,14 +16,20 @@ const Page = () => {
           </p>
         </ConfigCard>
         <ConfigCard title="vscode configs">
+          <p>this is where i keep my configs related to vscode. </p>
+          <br />
+          <p>it contains: </p>
+          <ul className="list-disc mx-6 mb-6 mt-4">
+            <li>my extensions 👾</li>
+            <li>my settings.json ⚙️</li>
+            <li>my keybindings ⌨️</li>
+          </ul>
           <p>
-            this is where i keep my configs related to vscode. it contains my extensions, settings
-            json file, as well as some of my custom keybinds. i use vim so keep in mind that some of
-            the keybinds are going to be more suited towards vim. my vim normal mode keybind is
-            binded to kj instead of esc, if you don&apos;t use kj you might want to change that. you
-            may also need to change some of the settings regarding the terminal because your
-            terminals may be different, this config was made while using windows so the primary
-            terminal is bash.
+            i use vim so keep in mind that some of the keybinds are going to be more suited towards
+            vim. my vim normal mode keybind is binded to kj instead of esc, if you don&apos;t use kj
+            you might want to change that. you may also need to change some of the settings
+            regarding the terminal because your terminals may be different, this config was made
+            while using windows so the primary terminal is bash.
           </p>
           <br />
           <p>
@@ -30,7 +37,7 @@ const Page = () => {
             through one command
           </p>
           <br />
-          <p>copy the `install-extensions.sh` file and install the extensions</p>
+          <p>just copy the `install-extensions.sh` file and then run this command</p>
           <div className="my-2">
             <TerminalCard text="./install-extensions.sh" />
           </div>
@@ -65,12 +72,14 @@ const Page = () => {
           </div>
         </ConfigCard>
         <ConfigCard title="bash config">
-          <p>
-            here is my .bashrc i mainly use bash because it is easy to use compared to other
-            terminals since im on windows. i have it setup so i can use vim directly in the bash
-            terminal, just type kj to enter normal mode directly in the terminal 😎. my bashrc also
-            an alias to cd into desktop quickly with `cdd`
-          </p>
+          <FancyContent>
+            <p>
+              here is my .bashrc i mainly use bash because it is easy to use compared to other
+              terminals since im on windows. i have it setup so i can use vim directly in the bash
+              terminal, just type kj to enter normal mode directly in the terminal 😎. my bashrc
+              also an alias to cd into desktop quickly with `cdd`
+            </p>
+          </FancyContent>
           <div className="my-2">
             <CodeCard
               fileIcon={<FileTerminal className="w-4 h-4 text-orange-500" />}
