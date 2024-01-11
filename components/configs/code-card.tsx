@@ -1,6 +1,6 @@
 "use client";
 
-import { File } from "lucide-react";
+import { Check, Copy, File } from "lucide-react";
 import { useState, useEffect, FC } from "react";
 
 // syntax highlighthing
@@ -16,6 +16,7 @@ interface CodeCardProps {
 
 export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath, language }) => {
   const [fileContent, setFileContent] = useState("");
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const fetchFileContent = async () => {
@@ -31,12 +32,33 @@ export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath, lang
     fetchFileContent();
   }, [codePath]);
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(fileContent);
+
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 3000);
+  };
+
   return (
     <div className="bg-neutral-300 dark:bg-neutral-800 rounded-md overflow-hidden">
       <div className="grid grid-flow-row gap-1">
-        <div className="bg-neutral-400 dark:bg-neutral-700 grid grid-cols-[max-content_max-content] place-items-center gap-1 text-zinc-400 dark:text-zinc-500 p-2">
-          {fileIcon ? fileIcon : <File className="w-4 h-4" />}
-          <span>{fileName}</span>
+        <div className="bg-black/10 dark:bg-neutral-700 grid grid-flow-col p-2">
+          <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1">
+            {fileIcon ? fileIcon : <File className="w-4 h-4" />}
+            <span>{fileName}</span>
+          </div>
+          <button
+            onClick={handleCopy}
+            className="ml-auto text-zinc-400 dark:text-zinc-500 hover:text-white duration-300 ease-in-out cursor-pointer"
+          >
+            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1">
+              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+              {copied ? "copied!" : "copy"}
+            </div>
+          </button>
         </div>
         <div className="overflow-y-scroll">
           <SyntaxHighlighter

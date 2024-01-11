@@ -23,6 +23,22 @@ const Page = () => {
             terminals may be different, this config was made while using windows so the primary
             terminal is bash.
           </p>
+          <br />
+          <p>
+            i have a lot of extensions so i made a script to quickly install all my extensions
+            through one command
+          </p>
+          <div className="my-2">
+            <CodeCard
+              fileIcon={<FileTerminal className="w-4 h-4 text-orange-500" />}
+              fileName="install-extensions.sh"
+              codePath="/my-configs/vscode/install-extensions.txt"
+              language="bash"
+            />
+          </div>
+          <p>
+            after the extensions have been installed the next step is to copy the settings.json file
+          </p>
           <div className="my-2">
             <CodeCard
               fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
@@ -31,7 +47,7 @@ const Page = () => {
               language="json"
             />
           </div>
-          <p>here is my keybindings.json file</p>
+          <p>here is my keybindings.json file as well</p>
           <div className="my-2">
             <CodeCard
               fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
@@ -43,10 +59,10 @@ const Page = () => {
         </ConfigCard>
         <ConfigCard title="bash config">
           <p>
-            here is my .bashrc i mainly use bash because it is use compared to other terminals since
-            im on windows. i have it setup so i can use vim directly in the bash terminal, just type
-            kj to enter normal mode directly in the terminal 😎. my bashrc also an alias to cd into
-            desktop quickly with `cdd`
+            here is my .bashrc i mainly use bash because it is easy to use compared to other
+            terminals since im on windows. i have it setup so i can use vim directly in the bash
+            terminal, just type kj to enter normal mode directly in the terminal 😎. my bashrc also
+            an alias to cd into desktop quickly with `cdd`
           </p>
           <div className="my-2">
             <CodeCard
