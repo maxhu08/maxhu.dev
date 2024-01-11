@@ -5,7 +5,7 @@ import { useState, useEffect, FC } from "react";
 import { Separator } from "~/components/separator";
 
 interface CodeCardProps {
-  fileIcon: any;
+  fileIcon?: any;
   fileName: string;
   codePath: string;
 }
@@ -31,7 +31,7 @@ export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath }) =>
     <div className="bg-neutral-300 dark:bg-neutral-800 rounded-md p-2">
       <div className="grid grid-flow-row gap-2">
         <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-zinc-400 dark:text-zinc-500">
-          {fileIcon}
+          {fileIcon ? fileIcon : <File className="w-4 h-4" />}
           <span>{fileName}</span>
         </div>
         <Separator orientation="horizontal" className="bg-zinc-400 dark:bg-zinc-500" />

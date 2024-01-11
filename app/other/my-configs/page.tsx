@@ -9,8 +9,8 @@ const Page = () => {
         <ConfigCard title="my configs">
           <p>
             this is where i keep my configs so if i switch computers i can easily reconfigure my
-            setup. if you want to try my configs you can copy them from here, this should contain
-            all my configs related my dev environment.
+            setup. if you want to try my configs you can copy them from here. this page should
+            contain all my configs related my dev environment.
           </p>
         </ConfigCard>
         <ConfigCard title="vscode configs">
@@ -46,7 +46,7 @@ const Page = () => {
           <CodeCard
             fileIcon={<FileTerminal className="w-4 h-4 text-orange-500" />}
             fileName=".bashrc"
-            codePath="/my-configs/bash/.bashrc"
+            codePath="/my-configs/bash/bashrc.txt"
           />
         </ConfigCard>
       </main>
