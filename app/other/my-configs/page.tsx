@@ -12,7 +12,7 @@ import {
 
 const Page = () => {
   return (
-    <div className="w-full h-full grid place-items-center pb-10">
+    <div className="w-full h-full grid place-items-center pb-40">
       <main className="grid grid-flow-row gap-2 w-full sm:w-[60%] md:w-[40%] h-full pt-10 mx-auto">
         <ConfigCard title="my configs">
           <FancyContent>
@@ -45,7 +45,7 @@ const Page = () => {
               terminal is bash.
             </p>
             <br />
-            <p>🚀 getting started</p>
+            <p className="font-semibold">🚀 getting started</p>
             <br />
             <p>
               i have a lot of extensions so i made a script to quickly install all my extensions
@@ -74,8 +74,12 @@ const Page = () => {
               </AccordionItem>
             </Accordion>
           </div>
+          <br />
+          <p className="font-semibold"> ️⚙ configuring settings and keybindings</p>
+          <br />
           <p>
-            after the extensions have been installed the next step is to copy the settings.json file
+            after the extensions have been installed the next step is to copy the `settings.json`
+            file
           </p>
           <div className="my-2">
             <Accordion type="single" collapsible>
@@ -94,18 +98,25 @@ const Page = () => {
           </div>
           <p>here is my keybindings.json file as well</p>
           <div className="my-2">
-            <CodeCard
-              fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
-              fileName="keybindings.json"
-              codePath="/my-configs/vscode/keybindings.json"
-              language="json"
-            />
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>hide/show keybindings.json</AccordionTrigger>
+                <AccordionContent>
+                  <CodeCard
+                    fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
+                    fileName="keybindings.json"
+                    codePath="/my-configs/vscode/keybindings.json"
+                    language="json"
+                  />
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </ConfigCard>
         <ConfigCard title="bash config">
           <FancyContent>
             <p>
-              thjs is my .bashrc i mainly use bash because it is easy to use compared to other
+              this is my .bashrc file. i mainly use bash because it is easy to use compared to other
               terminals since im on windows.
             </p>
             <br />
