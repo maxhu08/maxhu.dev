@@ -27,7 +27,7 @@ const Page = () => {
           <FancyContent>
             <p>this is where i keep my configs related to vscode. </p>
             <br />
-            <p>it contains: </p>
+            <p>this includes: </p>
             <ul className="list-disc mx-6 mb-6 mt-4">
               <li>my extensions 🐳</li>
               <li>my settings.json ⚙️</li>
