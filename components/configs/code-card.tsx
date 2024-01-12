@@ -24,8 +24,8 @@ export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath, lang
         const response = await fetch(codePath);
         const content = await response.text();
         setFileContent(content);
-      } catch (error) {
-        console.error("Error fetching file content:", error);
+      } catch (err) {
+        console.log("[CODE_CARD]", err);
       }
     };
 

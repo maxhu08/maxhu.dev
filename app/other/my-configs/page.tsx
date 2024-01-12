@@ -54,7 +54,6 @@ const Page = () => {
             <br />
             <p>just copy the `install-extensions.sh` file and then run this command: </p>
           </FancyContent>
-
           <div className="my-2">
             <TerminalCard text="./install-extensions.sh" />
           </div>
