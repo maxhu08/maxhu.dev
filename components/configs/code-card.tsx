@@ -43,7 +43,8 @@ export const CodeCard: FC<CodeCardProps> = ({ fileIcon, fileName, codePath, lang
   };
 
   return (
-    <div className="bg-neutral-300 dark:bg-neutral-800 rounded-md overflow-hidden">
+    // text-base fix
+    <div className="bg-neutral-300 dark:bg-neutral-800 rounded-md overflow-hidden text-base">
       <div className="grid grid-flow-row gap-1">
         <div className="bg-black/10 dark:bg-neutral-700 grid grid-flow-col p-2">
           <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1">
