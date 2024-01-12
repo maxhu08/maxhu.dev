@@ -15,11 +15,13 @@ const Page = () => {
     <div className="w-full h-full grid place-items-center pb-10">
       <main className="grid grid-flow-row gap-2 w-full sm:w-[60%] md:w-[40%] h-full pt-10 mx-auto">
         <ConfigCard title="my configs">
-          <p>
-            this is where i keep my configs so if i switch computers i can easily reconfigure my
-            setup. if you want to try my configs you can copy them from here. this page should
-            contain all my configs related my dev environment 👨‍💻.
-          </p>
+          <FancyContent>
+            <p>
+              this is where i keep my configs so if i switch computers i can easily reconfigure my
+              setup. if you want to try my configs you can copy them from here. this page should
+              contain all my configs related my dev environment 👨‍💻.
+            </p>
+          </FancyContent>
         </ConfigCard>
         <ConfigCard title="vscode configs">
           <FancyContent>
@@ -34,10 +36,16 @@ const Page = () => {
             <p>
               i use vim so keep in mind that some of the keybinds are going to be more suited
               towards vim. my vim normal mode keybind is binded to kj instead of esc, if you
-              don&apos;t use kj you might want to change that. you may also need to change some of
-              the settings regarding the terminal because your terminals may be different, this
-              config was made while using windows so the primary terminal is bash.
+              don&apos;t use kj you might want to change that.
             </p>
+            <br />
+            <p>
+              you may also need to change some of the settings regarding the terminal because your
+              terminals may be different, this config was made while using windows so the primary
+              terminal is bash.
+            </p>
+            <br />
+            <p>🚀 getting started</p>
             <br />
             <p>
               i have a lot of extensions so i made a script to quickly install all my extensions
