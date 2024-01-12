@@ -53,64 +53,64 @@ const Page = () => {
             </p>
             <br />
             <p>just copy the `install-extensions.sh` file and then run this command: </p>
+            <div className="my-2">
+              <TerminalCard text="./install-extensions.sh" />
+            </div>
+            <p>here is the install script</p>
+            <div className="my-2">
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>hide/show install-extensions.sh</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeCard
+                      fileIcon={<FileTerminal className="w-4 h-4 text-orange-500" />}
+                      fileName="install-extensions.sh"
+                      codePath="/my-configs/vscode/install-extensions.txt"
+                      language="bash"
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+            <br />
+            <p className="font-semibold">⚙️ configuring settings and keybindings</p>
+            <br />
+            <p>
+              after the extensions have been installed the next step is to copy the `settings.json`
+              file
+            </p>
+            <div className="my-2">
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>hide/show settings.json</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeCard
+                      fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
+                      fileName="settings.json"
+                      codePath="/my-configs/vscode/settings.json"
+                      language="json"
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+            <p>here is my keybindings.json file as well</p>
+            <div className="my-2">
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>hide/show keybindings.json</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeCard
+                      fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
+                      fileName="keybindings.json"
+                      codePath="/my-configs/vscode/keybindings.json"
+                      language="json"
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
           </FancyContent>
-          <div className="my-2">
-            <TerminalCard text="./install-extensions.sh" />
-          </div>
-          <p>here is the install script</p>
-          <div className="my-2">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>hide/show install-extensions.sh</AccordionTrigger>
-                <AccordionContent>
-                  <CodeCard
-                    fileIcon={<FileTerminal className="w-4 h-4 text-orange-500" />}
-                    fileName="install-extensions.sh"
-                    codePath="/my-configs/vscode/install-extensions.txt"
-                    language="bash"
-                  />
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-          <br />
-          <p className="font-semibold"> ️⚙ configuring settings and keybindings</p>
-          <br />
-          <p>
-            after the extensions have been installed the next step is to copy the `settings.json`
-            file
-          </p>
-          <div className="my-2">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>hide/show settings.json</AccordionTrigger>
-                <AccordionContent>
-                  <CodeCard
-                    fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
-                    fileName="settings.json"
-                    codePath="/my-configs/vscode/settings.json"
-                    language="json"
-                  />
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-          <p>here is my keybindings.json file as well</p>
-          <div className="my-2">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>hide/show keybindings.json</AccordionTrigger>
-                <AccordionContent>
-                  <CodeCard
-                    fileIcon={<Braces className="w-4 h-4 text-yellow-500" />}
-                    fileName="keybindings.json"
-                    codePath="/my-configs/vscode/keybindings.json"
-                    language="json"
-                  />
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
         </ConfigCard>
         <ConfigCard title="bash config">
           <FancyContent>
