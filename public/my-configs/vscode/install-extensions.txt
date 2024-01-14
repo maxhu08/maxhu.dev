@@ -8,10 +8,11 @@ fi
 
 # list of extensions to install
 extensions=(
-  aaron-bond.better-comments
+  Aaron-Bond.better-comments
   AbianS.prisma-generate-uml
-  adpyke.codesnap
-  amodio.tsl-problem-matcher
+  Adpyke.codesnap
+  Amodio.tsl-problem-matcher
+  Akamud.vscode-javascript-snippet-pack
   be5invis.vscode-custom-css
   bradlc.vscode-tailwindcss
   BrandonKirbyson.vscode-animations

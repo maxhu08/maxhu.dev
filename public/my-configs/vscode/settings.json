@@ -97,7 +97,7 @@
 
   // * vim *
   "vim.useSystemClipboard": true,
-  // "vim.leader": "",
+  "vim.leader": " ",
   "vim.insertModeKeyBindings": [
     {
       // vim quick normal mode
@@ -125,6 +125,11 @@
       // search files
       "before": ["<C-p>"],
       "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      // lead plugin find word globally
+      "before": ["<leader>", "s"],
+      "commands": ["leap.find"]
     }
   ],
   "vim.visualModeKeyBindings": [],
