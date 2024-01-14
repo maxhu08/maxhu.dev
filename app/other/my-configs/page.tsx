@@ -1,6 +1,7 @@
 import { Braces, FileTerminal } from "lucide-react";
 import { CodeCard } from "~/components/configs/code-card";
 import { ConfigCard } from "~/components/configs/config-card";
+import { Q } from "~/components/configs/quote";
 import { TerminalCard } from "~/components/configs/terminal-card";
 import { FancyContent } from "~/components/fancy-context";
 import {
@@ -35,8 +36,13 @@ const Page = () => {
             </ul>
             <p>
               i use vim so keep in mind that some of the keybinds are going to be more suited
-              towards vim. my vim normal mode keybind is binded to kj instead of esc, if you
-              don&apos;t use kj you might want to change that.
+              towards vim. my vim normal mode keybind is binded to <Q>kj</Q> instead of <Q>esc</Q>,
+              if you don&apos;t use <Q>kj</Q> you might want to change that.
+            </p>
+            <br />
+            <p>
+              i also changed my leader key to <Q>{"<space>"}</Q> for using the leap plugin with{" "}
+              <Q>{"<space>s"}</Q>
             </p>
             <br />
             <p>
@@ -52,7 +58,9 @@ const Page = () => {
               through one command
             </p>
             <br />
-            <p>just copy the `install-extensions.sh` file and then run this command: </p>
+            <p>
+              just copy the <Q>install-extensions.sh</Q> file and then run this command:{" "}
+            </p>
             <div className="my-2">
               <TerminalCard text="./install-extensions.sh" />
             </div>
@@ -76,8 +84,8 @@ const Page = () => {
             <p className="font-semibold">⚙️ configuring settings and keybindings</p>
             <br />
             <p>
-              after the extensions have been installed the next step is to copy the `settings.json`
-              file
+              after the extensions have been installed the next step is to copy the&nbsp;
+              <Q>settings.json</Q>&nbsp;file
             </p>
             <div className="my-2">
               <Accordion type="single" collapsible>
@@ -120,9 +128,9 @@ const Page = () => {
             </p>
             <br />
             <p>
-              i have it setup so i can use vim directly in the bash terminal, just type kj to enter
-              normal mode directly in the terminal 😎. my bashrc also an alias to cd into desktop
-              quickly ⚡ with `cdd`
+              i have it setup so i can use vim directly in the bash terminal, just type <Q>kj</Q> to
+              enter normal mode directly in the terminal 😎. my bashrc also an alias to cd into
+              desktop quickly ⚡ with <Q>cdd</Q>
             </p>
           </FancyContent>
           <div className="my-2">

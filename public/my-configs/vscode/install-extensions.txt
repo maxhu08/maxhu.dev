@@ -8,14 +8,13 @@ fi
 
 # list of extensions to install
 extensions=(
-  Aaron-Bond.better-comments
+  aaron-bond.better-comments
   AbianS.prisma-generate-uml
-  Adpyke.codesnap
-  Amodio.tsl-problem-matcher
-  Akamud.vscode-javascript-snippet-pack
+  adpyke.codesnap
+  akamud.vscode-javascript-snippet-pack
+  amodio.tsl-problem-matcher
   be5invis.vscode-custom-css
   bradlc.vscode-tailwindcss
-  BrandonKirbyson.vscode-animations
   burkeholland.simple-react-snippets
   dbaeumer.vscode-eslint
   donjayamanne.githistory
@@ -50,6 +49,7 @@ extensions=(
   ms-vscode-remote.remote-wsl
   ms-vscode.remote-explorer
   ms-vsliveshare.vsliveshare
+  MurlocCra4ler.leap
   mwpb.java-prettier-formatter
   orsenkucher.vscode-graphql
   PKief.material-icon-theme
@@ -72,7 +72,6 @@ extensions=(
   vscjava.vscode-maven
   vscodevim.vim
   WallabyJs.quokka-vscode
-  whizkydee.material-palenight-theme
   wix.vscode-import-cost
 )
 

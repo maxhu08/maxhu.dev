@@ -1,5 +1,5 @@
 {
-  // * Editor Settings *
+  // * editor Settings *
   "editor.fontFamily": "Fira Code Regular",
   "editor.fontLigatures": true,
   "diffEditor.codeLens": true,
@@ -16,13 +16,13 @@
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.formatOnSave": true,
 
-  // * File Explorer Settings *
+  // * file explorer Settings *
   "files.exclude": {
     "**/*.meta": true
   },
   "explorer.compactFolders": false,
 
-  // * Formatter Settings *
+  // * formatter Settings *
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -40,22 +40,22 @@
     "editor.formatOnSave": true
   },
 
-  // * Prettier Settings *
-  "prettier.arrowParens": "avoid",
+  // * prettier Settings *
+  "prettier.arrowParens": "always",
   "prettier.proseWrap": "never",
   "prettier.printWidth": 100,
   "prettier.trailingComma": "none",
   "prettier.bracketSameLine": true,
   "prettier.useEditorConfig": false,
 
-  // * Live Server Settings *
+  // * live Server Settings *
   "liveServer.settings.donotVerifyTags": true,
   "liveServer.settings.donotShowInfoMsg": true,
 
-  // * Workbench Settings *
+  // * workbench Settings *
   "workbench.iconTheme": "material-icon-theme",
 
-  // * Terminal Settings *
+  // * terminal Settings *
   "terminal.integrated.gpuAcceleration": "off",
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
@@ -81,7 +81,7 @@
   },
   "terminal.integrated.defaultProfile.windows": "Git Bash",
 
-  // * Miscellaneous Settings *
+  // * miscellaneous Settings *
   "html.format.contentUnformatted": "",
   "settingsSync.ignoredSettings": [],
   "go.toolsManagement.autoUpdate": true,
@@ -126,15 +126,15 @@
       "before": ["<C-p>"],
       "commands": ["workbench.action.quickOpen"]
     },
+    // lead plugin find word globally
     {
-      // lead plugin find word globally
       "before": ["<leader>", "s"],
       "commands": ["leap.find"]
     }
   ],
   "vim.visualModeKeyBindings": [],
 
-  // * Screencast Settings
+  // * screencast Settings *
   "screencastMode.fontSize": 48,
   "screencastMode.mouseIndicatorColor": "#00000000",
   "svg.preview.mode": "img",
