@@ -59,12 +59,8 @@ const Page = () => {
             </p>
             <br />
             <p>
-              just copy the <Q>install-extensions.sh</Q> file and then run this command:{" "}
+              just copy the <Q>install-extensions.sh</Q> file
             </p>
-            <div className="my-2">
-              <TerminalCard text="./install-extensions.sh" />
-            </div>
-            <p>here is the install script</p>
             <div className="my-2">
               <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
@@ -80,12 +76,17 @@ const Page = () => {
                 </AccordionItem>
               </Accordion>
             </div>
+            <p>then run this command: </p>
+            <div className="my-2">
+              <TerminalCard text="./install-extensions.sh" />
+            </div>
+
             <br />
             <p className="font-semibold">⚙️ configuring settings and keybindings</p>
             <br />
             <p>
-              after the extensions have been installed the next step is to copy the&nbsp;
-              <Q>settings.json</Q>&nbsp;file
+              after the extensions have been installed the next step is to copy the{" "}
+              <Q>settings.json</Q> file
             </p>
             <div className="my-2">
               <Accordion type="single" collapsible>
