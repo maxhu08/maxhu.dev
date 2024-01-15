@@ -40,8 +40,8 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         setIsVisible(entry.isIntersecting);
       });
     });
@@ -70,7 +70,9 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
 
   return (
     <div ref={cardRef} className={cn("p-2", className)}>
-      <p className={cn("font-semibold", isVisible && isMdOrLarger && styles["fade-in-bounce"])}>{info.title}</p>
+      <p className={cn("font-semibold", isVisible && isMdOrLarger && styles["fade-in-bounce"])}>
+        {info.title}
+      </p>
       <div className="grid grid-flow-col gap-1 w-max place-items-center">
         <span className="text-zinc-500">made with</span>
         {technologies.map((technology, index) => {
@@ -79,7 +81,10 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
             return (
               <ActionTooltip label={technology.name} side="bottom" key={index}>
                 <div
-                  className={cn("w-6 h-6 relative cursor-pointer !aspect-square", isVisible && isMdOrLarger && styles["fade-in-bounce"])}
+                  className={cn(
+                    "w-6 h-6 relative cursor-pointer !aspect-square",
+                    isVisible && isMdOrLarger && styles["fade-in-bounce"]
+                  )}
                   style={{ animationDelay: `${renderedIndex * 100 + 500}ms` }}
                 >
                   {technology.iconLight && theme === "light" ? (
@@ -94,7 +99,10 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
         })}
       </div>
       <Separator orientation="horizontal" className="my-1" />
-      <div ref={contentRef} className={cn("relative w-full overflow-hidden", !expanded && "max-h-60")}>
+      <div
+        ref={contentRef}
+        className={cn("relative w-full overflow-hidden", !expanded && "max-h-60")}
+      >
         {children}
         {!expanded && (
           // 240 = h-60
@@ -120,7 +128,7 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
       <div className="pt-2 grid grid-flow-col w-max gap-4 ml-auto">
         {expanded && (
           <button onClick={() => setExpanded(false)} className="cursor-pointer">
-            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out">
+            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
               <FoldVertical className="w-4 h-4" />
               <span>Collapse</span>
             </div>
@@ -128,7 +136,7 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
         )}
         {info.demoLink && (
           <a href={info.demoLink} target="_blank">
-            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out">
+            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
               <Paperclip className="w-4 h-4" />
               <span>View demo</span>
             </div>
@@ -136,7 +144,7 @@ const _ProjectCard: FC<ProjectCardProps> = ({ info, children, className }) => {
         )}
         {info.codeLink && (
           <a href={info.codeLink} target="_blank">
-            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out">
+            <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
               <Code2 className="w-4 h-4" />
               <span>View code</span>
             </div>

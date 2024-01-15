@@ -1,5 +1,5 @@
 {
-  // * editor Settings *
+  // * editor settings *
   "editor.fontFamily": "Fira Code Regular",
   "editor.fontLigatures": true,
   "diffEditor.codeLens": true,
@@ -16,13 +16,13 @@
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.formatOnSave": true,
 
-  // * file explorer Settings *
+  // * file explorer settings *
   "files.exclude": {
     "**/*.meta": true
   },
   "explorer.compactFolders": false,
 
-  // * formatter Settings *
+  // * formatter settings *
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -40,7 +40,7 @@
     "editor.formatOnSave": true
   },
 
-  // * prettier Settings *
+  // * prettier settings *
   "prettier.arrowParens": "always",
   "prettier.proseWrap": "never",
   "prettier.printWidth": 100,
@@ -48,14 +48,16 @@
   "prettier.bracketSameLine": true,
   "prettier.useEditorConfig": false,
 
-  // * live Server Settings *
+  // * live Server settings *
   "liveServer.settings.donotVerifyTags": true,
   "liveServer.settings.donotShowInfoMsg": true,
 
-  // * workbench Settings *
+  // * workbench settings *
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.list.smoothScrolling": true,
+  "workbench.startupEditor": "none",
 
-  // * terminal Settings *
+  // * terminal settings *
   "terminal.integrated.gpuAcceleration": "off",
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
@@ -80,20 +82,7 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-
-  // * miscellaneous Settings *
-  "html.format.contentUnformatted": "",
-  "settingsSync.ignoredSettings": [],
-  "go.toolsManagement.autoUpdate": true,
   "terminal.integrated.smoothScrolling": true,
-  "workbench.list.smoothScrolling": true,
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "vscode_vibrancy.opacity": 0.1,
-  "npm.keybindingsChangedWarningShown": true,
-  "window.titleBarStyle": "custom",
-  "window.zoomLevel": 1,
-  "redhat.telemetry.enabled": false,
-  "typescript.preferences.importModuleSpecifier": "non-relative",
 
   // * vim *
   "vim.useSystemClipboard": true,
@@ -126,7 +115,7 @@
       "before": ["<C-p>"],
       "commands": ["workbench.action.quickOpen"]
     },
-    // lead plugin find word globally
+    // leap plugin find word globally
     {
       "before": ["<leader>", "s"],
       "commands": ["leap.find"]
@@ -134,9 +123,20 @@
   ],
   "vim.visualModeKeyBindings": [],
 
-  // * screencast Settings *
+  // * screencast settings *
   "screencastMode.fontSize": 48,
   "screencastMode.mouseIndicatorColor": "#00000000",
-  "svg.preview.mode": "img",
-  "workbench.startupEditor": "none"
+
+  // * miscellaneous settings *
+  "html.format.contentUnformatted": "",
+  "settingsSync.ignoredSettings": [],
+  "go.toolsManagement.autoUpdate": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "vscode_vibrancy.opacity": 0.1,
+  "npm.keybindingsChangedWarningShown": true,
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 1,
+  "redhat.telemetry.enabled": false,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "svg.preview.mode": "img"
 }
