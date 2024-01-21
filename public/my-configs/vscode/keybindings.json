@@ -2,7 +2,6 @@
 
 [
   // move up and down in suggestions box
-  // ! does not work for quick fix
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
@@ -12,5 +11,16 @@
     "key": "ctrl+k",
     "command": "selectPrevSuggestion",
     "when": "editorTextFocus && suggestWidgetVisible"
+  },
+  // move up and down in quick fix box
+  {
+    "key": "ctrl+j",
+    "command": "selectPrevCodeAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectNextCodeAction",
+    "when": "editorFocus"
   }
 ]
