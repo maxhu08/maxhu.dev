@@ -22,5 +22,16 @@
     "key": "ctrl+k",
     "command": "selectNextCodeAction",
     "when": "editorFocus"
+  },
+  // move up and down in quick open file box
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
   }
 ]
