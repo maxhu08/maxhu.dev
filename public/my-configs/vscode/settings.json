@@ -82,7 +82,7 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": false,
 
   // * vim *
   "vim.useSystemClipboard": true,
@@ -115,6 +115,11 @@
       "before": ["<C-p>"],
       "commands": ["workbench.action.quickOpen"]
     },
+    {
+      // search files (with leader)
+      "before": ["<leader>", "<leader>"],
+      "commands": ["workbench.action.quickOpen"]
+    },
     // leap plugin find word globally
     {
       "before": ["<leader>", "s"],
@@ -135,8 +140,10 @@
   "vscode_vibrancy.opacity": 0.1,
   "npm.keybindingsChangedWarningShown": true,
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 1,
   "redhat.telemetry.enabled": false,
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "svg.preview.mode": "img"
+  "svg.preview.mode": "img",
+  "window.zoomLevel": 1,
+  "cmake.configureOnOpen": false,
+  "cmake.showOptionsMovedNotification": false
 }
