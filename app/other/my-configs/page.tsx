@@ -150,6 +150,32 @@ const Page = () => {
             </Accordion>
           </div>
         </ConfigCard>
+        <ConfigCard title="fish config">
+          <FancyContent>
+            <p>
+              i also have a fish config 🐟
+            </p>
+            <br/>
+            <p>
+              here it is:
+            </p>
+          </FancyContent>
+          <div className="my-2">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>hide/show config.fish</AccordionTrigger>
+                <AccordionContent>
+                  <CodeCard
+                    fileIcon={<FileTerminal className="w-4 h-4 text-orange-500" />}
+                    fileName="config.fish"
+                    codePath="/my-configs/fish/config.fish.txt"
+                    language="fish"
+                  />
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </ConfigCard>
       </main>
     </div>
   );

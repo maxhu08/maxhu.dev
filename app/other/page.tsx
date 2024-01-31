@@ -12,7 +12,7 @@ const Page = () => {
           <Link href={link.destination} key={`link-${link.text}`}>
             <div className="text-blue-500 hover:bg-blue-500/20 duration-300 ease-in-out grid grid-cols-[max-content_max-content] place-items-center gap-2 p-1 rounded-md">
               <ExternalLink className="w-4 h-4" />
-              <span className="">{link.text}</span>
+              <span>{link.text}</span>
             </div>
           </Link>
         ))}

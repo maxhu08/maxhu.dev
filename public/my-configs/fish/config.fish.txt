@@ -1,0 +1,52 @@
+# custom greeting
+set fish_greeting "🐟 welcome to fish"
+
+# custom prompt
+function fish_prompt
+  set_color normal
+
+  # directory
+  set transformed_pwd (prompt_pwd | string replace -r '^~' (set_color --bold 40e4ef)'~'(set_color --bold 4086ef))
+
+  # for wsl
+  set transformed_pwd (string replace -r '^/m/c/U/.{1}' (set_color --bold 40e4ef)'~'(set_color --bold 4086ef) $transformed_pwd)
+
+  echo -n $transformed_pwd
+
+  #space
+  echo -n ' '
+
+  # git branch  
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1
+    echo -n (set_color --bold 8544ed)'('
+
+    set_color f7a8d6
+    echo -n (git branch --show-current)
+
+    echo -n (set_color --bold 8544ed)')'
+    set_color normal
+  else
+    echo -n ""
+  end
+
+  # space
+  echo -n ' '
+
+  # arrows
+  echo -n (set_color --bold efcf40)'❱'
+  echo -n (set_color --bold ef9540)'❱'
+  echo -n (set_color --bold ea3838)'❱'
+
+  #space
+  echo -n ' '
+end
+
+# set environment variables
+set -x PATH $PATH:/usr/local/bin:/opt/bin
+
+# aliases
+alias cls 'clear' # clear
+alias cdw 'cd /mnt/c/Users/a' # for wsl (may need to be changed depending on user)
+
+# set editor
+set -x EDITOR "nvim"
