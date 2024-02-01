@@ -1,5 +1,13 @@
 # custom greeting
-set fish_greeting "🐟 welcome to fish"
+set fish_greeting "welcome to fish 🐟, the friendly interactive shell
+"
+
+function fish_user_key_bindings
+  fish_vi_key_bindings
+
+  # set kj to <Esc> 
+  bind -M insert -m default kj backward-char force-repaint
+end
 
 # custom prompt
 function fish_prompt
@@ -13,11 +21,11 @@ function fish_prompt
 
   echo -n $transformed_pwd
 
-  #space
-  echo -n ' '
-
   # git branch  
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1
+    #space
+    echo -n " "
+
     echo -n (set_color --bold 8544ed)'('
 
     set_color f7a8d6

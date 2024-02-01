@@ -81,7 +81,7 @@
       "args": ["-e", "fish"]
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.windows": "fish",
   "terminal.integrated.smoothScrolling": false,
 
   // * vim *
@@ -143,7 +143,8 @@
   "redhat.telemetry.enabled": false,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "svg.preview.mode": "img",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "cmake.configureOnOpen": false,
   "cmake.showOptionsMovedNotification": false
 }
+
