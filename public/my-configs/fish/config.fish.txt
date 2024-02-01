@@ -1,5 +1,6 @@
 # custom greeting
-set fish_greeting "welcome to fish 🐟, the friendly interactive shell
+set fish_greeting (set_color --bold efcf40)">"(set_color ef9540)"<"(set_color ea3838)">" (set_color normal)"welcome to fish, the friendly interactive shell
+type `help` to get started
 "
 
 function fish_user_key_bindings
@@ -14,7 +15,7 @@ function fish_prompt
   set_color normal
 
   # directory
-  set transformed_pwd (prompt_pwd | string replace -r '^~' (set_color --bold 40e4ef)'~'(set_color --bold 4086ef))
+  set transformed_pwd (prompt_pwd | string replace -r '^~' (set_color --bold 40e4ef)'~WSL'(set_color --bold 4086ef))
 
   # for wsl
   set transformed_pwd (string replace -r '^/m/c/U/.{1}' (set_color --bold 40e4ef)'~'(set_color --bold 4086ef) $transformed_pwd)
