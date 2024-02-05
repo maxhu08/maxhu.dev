@@ -10,55 +10,71 @@ function fish_user_key_bindings
   bind -M insert -m default kj backward-char force-repaint
 end
 
+# indicator for vi
+function fish_mode_prompt
+  switch "$fish_bind_mode"
+    case "default"
+      echo -n (set_color f43f5e)"𝓷"
+    case "insert"
+      echo -n (set_color 84cc16)"𝒾"
+    case "visual"
+      echo -n (set_color 8b5cf6)"𝓿"
+    case "*"
+      echo -n "?"
+  end
+
+  echo -n " "
+end
+
 # custom prompt
 function fish_prompt
-  set_color normal
+  set_color --bold 4086ef
 
-  # directory
-  set transformed_pwd (prompt_pwd | string replace -r '^~' (set_color --bold aa66e2)'~WSL'(set_color --bold 4086ef))
+  set transformed_pwd (prompt_pwd | string replace -r "^~" (set_color --bold 40e4ef)"~"(set_color --bold 4086ef))
+
+  # directory (to distinguish for wsl)
+  # set transformed_pwd (prompt_pwd | string replace -r "^~" (set_color --bold aa66e2)"~WSL"(set_color --bold 4086ef))
 
   # for wsl
   # regex to match /m/c/U/{username}/ and replace with ~/
-  set transformed_pwd (string replace -r '\/m\/c\/U\/([^\/]+)\/' (set_color --bold 40e4ef)'~'(set_color --bold 4086ef)'/' $transformed_pwd)
+  # set transformed_pwd (string replace -r "\/m\/c\/U\/([^\/]+)\/" (set_color --bold 40e4ef)"~"(set_color --bold 4086ef)"/" $transformed_pwd)
   # regex to match /m/c/U/{username} and replace with ~
-  set transformed_pwd (string replace -r '\/m\/c\/U\/([^\/]+)\/?' (set_color --bold 40e4ef)'~'(set_color --bold 4086ef) $transformed_pwd)
+  # set transformed_pwd (string replace -r "\/m\/c\/U\/([^\/]+)\/?" (set_color --bold 40e4ef)"~"(set_color --bold 4086ef) $transformed_pwd)
 
-  echo -n $transformed_pwd 
+  echo -n $transformed_pwd
 
   # git branch  
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1
     #space
     echo -n " "
 
-    echo -n (set_color --bold 8544ed)'('
+    echo -n (set_color --bold 8544ed)"("
 
     set_color f7a8d6
     echo -n (git branch --show-current)
 
-    echo -n (set_color --bold 8544ed)')'
+    echo -n (set_color --bold 8544ed)")"
     set_color normal
-  else
-    echo -n ""
   end
 
   # space
-  echo -n ' '
+  echo -n " "
 
   # arrows
-  echo -n (set_color --bold efcf40)'❱'
-  echo -n (set_color --bold ef9540)'❱'
-  echo -n (set_color --bold ea3838)'❱'
+  echo -n (set_color --bold efcf40)"❱"
+  echo -n (set_color --bold ef9540)"❱"
+  echo -n (set_color --bold ea3838)"❱"
 
   #space
-  echo -n ' '
+  echo -n " "
 end
 
 # set environment variables
 set -x PATH $PATH:/usr/local/bin:/opt/bin
 
 # aliases
-alias cls 'clear' # clear
-alias cdw 'cd /mnt/c/Users/a' # for wsl (may need to be changed depending on user)
+alias cls "clear" # clear
+alias cdw "cd /mnt/c/Users/a" # for wsl (may need to be changed depending on user)
 
 # set editor
 set -x EDITOR "nvim"
@@ -97,3 +113,4 @@ set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
 set -g fish_pager_color_selected_background --background=$selection
+
