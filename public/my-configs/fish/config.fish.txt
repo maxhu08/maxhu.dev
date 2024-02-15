@@ -6,8 +6,13 @@ type `help` to get started
 function fish_user_key_bindings
   fish_vi_key_bindings
 
-  # set kj to <Esc> 
+  # set kj to <Esc>
   bind -M insert -m default kj backward-char force-repaint
+end
+
+# remove default clock
+function fish_right_prompt
+  echo (set_color 404040)"$USER"@(hostname)
 end
 
 # indicator for vi
@@ -21,7 +26,7 @@ function fish_mode_prompt
       echo -n (set_color 8b5cf6)"𝓿"
     case "*"
       echo -n "?"
-  end
+   end
 
   echo -n " "
 end
@@ -30,16 +35,7 @@ end
 function fish_prompt
   set_color --bold 4086ef
 
-  set transformed_pwd (prompt_pwd | string replace -r "^~" (set_color --bold 40e4ef)"~"(set_color --bold 4086ef))
-
-  # directory (to distinguish for wsl)
-  # set transformed_pwd (prompt_pwd | string replace -r "^~" (set_color --bold aa66e2)"~WSL"(set_color --bold 4086ef))
-
-  # for wsl
-  # regex to match /m/c/U/{username}/ and replace with ~/
-  # set transformed_pwd (string replace -r "\/m\/c\/U\/([^\/]+)\/" (set_color --bold 40e4ef)"~"(set_color --bold 4086ef)"/" $transformed_pwd)
-  # regex to match /m/c/U/{username} and replace with ~
-  # set transformed_pwd (string replace -r "\/m\/c\/U\/([^\/]+)\/?" (set_color --bold 40e4ef)"~"(set_color --bold 4086ef) $transformed_pwd)
+  set transformed_pwd (prompt_pwd | string replace -r "^~" (set_color --bold 06b6d4)"~"(set_color --bold 1d4ed8))
 
   echo -n $transformed_pwd
 
@@ -48,12 +44,12 @@ function fish_prompt
     #space
     echo -n " "
 
-    echo -n (set_color --bold 8544ed)"("
+    echo -n (set_color --bold 4338ca)"("
 
-    set_color f7a8d6
+    set_color f0abfc
     echo -n (git branch --show-current)
 
-    echo -n (set_color --bold 8544ed)")"
+    echo -n (set_color --bold 4338ca)")"
     set_color normal
   end
 
@@ -61,12 +57,16 @@ function fish_prompt
   echo -n " "
 
   # arrows
-  echo -n (set_color --bold efcf40)"❱"
-  echo -n (set_color --bold ef9540)"❱"
-  echo -n (set_color --bold ea3838)"❱"
-
+  # echo -n (set_color --bold efcf40)"❱"
+  # echo -n (set_color --bold ef9540)"❱"
+  # echo -n (set_color --bold ea3838)"❱"
+  
+  echo -n (set_color --bold 14b8a6)"→"
+  
   #space
   echo -n " "
+
+  set_color normal
 end
 
 # set environment variables
