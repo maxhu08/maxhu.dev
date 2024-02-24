@@ -15,7 +15,7 @@ const Page = () => {
         <Header name="info" />
         <p>this setup uses these programs:</p>
         <br />
-        <div className="w-full hidden">
+        <div className="w-full">
           <div className="border border-neutral-500">
             <div className="grid grid-cols-2 bg-neutral-300 dark:bg-neutral-800">
               <div className="border border-neutral-500 px-4 py-2">program</div>
