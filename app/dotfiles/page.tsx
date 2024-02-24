@@ -4,7 +4,7 @@ import { GuideLink } from "~/components/dotfiles/guide-link";
 
 const Page = () => {
   return (
-    <div className="grid grid-flow-row gap-2 mx-auto w-[40%] pt-20">
+    <div className="grid grid-flow-row gap-2 mx-auto w-[95%] lg:w-[60%] xl:w-[40%] py-20">
       <DotfilesText />
       <div className="pt-10">
         <p>
@@ -19,7 +19,7 @@ const Page = () => {
         <br />
         <p>setup guide for each version (newest at top) can be found here:</p>
         <br />
-        <div className="w-max">
+        <div className="w-full">
           <div className="border border-neutral-500">
             <div className="grid grid-cols-2 bg-neutral-300 dark:bg-neutral-800">
               <div className="border border-neutral-500 px-4 py-2">version</div>
