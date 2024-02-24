@@ -2,19 +2,20 @@ import { Code } from "~/components/dotfiles/code";
 import { Command } from "~/components/dotfiles/command";
 import { CommandContainer } from "~/components/dotfiles/command-container";
 import { ExternalLink } from "~/components/dotfiles/external-link";
+import { Header } from "~/components/dotfiles/header";
 
 const Page = () => {
   return (
     <div className="grid grid-flow-row gap-2 mx-auto w-[40%] py-20">
       <p>install guide for alpha dotfiles</p>
       <div className="pt-10">
-        <p>Getting started</p>
-        <br />
+        <Header name="getting-started" />
         <p>
           If you want to follow along exactly, first install EndeavourOS with the GNOME DE.
           EndeavourOS will automatically set it up for you.
         </p>
         <br />
+        <Header name="installing-hyprland" />
         <p>
           Once you have EndeavourOS installed boot into it and press Ctrl+Alt+F2 to launch the tty.
           The first thing to install is Hyprland which is going to be the DE. To install Hyprland
@@ -27,6 +28,7 @@ const Page = () => {
           <Command comment="then run this command to start hyprland" command="Hyprland" />
         </CommandContainer>
         <br />
+        <Header name="configuring-hyprland" />
         <p>
           You will also need to install some programs like kitty (terminal emulator), nemo (file
           manager), and wofi (app launcher) so exit hyprland with SUPER+M and install:
@@ -46,7 +48,10 @@ const Page = () => {
           <Command comment="edit hyprland config" command="vim hyprland.conf" />
         </CommandContainer>
         <br />
-        <p>Just change these variables in your hyprland.conf to this</p>
+        <p>
+          Just change these variables in your hyprland.conf to this (CTRL+SHIFT+V or middle-click to
+          paste)
+        </p>
         <br />
         <CommandContainer>
           <Code text={`$terminal = kitty\n$fileManager = nemo\n$menu = wofi --show drun`} />
@@ -69,7 +74,8 @@ const Page = () => {
         <br />
         <p>
           Then adjust your hyprland.conf accordingly. Here is what it would look like assuming your
-          monitor names are DP-1 and DP-2 (it may different for you, see{" "}
+          monitor names are DP-1 and DP-2 (it may different for you, it's what you got from running
+          hyprctl monitors, see{" "}
           <ExternalLink url="https://wiki.hyprland.org/Configuring/Monitors" />
           ).
         </p>
@@ -81,6 +87,71 @@ monitor=DP-2,1920x1080@165,0x1080,auto`}
           />
         </CommandContainer>
         <br />
+        <p>
+          If you have multiple monitors and want to have separate workspaces for each monitor you
+          can use a program called hyprsome by sopa0 (
+          <ExternalLink url="https://github.com/sopa0/hyprsome" />)
+        </p>
+        <br />
+        <p>For now don't worry about that you can come back to this later</p>
+        <br />
+        <Header name="setting-wallpaper" />
+        <p>To set a wallpaper, I used a program called hyprpaper, which works well with hyprland</p>
+        <br />
+        <CommandContainer>
+          <Command command="sudo pacman -S hyprpaper" />
+        </CommandContainer>
+        <br />
+        <p>
+          To set a wallpaper I would suggest creating a hidden folder in like `.wallpapers` in your
+          home directory add putting your wallpapers there
+        </p>
+        <br />
+        <p>To actually set the wallpaper, edit the hyprpaper.conf file</p>
+        <br />
+        <CommandContainer>
+          <Command command="cd ~/.config/hypr" />
+          <br />
+          <Command comment="if hyprpaper.conf doesn't exit" command="touch hyprpaper.conf" />
+          <br />
+          <Command command="vim hyprpaper.conf" />
+        </CommandContainer>
+        <br />
+        <p>
+          set preload to and wallpaper to whatever you named your wallpaper file. you can also
+          choose a wallpaper to set for each monitor.
+        </p>
+        <br />
+        <CommandContainer>
+          <Code
+            text={`preload = ~/.wallpapers/wall0.jpg
+
+wallpaper = DP-1,~/.wallpapers/wall0.jpg
+wallpaper = DP-2,~/.wallpapers/wall0.jpg
+# .. more monitors
+
+# disable messages on bottom
+splash = false
+
+# fully disable ipc
+# ipc = off`}
+          />
+        </CommandContainer>
+        <br />
+        <p>
+          After, just set this line in your hyprland.conf to execute hyprpaper as hyprland starts
+        </p>
+        <br />
+        <CommandContainer>
+          <Code text="exec-once = hyprpaper" />
+        </CommandContainer>
+        <br />
+        <Header name="configuring-waybar" />
+        <p>For the taskbar, I used waybar which works well with hyprland</p>
+        <br />
+        <CommandContainer>
+          <Command command="sudo pacman -S waybar" />
+        </CommandContainer>
       </div>
     </div>
   );
