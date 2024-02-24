@@ -1,5 +1,6 @@
 import { DotfilesText } from "~/components/dotfiles/dotfiles-text";
 import { ExternalLink } from "~/components/dotfiles/external-link";
+import { GuideLink } from "~/components/dotfiles/guide-link";
 
 const Page = () => {
   return (
@@ -12,11 +13,26 @@ const Page = () => {
         </p>
         <br />
         <p>
-          The actual dotfiles can be found in my github repo:{" "}
+          The actual dotfiles can be found in my github repo. Each version will have its own branch.{" "}
           <ExternalLink url="https://github.com/maxhu08/dotfiles" />
         </p>
         <br />
-        <p>setup guide for each version can be found here:</p>
+        <p>setup guide for each version (newest at top) can be found here:</p>
+        <br />
+        <div className="w-max">
+          <div className="border border-neutral-500">
+            <div className="grid grid-cols-2 bg-neutral-300 dark:bg-neutral-800">
+              <div className="border border-neutral-500 px-4 py-2">version</div>
+              <div className="border border-neutral-500 px-4 py-2">install guide</div>
+            </div>
+            <div className="grid grid-cols-2">
+              <div className="border border-neutral-500 px-4 py-2 text-teal-500">alpha (α)</div>
+              <div className="border border-neutral-500 px-4 py-2">
+                <GuideLink url="/dotfiles/alpha" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
