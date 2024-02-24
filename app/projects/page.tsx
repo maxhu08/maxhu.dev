@@ -14,14 +14,14 @@ const Page: NextPage = () => {
     setIsMounted(true);
 
     const hiddenElements = document.querySelectorAll(`.${styles["project"]}`);
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add(styles["project-shown"]);
         else entry.target.classList.remove(styles["project-shown"]);
       });
     });
 
-    hiddenElements.forEach(el => observer.observe(el));
+    hiddenElements.forEach((el) => observer.observe(el));
 
     return () => {
       observer.disconnect();
@@ -30,7 +30,7 @@ const Page: NextPage = () => {
 
   return (
     <div className="w-full h-full grid place-items-center overflow-x-clip pb-10">
-      <main className="grid grid-flow-row gap-2 w-full sm:w-[60%] md:w-[40%] h-full pt-10">
+      <main className="grid grid-flow-row gap-2 w-full md:w-[60%] xl:w-[40%] h-full pt-10">
         <ProjectCard
           className={styles["project"]}
           info={{
@@ -40,9 +40,10 @@ const Page: NextPage = () => {
           }}
         >
           <p>
-            This is a project I made as my final project for java class. It is a tomb of the mask style game where you collect the keys to go through
-            the portal and progress to the next level. There are eight worlds in total. You can also collect coins, which increase your score. You can
-            find the download for the game&nbsp;
+            This is a project I made as my final project for java class. It is a tomb of the mask
+            style game where you collect the keys to go through the portal and progress to the next
+            level. There are eight worlds in total. You can also collect coins, which increase your
+            score. You can find the download for the game&nbsp;
             <a
               href="https://github.com/maxhu08/tomb-of-the-mask-clone/blob/master/tomb-of-the-mask-clone.exe"
               className="text-blue-500 hover:text-blue-700 duration-300 ease-in-out underline"
@@ -63,10 +64,12 @@ const Page: NextPage = () => {
             demoLink: "https://maxhu.dev/"
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
         </ProjectCard>
         <ProjectCard
           className={styles["project"]}
@@ -77,10 +80,12 @@ const Page: NextPage = () => {
             demoLink: "https://maxhu.dev/"
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
         </ProjectCard>
         <ProjectCard
           className={styles["project"]}
@@ -91,10 +96,12 @@ const Page: NextPage = () => {
             demoLink: "https://maxhu.dev/"
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
         </ProjectCard>
       </main>
     </div>

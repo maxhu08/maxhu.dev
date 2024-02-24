@@ -24,7 +24,11 @@ export const Command: FC<CommandProps> = ({ command, comment }) => {
   };
 
   return (
-    <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative"
+    >
       {comment && (
         <div className="text-neutral-500">
           <span className="select-none"># </span>
@@ -32,15 +36,16 @@ export const Command: FC<CommandProps> = ({ command, comment }) => {
         </div>
       )}
       <div className="grid grid-cols-[auto_max-content]">
-        <div>
+        <pre>
           <span className="text-emerald-500 select-none">$ </span>
-          <span>{command}</span>
-        </div>
+          {command}
+        </pre>
         <button
           onClick={handleCopy}
           className={cn(
             !isHovered && "opacity-0",
-            "ml-auto border p-1 rounded-md border-neutral-500 text-neutral-500 duration-300 ease-in-out cursor-pointer",
+            "absolute top-0 right-0 bg-neutral-300 dark:bg-neutral-800",
+            "ml-auto border p-1 rounded-sm border-neutral-500 text-neutral-500 duration-300 ease-in-out cursor-pointer",
             "hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white"
           )}
         >

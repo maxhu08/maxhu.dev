@@ -5,10 +5,11 @@ import { FC, useState } from "react";
 import { cn } from "~/utils/cn";
 
 interface CodeProps {
+  name: string;
   text: string;
 }
 
-export const Code: FC<CodeProps> = ({ text }) => {
+export const Code: FC<CodeProps> = ({ name, text }) => {
   const [copied, setCopied] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -23,24 +24,23 @@ export const Code: FC<CodeProps> = ({ text }) => {
   };
 
   return (
-    <div className="bg-neutral-300 dark:bg-neutral-800 p-2 rounded-md w-full box-border overflow-hidden">
-      <div
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="relative"
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative"
+    >
+      <span className="text-neutral-500"># {name}</span>
+      <pre>{text}</pre>
+      <button
+        onClick={handleCopy}
+        className={cn(
+          !isHovered && "opacity-0",
+          "absolute top-0 right-0 border p-1 rounded-md border-neutral-500 text-neutral-500 duration-300 ease-in-out cursor-pointer",
+          "hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white"
+        )}
       >
-        <pre>{text}</pre>
-        <button
-          onClick={handleCopy}
-          className={cn(
-            !isHovered && "opacity-0",
-            "absolute top-0 right-0 border p-1 rounded-md border-neutral-500 text-neutral-500 duration-300 ease-in-out cursor-pointer",
-            "hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white"
-          )}
-        >
-          <div>{copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}</div>
-        </button>
-      </div>
+        <div>{copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}</div>
+      </button>
     </div>
   );
 };
