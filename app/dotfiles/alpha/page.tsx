@@ -11,7 +11,7 @@ const Page = () => {
     <div className="grid grid-flow-row gap-2 mx-auto w-[95%] lg:w-[60%] xl:w-[40%] py-20">
       <AlphaText />
       <p className="text-center">install guide for alpha dotfiles</p>
-      <div className="pt-10">
+      <div className="pt-10 box-border">
         <Header name="info" />
         <p>this setup uses these programs:</p>
         <br />
@@ -129,12 +129,10 @@ const Page = () => {
           ).
         </p>
         <br />
-        <CommandContainer>
-          <Code
-            text={`monitor=DP-1,1920x1080@165,1920x1080,auto
+        <Code
+          text={`monitor=DP-1,1920x1080@165,1920x1080,auto
 monitor=DP-2,1920x1080@165,0x1080,auto`}
-          />
-        </CommandContainer>
+        />
         <br />
         <p>
           If you have multiple monitors and want to have separate workspaces for each monitor you
@@ -176,9 +174,8 @@ monitor=DP-2,1920x1080@165,0x1080,auto`}
           choose a wallpaper to set for each monitor.
         </p>
         <br />
-        <CommandContainer>
-          <Code
-            text={`preload = ~/.wallpapers/wall0.jpg
+        <Code
+          text={`preload = ~/.wallpapers/wall0.jpg
 
 wallpaper = DP-1,~/.wallpapers/wall0.jpg
 wallpaper = DP-2,~/.wallpapers/wall0.jpg
@@ -189,8 +186,7 @@ splash = false
 
 # fully disable ipc
 # ipc = off`}
-          />
-        </CommandContainer>
+        />
         <br />
         <p>
           After, just set this line in your hyprland.conf to execute hyprpaper as hyprland starts

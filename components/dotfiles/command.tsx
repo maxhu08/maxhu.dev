@@ -40,7 +40,7 @@ export const Command: FC<CommandProps> = ({ command, comment }) => {
           onClick={handleCopy}
           className={cn(
             !isHovered && "opacity-0",
-            "ml-auto border p-1 rounded-md border-neutral-500 text-neutral-500 duration-100 ease-in-out cursor-pointer",
+            "ml-auto border p-1 rounded-md border-neutral-500 text-neutral-500 duration-300 ease-in-out cursor-pointer",
             "hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white"
           )}
         >
