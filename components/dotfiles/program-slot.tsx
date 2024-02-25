@@ -26,7 +26,7 @@ export const ProgramSlot: FC<ProgramSlotProps> = ({ purpose, name, url }) => {
       <div className="grid md:hidden grid-flow-row gap-2 w-full">
         <span className="text-pink-500">{purpose}</span>
         <div className="grid grid-cols-[max-content_max-content] gap-2">
-          <span className="text-lime-500">{`==>`}</span>
+          <span className="text-lime-500">{`└──`}</span>
           <a
             href={url}
             target="_blank"

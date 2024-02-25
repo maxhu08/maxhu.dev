@@ -7,6 +7,7 @@ import { ExternalLink } from "~/components/dotfiles/external-link";
 import { Header } from "~/components/dotfiles/header";
 import { ProgramSlot } from "~/components/dotfiles/program-slot";
 import { Warning } from "~/components/dotfiles/warning";
+import { YoutubeEmbed } from "~/components/dotfiles/youtube-embed";
 
 const Page = () => {
   return (
@@ -42,6 +43,9 @@ const Page = () => {
         <ProgramSlot purpose="IDE" name="VSCode" url="https://code.visualstudio.com/" />
       </div>
       <br />
+      <p>Here's a little showcase of the setup:</p>
+      <YoutubeEmbed videoId="XK7gal3Wrtk" />
+      <br />
       <Header name="getting-started" />
       <p>
         If you want to follow along exactly, first install EndeavourOS with the GNOME Desktop
@@ -72,6 +76,12 @@ const Page = () => {
       <CommandContainer>
         <Command command="sudo reboot" />
       </CommandContainer>
+      <br />
+      <p>
+        I also made a tutorial on how to install hyprland on EndeavourOS (in a VM), so you can also
+        check that out if you're having trouble:
+      </p>
+      <YoutubeEmbed videoId="Tvo_OUAW_KY" />
       <br />
       <Header name="configuring-hyprland" />
       <p>
