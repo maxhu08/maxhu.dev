@@ -13,7 +13,7 @@ const Page = () => {
     <div className="grid grid-flow-row mx-auto w-[95%] lg:w-[60%] xl:w-[40%] py-20">
       <AlphaText />
       <p className="text-center">
-        install guide for <span className="text-teal-700">alpha</span> dotfiles
+        install guide for <span className="text-teal-700">alpha (α)</span> dotfiles
       </p>
       <Header name="info" />
       this setup uses the following programs:
@@ -27,7 +27,7 @@ const Page = () => {
           name="kitty"
           url="https://github.com/kovidgoyal/kitty"
         />
-        <ProgramSlot purpose="Shell" name="kitty" url="https://github.com/kovidgoyal/kitty" />
+        <ProgramSlot purpose="Shell" name="fish" url="https://github.com/kovidgoyal/kitty" />
         <ProgramSlot
           purpose="App Launcher"
           name="wofi"
@@ -69,7 +69,8 @@ const Page = () => {
       <br />
       <Warning>
         If you're installing this on a VM, kitty might not work and many other things in this guide
-        may not work either, if you still want to try do this in a VM, try `foot` instead of kitty
+        may not work either, if you still want to try to follow again in a VM, try `foot` instead of
+        kitty
       </Warning>
       <br />
       <CommandContainer>
@@ -186,7 +187,7 @@ splash = false
         <Code name="hyprland.conf" text="exec-once = hyprpaper" />
       </CommandContainer>
       <br />
-      <Header name="configuring-waybar" />
+      <Header name="installing-waybar" />
       <p>
         For the taskbar, I used <Q>waybar</Q> which works well with hyprland
       </p>
@@ -194,6 +195,84 @@ splash = false
       <CommandContainer>
         <Command command="sudo pacman -S waybar" />
       </CommandContainer>
+      <br />
+      <p>Now run waybar with</p>
+      <br />
+      <CommandContainer>
+        <Command command="waybar" />
+      </CommandContainer>
+      <br />
+      <p>
+        Or add it to your exec-once in your <Q>hyprland.conf</Q>
+      </p>
+      <br />
+      <CommandContainer>
+        <Code name="hyprland.conf" text="exec-once = waybar" />
+      </CommandContainer>
+      <br />
+      <Header name="configuring-waybar" />
+      <p>
+        To use my dotfiles for waybar, copy my <Q>config</Q> and <Q>style.css</Q>
+      </p>
+      <br />
+      <CommandContainer>
+        <Command command="cd ~/.config" />
+        <br />
+        <Command comment="if doesn't exist" command="mkdir -p waybar" />
+        <Command command="touch config" />
+        <Command command="touch style.css" />
+      </CommandContainer>
+      <br />
+      <p>
+        Then copy the configs in <Q>waybar</Q> from the dotfiles on my github in branch <Q>alpha</Q>{" "}
+      </p>
+      <br />
+      <p>
+        It would also be good to install a font since some of the icons might not render properly if
+        you don't have it installed. You should also install wlogout to get a logout menu from the
+        power button.
+      </p>
+      <br />
+      <CommandContainer>
+        <Command comment="make sure yay is installed" command="yay -S ttf-firacode-nerd" />
+        <Command command="sudo pacman -S wlogout" />
+      </CommandContainer>
+      <br />
+      <p>Then you can reboot to see changes</p>
+      <br />
+      <CommandContainer>
+        <Command command="sudo reboot" />
+      </CommandContainer>
+      <br />
+      <p>After this, most of the desktop environment stuff is setup</p>
+      <br />
+      <Header name="fish" />
+      <p>Setting up fish is pretty simple. First install fish</p>
+      <br />
+      <CommandContainer>
+        <Command command="sudo pacman -S fish" />
+      </CommandContainer>
+      <br />
+      <p>Then set fish as default shell</p>
+      <br />
+      <CommandContainer>
+        <Command command="chsh -s /usr/bin/fish" />
+      </CommandContainer>
+      <br />
+      <p>
+        To get my fish setup, which includes vim mode through keybind <Q>kj</Q>, tokyonight
+        colorscheme, custom prompt, and more. It also sets some env vars for wayland. Just copy the
+        config.fish file from my dotfiles repo. The fish config should be located in{" "}
+        <Q>~/.config/fish/config.fish</Q>. That's it.
+      </p>
+      <br />
+      <Header name="kitty" />
+      <p>
+        You should already have kitty installed from setting up hyprland. For kitty, my setup is
+        pretty simple, just a config file. Copy my kitty.conf from my dotfiles file into your{" "}
+        <Q>~/.config/kitty/kitty.conf</Q>. My kitty.conf file just sets font size, transparency, and
+        colorscheme
+      </p>
     </div>
   );
 };
