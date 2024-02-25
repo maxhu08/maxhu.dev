@@ -26,18 +26,14 @@ export const Command: FC<CommandProps> = ({ command, comment }) => {
   const words = command.split(" ");
 
   return (
-    <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="relative"
-    >
+    <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       {comment && (
         <div className="text-neutral-500">
           <span className="select-none"># </span>
           <span>{comment}</span>
         </div>
       )}
-      <div className="grid grid-cols-[auto_max-content]">
+      <div className="grid grid-cols-[auto_max-content] relative">
         <pre>
           <span className="text-emerald-500 select-none">$ </span>
           <span>
