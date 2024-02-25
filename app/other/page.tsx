@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
-const links = [{ text: "dotfiles", destination: "/dotfiles-new" }];
+const links = [{ text: "dotfiles", destination: "/dotfiles" }];
 
 const Page = () => {
   return (
