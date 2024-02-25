@@ -61,6 +61,17 @@ const Page = () => {
         <Command comment="then run this command to start hyprland" command="Hyprland" />
       </CommandContainer>
       <br />
+      <p>
+        If your cursor isn't showing up and you're using a NVIDIA graphics card, follow the fish
+        setup instructions and use my config, which set somes env vars to fix this.
+      </p>
+      <br />
+      <p>Then reboot.</p>
+      <br />
+      <CommandContainer>
+        <Command command="sudo reboot" />
+      </CommandContainer>
+      <br />
       <Header name="configuring-hyprland" />
       <p>
         You will also need to install some programs like kitty (terminal emulator), nemo (file
@@ -187,6 +198,25 @@ splash = false
         <Code name="hyprland.conf" text="exec-once = hyprpaper" />
       </CommandContainer>
       <br />
+      <Header name="configuring-wofi" />
+      <p>
+        To configure wofi copy my <Q>config</Q> and <Q>style.css</Q> from my dotfiles repo into{" "}
+        <Q>~/.config/wofi/config</Q> and <Q>~/.config/wofi/style.css</Q>.
+      </p>
+      <br />
+      <CommandContainer>
+        <Command command="cd ~/.config" />
+        <br />
+        <Command comment="if doesn't exist" command="mkdir -p waybar" />
+        <Command command="touch config" />
+        <Command command="touch style.css" />
+      </CommandContainer>
+      <br />
+      <p>
+        The wofi window should automatically change when pressing <Q>SUPER+R</Q> or whatever you set
+        the keybind to, no need to refresh.
+      </p>
+      <br />
       <Header name="installing-waybar" />
       <p>
         For the taskbar, I used <Q>waybar</Q> which works well with hyprland
@@ -272,6 +302,48 @@ splash = false
         pretty simple, just a config file. Copy my kitty.conf from my dotfiles file into your{" "}
         <Q>~/.config/kitty/kitty.conf</Q>. My kitty.conf file just sets font size, transparency, and
         colorscheme
+      </p>
+      <br />
+      <Header name="vscode" />
+      <p>Setting up VSCode should be pretty simple, first run this command to install:</p>
+      <br />
+      <CommandContainer>
+        <Command command="yay -S visual-studio-code-bin" />
+      </CommandContainer>
+      <br />
+      <p>
+        VSCode should not automatically appear in the wofi menu. It should also work in wayland if
+        you setup my fish config earlier. The top bar may also look a little different than normal,
+        don't worry it should be fixed after copying my configs
+      </p>
+      <br />
+      <p>
+        To get my configs just copy the <Q>settings.json</Q> and <Q>keybindings.json</Q> file from
+        my dotfiles repo in <Q>vscode</Q>.
+      </p>
+      <br />
+      <p>
+        To set the settings.json file press{" "}
+        <Q>CTRL+SHIFT+P {`>`} Preferences: Open User Settings (JSON)</Q>
+      </p>
+      <br />
+      <p>
+        To set the keybindings.json file press{" "}
+        <Q>CTRL+SHIFT+P {`>`} Preferences: Open Keyboards Shortcuts (JSON)</Q>
+      </p>
+      <br />
+      <p>Lastly, installing the extensions on vscode should be pretty easy.</p>
+      <br />
+      <Header name="chrome" />
+      <p>Installing chrome should be pretty simple just use yay</p>
+      <br />
+      <CommandContainer>
+        <Command command="yay -S google-chrome" />
+      </CommandContainer>
+      <br />
+      <p>
+        I thought I would mention you should go to the url, <Q>chrome://flags</Q>, there you can set
+        ozone layer to wayland to make things run smoother
       </p>
     </div>
   );
