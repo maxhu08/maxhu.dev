@@ -46,6 +46,38 @@ const Page = () => {
       <p>Here's a little showcase of the setup:</p>
       <YoutubeEmbed videoId="XK7gal3Wrtk" />
       <br />
+      <p>
+        The actual dotfiles are in the <Q>alpha</Q> branch on my dotfiles repo <br />
+        (<ExternalLink url="https://github.com/maxhu08/dotfiles" />
+        ). Keep in mind the file strucuture in the dotfiles repo is not the same, most of these file
+        should go in the <Q>.config</Q> directory. Here is the file structure of the dotfiles repo.
+      </p>
+      <br />
+      <CommandContainer>
+        <pre>
+          {/* prettier-ignore */}
+          {`dotfiles
+├── fish
+│   └── config.fish
+├── hypr
+│   ├── hyprland.conf
+│   └── hyprpaper.conf
+├── kitty
+│   └── kitty.conf
+├── vim
+│   ├── keybindings.json
+├── vscode
+│   ├── keybindings.json
+│   └── settings.json
+├── waybar
+│   ├── config
+│   └── style.css
+└── wofi
+    ├── config
+    └── style.css`}
+        </pre>
+      </CommandContainer>
+      <br />
       <Header name="getting-started" />
       <p>
         If you want to follow along exactly, first install EndeavourOS with the GNOME Desktop
@@ -84,6 +116,11 @@ const Page = () => {
       <YoutubeEmbed videoId="Tvo_OUAW_KY" />
       <br />
       <Header name="configuring-hyprland" />
+      <p>
+        I have a <Q>hyprland.conf</Q> in my dotfiles repo but I don't recommend to copy everything
+        because some things might not work for you, such as the monitors setup.
+      </p>
+      <br />
       <p>
         You will also need to install some programs like kitty (terminal emulator), nemo (file
         manager), and wofi (app launcher) so exit hyprland with <Q>SUPER+M</Q> and install:
