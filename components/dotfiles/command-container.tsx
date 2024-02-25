@@ -6,7 +6,7 @@ interface CommandContainerProps {
 
 export const CommandContainer: FC<CommandContainerProps> = ({ children }) => {
   return (
-    <div className="bg-neutral-300 dark:bg-neutral-800 p-2 rounded-md w-full overflow-x-scroll">
+    <div className="bg-neutral-300 dark:bg-neutral-800 pt-2 px-2 rounded-md w-full overflow-y-hidden overflow-x-scroll">
       {children}
     </div>
   );

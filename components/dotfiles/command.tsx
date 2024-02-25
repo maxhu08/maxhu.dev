@@ -23,6 +23,8 @@ export const Command: FC<CommandProps> = ({ command, comment }) => {
     }, 3000);
   };
 
+  const words = command.split(" ");
+
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
@@ -38,7 +40,10 @@ export const Command: FC<CommandProps> = ({ command, comment }) => {
       <div className="grid grid-cols-[auto_max-content]">
         <pre>
           <span className="text-emerald-500 select-none">$ </span>
-          {command}
+          <span>
+            <span className="text-cyan-600 dark:text-cyan-500">{words[0]}</span>{" "}
+            <span className="text-indigo-600 dark:text-indigo-400">{words.slice(1).join(" ")}</span>
+          </span>
         </pre>
         <button
           onClick={handleCopy}

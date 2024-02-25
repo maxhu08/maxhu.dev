@@ -5,6 +5,7 @@ import { Command } from "~/components/dotfiles/command";
 import { CommandContainer } from "~/components/dotfiles/command-container";
 import { ExternalLink } from "~/components/dotfiles/external-link";
 import { Header } from "~/components/dotfiles/header";
+import { ProgramSlot } from "~/components/dotfiles/program-slot";
 import { Warning } from "~/components/dotfiles/warning";
 
 const Page = () => {
@@ -18,15 +19,27 @@ const Page = () => {
       this setup uses the following programs:
       <br />
       <br />
-      <div className="grid grid-flow-row">
-        <span>Distro - EndeavourOS</span>
-        <span>DE/WM/Compositor - hyprland</span>
-        <span>Terminal Emulator - kitty</span>
-        <span>Shell - fish</span>
-        <span>App Launcher - wofi</span>
-        <span>Taskbar - waybar</span>
-        <span>File Manager - nemo</span>
-        <span>IDE - VSCode</span>
+      <div className="grid grid-flow-row w-max">
+        <ProgramSlot purpose="Distro" name="EndeavourOS" url="https://endeavouros.com/" />
+        <ProgramSlot purpose="DE/WM/Compositor" name="hyprland" url="https://hyprland.org/" />
+        <ProgramSlot
+          purpose="Terminal Emulator"
+          name="kitty"
+          url="https://github.com/kovidgoyal/kitty"
+        />
+        <ProgramSlot purpose="Shell" name="kitty" url="https://github.com/kovidgoyal/kitty" />
+        <ProgramSlot
+          purpose="App Launcher"
+          name="wofi"
+          url="https://man.archlinux.org/man/wofi.1.en"
+        />
+        <ProgramSlot purpose="Taskbar" name="waybar" url="https://github.com/Alexays/Waybar" />
+        <ProgramSlot
+          purpose="File Manager"
+          name="nemo"
+          url="https://wiki.archlinux.org/title/Nemo"
+        />
+        <ProgramSlot purpose="IDE" name="VSCode" url="https://code.visualstudio.com/" />
       </div>
       <br />
       <Header name="getting-started" />
