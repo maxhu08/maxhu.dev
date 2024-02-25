@@ -50,7 +50,7 @@ const Page = () => {
       <br />
       <Header name="installing-hyprland" />
       <p>
-        Once you have EndeavourOS installed boot into it and press <Q>Ctrl+Alt+F2</Q> to launch the
+        Once you have EndeavourOS installed boot into it and press <Q>CTRL+ALT+F2</Q> to launch the
         tty. The first thing to install is Hyprland which is going to be the DE. To install Hyprland
         just run:
       </p>
@@ -63,7 +63,8 @@ const Page = () => {
       <br />
       <p>
         If your cursor isn't showing up and you're using a NVIDIA graphics card, follow the fish
-        setup instructions and use my config, which set somes env vars to fix this.
+        setup instructions and use my config, which set somes env vars to fix this. (see{" "}
+        <ExternalLink url="https://wiki.hyprland.org/FAQ/#me-cursor-no-render" />)
       </p>
       <br />
       <p>Then reboot.</p>
