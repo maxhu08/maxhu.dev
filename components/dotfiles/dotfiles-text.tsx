@@ -12,7 +12,11 @@ export const DotfilesText: FC = () => {
 ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║<br/>
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
       </pre>
-      <p className="block md:hidden text-[#6A9955]">~/dotfiles</p>
+      <div className="block md:hidden">
+        <br />
+        <p className="text-[#6A9955]">~/dotfiles</p>
+        <br />
+      </div>
     </div>
   );
 };

@@ -16,6 +16,7 @@ const Page = () => {
       <p className="text-center">
         install guide for <span className="text-teal-700">alpha (α)</span> dotfiles
       </p>
+      <br />
       <Header name="info" />
       this setup uses the following programs:
       <br />
@@ -64,11 +65,15 @@ const Page = () => {
 │   └── hyprpaper.conf
 ├── kitty
 │   └── kitty.conf
+├── README.md
 ├── vim
-│   ├── keybindings.json
+│   └── .vimrc
 ├── vscode
 │   ├── keybindings.json
 │   └── settings.json
+├── wallpapers
+│   ├── wall0.jpg
+│   └── wall1.jpg
 ├── waybar
 │   ├── config
 │   └── style.css

@@ -12,7 +12,11 @@ export const AlphaText: FC = () => {
 ██║  ██║███████╗██║     ██║  ██║██║  ██║<br />
 ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝
       </pre>
-      <p className="block md:hidden text-teal-700">~/dotfiles/alpha</p>
+      <div className="block md:hidden">
+        <br />
+        <p className="text-teal-700">~/dotfiles/alpha</p>
+        <br />
+      </div>
     </div>
   );
 };
