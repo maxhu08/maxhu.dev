@@ -12,7 +12,9 @@ export const ExternalLink: FC<ExternalLinkProps> = ({ url }) => {
       target="_blank"
       className="text-blue-500 hover:text-blue-600 ease-in-out duration-300"
     >
-      <span className="max-w-[200px] lg:max-w-none inline-block align-middle truncate">{url}</span>
+      <span className="whitespace-nowrap max-w-[200px] lg:max-w-none align-middle truncate">
+        {url}
+      </span>
     </Link>
   );
 };

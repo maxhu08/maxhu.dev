@@ -176,9 +176,12 @@ const Page = () => {
       <br />
       <p>
         Then adjust your hyprland.conf accordingly. Here is what it would look like assuming your
-        monitor names are DP-1 and DP-2 (it may different for you, it's what you got from running
-        hyprctl monitors, see <ExternalLink url="https://wiki.hyprland.org/Configuring/Monitors" />
-        ).
+        monitor names are DP-1 and DP-2{" "}
+      </p>
+      <br />
+      <p>
+        It may different for you, it's what you got from running hyprctl monitors, see{" "}
+        <ExternalLink url="https://wiki.hyprland.org/Configuring/Monitors" />
       </p>
       <br />
       <CommandContainer>
@@ -189,13 +192,52 @@ monitor=DP-2,1920x1080@165,0x1080,auto`}
         />
       </CommandContainer>
       <br />
+      {/* prettier-ignore */}
       <p>
         If you have multiple monitors and want to have separate workspaces for each monitor you can
-        use a program called hyprsome by sopa0 (
-        <ExternalLink url="https://github.com/sopa0/hyprsome" />)
+        use a program called hyprsome by sopa0 
+        (<ExternalLink url="https://github.com/sopa0/hyprsome" />)
       </p>
       <br />
-      <p>For now don't worry about that you can come back to this later</p>
+      <p>
+        For now don't worry about that you can come back to this later. If you are interested check
+        out this video I made about it right here
+      </p>
+      <YoutubeEmbed videoId="ylbdIS_twyk" />
+      <p>
+        You will also probably want to setup screenshotting. To do so just install <Q>grim</Q> and{" "}
+        <Q>slurp</Q>
+      </p>
+      <br />
+      <CommandContainer>
+        <Command command="sudo pacman -S grim slurp" />
+      </CommandContainer>
+      <br />
+      <p>
+        Then just add this keybind to your <Q>hyprland.conf</Q>
+      </p>
+      <br />
+      <CommandContainer>
+        <Code
+          name="hyprland.conf"
+          text={`
+# screenshot keybind
+bind = $mainMod, S, exec, grim -o DP-1 "\${HOME}/Pictures/screenshots/screenshot-$(date +%F-%T).png"
+# screenshot + crop keybind
+bind = $mainMod SHIFT, S, exec, grim -g "$(slurp)" "\${HOME}/Pictures/screenshots/screenshot-$(date +%F-%T).png"
+
+...
+
+# Example special workspace (scratchpad) COMMENT THIS OUT FOR SCREENSHOT KEYBIND
+# bind = $mainMod, S, togglespecialworkspace, magic
+# bind = $mainMod SHIFT, S, movetoworkspace, special:magic`}
+        />
+      </CommandContainer>
+      <br />
+      <p>
+        Make sure you have a directory called <Q>screenshots</Q> inside your <Q>~/Pictures</Q>{" "}
+        otherwise it the screenshots won't save.
+      </p>
       <br />
       <Header name="setting-wallpaper" />
       <p>
