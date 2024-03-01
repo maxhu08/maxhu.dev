@@ -407,9 +407,8 @@ splash = false
       </CommandContainer>
       <br />
       <p>
-        VSCode should not automatically appear in the wofi menu. It should also work in wayland if
-        you setup my fish config earlier. The top bar may also look a little different than normal,
-        don't worry it should be fixed after copying my configs
+        VSCode should not automatically appear in the wofi menu. The top bar may also look a little
+        different than normal, don't worry it should be fixed after copying my configs
       </p>
       <br />
       <p>
@@ -427,7 +426,26 @@ splash = false
         <Q>CTRL+SHIFT+P {`>`} Preferences: Open Keyboards Shortcuts (JSON)</Q>
       </p>
       <br />
-      <p>Lastly, installing the extensions on vscode should be pretty easy.</p>
+      <p>If VSCode feels laggy or your cursor is off, VSCode may not be using wayland</p>
+      <br />
+      <p>
+        To fix that, create a <Q>code-flags.conf</Q> in <Q>.config</Q>, then add this to it
+      </p>
+      <br />
+      <CommandContainer>
+        <Code
+          name="code-flags.conf"
+          text={`# put in ~/.config/code-flags.conf
+
+--enable-features=UseOzonePlatform
+--ozone-platform=wayland`}
+        />
+      </CommandContainer>
+      <br />
+      <p>
+        Lastly, installing the extensions on VSCode should be pretty easy, just search for
+        extensions in VSCode and install them
+      </p>
       <br />
       <Header name="chrome" />
       <p>Installing chrome should be pretty simple just use yay</p>
