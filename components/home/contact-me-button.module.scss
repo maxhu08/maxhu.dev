@@ -1,0 +1,8 @@
+.button * {
+  transition-duration: 250ms;
+}
+
+.button:hover .arrow {
+  transform: translateX(6px);
+  transition-duration: 250ms;
+}
