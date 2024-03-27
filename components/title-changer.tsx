@@ -15,7 +15,7 @@ export const TitleChanger: FC = () => {
 
     const interval = setInterval(() => {
       if (stateIndex === states.length - 1) setStateIndex(0);
-      else setStateIndex(prev => prev + 1);
+      else setStateIndex((prev) => prev + 1);
 
       document.title = `${websiteName} ${states[stateIndex]}`;
     }, 200);

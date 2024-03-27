@@ -152,13 +152,9 @@ const Page = () => {
         </ConfigCard>
         <ConfigCard title="fish config">
           <FancyContent>
-            <p>
-              i also have a fish config 🐟
-            </p>
-            <br/>
-            <p>
-              here it is:
-            </p>
+            <p>i also have a fish config 🐟</p>
+            <br />
+            <p>here it is:</p>
           </FancyContent>
           <div className="my-2">
             <Accordion type="single" collapsible>

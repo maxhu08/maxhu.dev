@@ -24,7 +24,12 @@ export const Technologies: FC = () => {
   let technologiesIndex = 0;
 
   return (
-    <div className={cn("p-2 flex place-items-start gap-1 md:gap-2 max-w-[100vw] overflow-x-scroll", styles["technologies-container"])}>
+    <div
+      className={cn(
+        "p-2 flex place-items-start gap-1 md:gap-2 max-w-[100vw] overflow-x-scroll",
+        styles["technologies-container"]
+      )}
+    >
       {/* {[...items, ...items].map((item, index) => (
             <Icon name={item.name} icon={item.icon} iconLight={item.iconDark} key={`techonology-${item.name}`} delay={index * 50 + 600} />
           ))} */}

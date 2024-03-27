@@ -18,21 +18,25 @@ export const Content: FC<MarkdownProps> = ({ children }) => {
   return (
     <ReactMarkdown
       components={{
-        p: props => {
+        p: (props) => {
           const { children } = props;
 
           return <p className="leading-6">{children}</p>;
         },
-        a: props => {
+        a: (props) => {
           const { href, children } = props;
 
           return (
-            <a href={href} target="_blank" className="text-blue-500 hover:text-blue-700 duration-300 ease-in-out leading-6 underline">
+            <a
+              href={href}
+              target="_blank"
+              className="text-blue-500 hover:text-blue-700 duration-300 ease-in-out leading-6 underline"
+            >
               {children}
             </a>
           );
         },
-        img: props => {
+        img: (props) => {
           const { src, alt } = props;
 
           console.log("img", props);
