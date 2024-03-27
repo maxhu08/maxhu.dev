@@ -9,8 +9,8 @@ const Page = () => {
       <DotfilesText />
       <Header name="info" />
       <p>
-        This is my dotfiles page. I version my each major change in my dotfiles by greek letters
-        (eg. α, β, γ). You can click the link for each one to see dotfiles guide.
+        This is my dotfiles page. I have separate dotfiles and setup guides for different window
+        managers and distros. You can click the link to see each dotfiles guide.
       </p>
       <br />
       <p>
@@ -21,8 +21,8 @@ const Page = () => {
       <p>setup guide for each version (newest at top) can be found here:</p>
       <br />
       <div className="grid grid-cols-[max-content_max-content] gap-2">
-        <p className="text-teal-500">alpha (α)</p>
-        <GuideLink url="/dotfiles/alpha" />
+        <p className="text-teal-500">hyprland-dots</p>
+        <GuideLink url="/dotfiles/hyprland-dots" />
       </div>
     </div>
   );

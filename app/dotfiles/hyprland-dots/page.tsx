@@ -1,5 +1,5 @@
 import { Q } from "~/components/configs/quote";
-import { AlphaText } from "~/components/dotfiles/alpha-text";
+import { HyprlandDotsText } from "~/components/dotfiles/hyprland-dots";
 import { Code } from "~/components/dotfiles/code";
 import { Command } from "~/components/dotfiles/command";
 import { CommandContainer } from "~/components/dotfiles/command-container";
@@ -12,9 +12,9 @@ import { YoutubeEmbed } from "~/components/dotfiles/youtube-embed";
 const Page = () => {
   return (
     <div className="grid grid-flow-row mx-auto w-[95%] lg:w-[60%] xl:w-[40%] py-20">
-      <AlphaText />
+      <HyprlandDotsText />
       <p className="text-center">
-        install guide for <span className="text-teal-700">alpha (α)</span> dotfiles
+        install guide for <span className="text-teal-700">hyprland-dots</span>
       </p>
       <br />
       <Header name="info" />
