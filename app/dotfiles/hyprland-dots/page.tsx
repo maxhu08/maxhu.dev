@@ -48,10 +48,11 @@ const Page = () => {
       <YoutubeEmbed videoId="XK7gal3Wrtk" />
       <br />
       <p>
-        The actual dotfiles are in the <Q>alpha</Q> branch on my dotfiles repo <br />
+        The actual dotfiles are in the <Q>hyprland-dots</Q> branch on my dotfiles repo <br />
         (<ExternalLink url="https://github.com/maxhu08/dotfiles" />
         ). Keep in mind the file strucuture in the dotfiles repo is not the same, most of these file
-        should go in the <Q>.config</Q> directory. Here is the file structure of the dotfiles repo.
+        should go in the <Q>.config</Q> directory. Here is the rough file structure of the dotfiles
+        repo.
       </p>
       <br />
       <CommandContainer>
@@ -85,13 +86,14 @@ const Page = () => {
       <br />
       <Header name="getting-started" />
       <p>
-        If you want to follow along exactly, first install EndeavourOS with the GNOME Desktop
-        Environment. EndeavourOS will allow you to choose this in the install setup.
+        If you want to follow along exactly, install EndeavourOS, but any arch based distro should
+        work. Install EndeavourOS with the GNOME Desktop Environment. EndeavourOS should allow you
+        to choose this in the install setup.
       </p>
       <br />
       <Header name="installing-hyprland" />
       <p>
-        Once you have EndeavourOS installed boot into it and press <Q>CTRL+ALT+F2</Q> to launch the
+        Once you have EndeavourOS installed boot into it and press <Q>CTRL+ALT+F2</Q> to open the
         tty. The first thing to install is Hyprland which is going to be the DE. To install Hyprland
         just run:
       </p>
@@ -458,6 +460,22 @@ splash = false
         I thought I would mention you should go to the url, <Q>chrome://flags</Q>, there you can set
         ozone layer to wayland to make things run smoother
       </p>
+      <br />
+      <Header name="theming" />
+      <p>
+        To set up themes for stuff like nemo install a gtk theme. I'm using the catpuccin theme from{" "}
+      </p>
+      <br />
+      <ExternalLink url="https://aur.archlinux.org/packages/catppuccin-gtk-theme-mocha" />
+      <br />
+      <p>
+        For my folder icons I used papirus folders along with the catpuccin papirus folders to color
+        them.
+      </p>
+      <br />
+      <ExternalLink url="https://aur.archlinux.org/packages/papirus-folders" />
+      <ExternalLink url="https://github.com/catppuccin/papirus-folders" />
+      <br />
     </div>
   );
 };
