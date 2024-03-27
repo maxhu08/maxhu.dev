@@ -40,7 +40,7 @@ const Page: NextPage = () => {
           }}
         >
           <p>
-            This is a project I made as my final project for java class. It is a tomb of the mask
+            This is a simple project I made as a project for my java class. It is a tomb of the mask
             style game where you collect the keys to go through the portal and progress to the next
             level. There are eight worlds in total. You can also collect coins, which increase your
             score. You can find the download for the game&nbsp;
@@ -58,50 +58,14 @@ const Page: NextPage = () => {
         <ProjectCard
           className={styles["project"]}
           info={{
-            title: "todo: add later",
-            technologies: ["typescript", "nodejs"],
-            codeLink: "https://github.com/maxhu08/maxhu.dev",
-            demoLink: "https://maxhu.dev/"
+            title: "mtab",
+            technologies: ["html", "css", "typescript"],
+            codeLink: "https://github.com/maxhu08/mtab"
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </ProjectCard>
-        <ProjectCard
-          className={styles["project"]}
-          info={{
-            title: "todo: add later",
-            technologies: ["typescript", "nodejs"],
-            codeLink: "https://github.com/maxhu08/maxhu.dev",
-            demoLink: "https://maxhu.dev/"
-          }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </ProjectCard>
-        <ProjectCard
-          className={styles["project"]}
-          info={{
-            title: "todo: add later",
-            technologies: ["typescript", "nodejs"],
-            codeLink: "https://github.com/maxhu08/maxhu.dev",
-            demoLink: "https://maxhu.dev/"
-          }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
+          This is a chrome extension that adds a new tab page. I made it because I wanted a
+          customizable new tab page where I can change my wallpaper. I also added a lot of fancy
+          animations because it makes it feel more modern.
         </ProjectCard>
       </main>
     </div>
