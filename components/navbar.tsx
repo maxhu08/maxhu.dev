@@ -77,7 +77,8 @@ export const Navbar: FC = () => {
   };
 
   return (
-    <nav className="fixed z-[3] w-full top-0 ease-in-out backdrop-blur-2xl">
+    // <nav className="fixed z-[3] w-full top-0 ease-in-out backdrop-blur-2xl">
+    <nav className="fixed z-[3] w-full top-0 ease-in-out bg-neutral-200 dark:bg-neutral-900">
       <div className="py-2 px-2 md:px-4 grid grid-cols-[1fr_auto_1fr] w-full">
         <div className="w-max">{navigationControls()}</div>
         {currentPage()}
@@ -85,12 +86,18 @@ export const Navbar: FC = () => {
           <ThemeToggle />
         </div>
       </div>
-      <Separator
+      {/* 
+        <Separator
         orientation="horizontal"
         className={cn(
           "transition-all duration-500 mx-auto",
           scrolled ? "w-full visible" : "w-0 invisible",
         )}
+        />
+      */}
+      <Separator
+        orientation="horizontal"
+        className={cn("transition-all duration-500 mx-auto")}
       />
     </nav>
   );
