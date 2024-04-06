@@ -29,7 +29,7 @@ const Page: NextPage = () => {
               👋
             </span>
             <span className="text-2xl md:text-4xl dark:text-white">
-              Hi! I'm <span className="special-text">Max Hu</span>
+              Hi! I'm <span className={styles["special-text"]}>Max Hu</span>
             </span>
           </div>
           <div className="grid grid-cols-[max-content_max-content] gap-2">
