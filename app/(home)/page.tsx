@@ -28,6 +28,7 @@ const Page: NextPage = () => {
             >
               👋
             </span>
+            <span> </span>
             <span className="text-2xl md:text-4xl dark:text-white">
               Hi! I'm <span className={styles["special-text"]}>Max Hu</span>
             </span>

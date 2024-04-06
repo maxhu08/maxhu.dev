@@ -3,6 +3,7 @@ import { Fira_Mono } from "next/font/google";
 import "./globals.scss";
 import { cn } from "~/utils/cn";
 import { ThemeProvider } from "~/components/providers/theme-provider";
+import { Navbar } from "~/components/navbar";
 
 const fira = Fira_Mono({ subsets: ["latin"], weight: "400" });
 
@@ -40,6 +41,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
