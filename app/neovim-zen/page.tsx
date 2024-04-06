@@ -6,6 +6,7 @@ import { FancyGap } from "~/components/fancy/fancy-gap";
 import { FancyHeader } from "~/components/fancy/fancy-header";
 import { FancyList } from "~/components/fancy/fancy-list";
 import { Q } from "~/components/fancy/fancy-quote";
+import { FancySyntaxHighlighter } from "~/components/fancy/fancy-syntax-highlight";
 import { FancyYoutubeEmbed } from "~/components/fancy/fancy-youtube-embed";
 import { PageContainer } from "~/components/page-container";
 
@@ -115,9 +116,8 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyCommandContainer>
-        <pre>
-          {`
-# backup old neovim config
+        <FancySyntaxHighlighter language="bash">
+          {`# backup old neovim config
 mv ~/.config/nvim{,.bak}
 
 # optional backup
@@ -134,7 +134,7 @@ rm -rf ~/.config/nvim/.git
 # start nvim !
 nvim
 `}
-        </pre>
+        </FancySyntaxHighlighter>
       </FancyCommandContainer>
       <br />
       <FancyContent>That's it!</FancyContent>
