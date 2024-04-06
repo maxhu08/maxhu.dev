@@ -66,22 +66,13 @@ export const Navbar: FC = () => {
   const currentPage = () => {
     if (pathname === "/") {
       return <div></div>;
-    } else if (pathname === "/projects") {
-      return (
-        <div className="grid grid-cols-[max-content_max-content] gap-1 place-items-center">
-          <Webhook className="w-4 h-4" />
-          <span>projects</span>
-        </div>
-      );
-    } else if (pathname === "/other/my-configs") {
-      return (
-        <div className="grid grid-cols-[max-content_max-content] gap-1 place-items-center">
-          <Sliders className="w-4 h-4" />
-          <span>my configs</span>
-        </div>
-      );
     } else {
-      return <div></div>;
+      return (
+        <div className="grid grid-cols-[max-content_max-content] gap-1 place-items-center font-semibold">
+          <span className="text-sky-500">~</span>
+          <span className="text-orange-500">{pathname}</span>
+        </div>
+      );
     }
   };
 

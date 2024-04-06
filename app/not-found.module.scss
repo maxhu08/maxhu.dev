@@ -1,0 +1,19 @@
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  -webkit-animation: float 2.5s;
+  animation: float 2.5s;
+  animation-iteration-count: infinite;
+}
