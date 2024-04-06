@@ -33,30 +33,39 @@ export const Navbar: FC = () => {
           <span>maxhu.dev</span>
         </div>
       );
-    } else if (pathname === "/projects") {
-      return (
-        <Link href="/">
-          <div className="grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
-            <ChevronLeft className="w-4 h-4" />
-            <span>Back</span>
-          </div>
-        </Link>
-      );
     } else if (pathname === "/dotfiles" || pathname === "/neovim-zen") {
       return (
         <Link href="/">
-          <div className="grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
+          <div className="hidden md:grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
             <ChevronLeft className="w-4 h-4" />
             <span>Other</span>
+          </div>
+          <div className="grid md:hidden text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
+            <ChevronLeft className="w-4 h-4" />
+          </div>
+        </Link>
+      );
+    } else if (pathname.startsWith("/projects") && pathname !== "/projects") {
+      return (
+        <Link href="/projects">
+          <div className="hidden md:grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
+            <ChevronLeft className="w-4 h-4" />
+            <span>Projects</span>
+          </div>
+          <div className="grid md:hidden h-full text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
+            <ChevronLeft className="w-4 h-4" />
           </div>
         </Link>
       );
     } else {
       return (
         <Link href="/">
-          <div className="grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
+          <div className="hidden md:grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
             <ChevronLeft className="w-4 h-4" />
             <span>Home</span>
+          </div>
+          <div className="grid md:hidden h-full text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
+            <ChevronLeft className="w-4 h-4" />
           </div>
         </Link>
       );
@@ -68,7 +77,7 @@ export const Navbar: FC = () => {
       return <div></div>;
     } else {
       return (
-        <div className="grid grid-cols-[max-content_max-content] gap-1 place-items-center font-semibold">
+        <div className="grid grid-cols-[max-content_max-content] gap-1 place-items-center font-semibold overflow-hidden">
           <span className="text-sky-500">~</span>
           <span className="text-orange-500">{pathname}</span>
         </div>
