@@ -47,8 +47,9 @@ const Page: NextPage = () => {
       <br />
       <FancyContent>
         While following the video, I customized things such keymaps and how
-        plugins are configured. I also added plugins like <Q>noice.nvim</Q> and
-        replaced <Q>alpha.nvim</Q> with <Q>dashboard.nvim</Q>
+        plugins are configured. I also added plugins like <Q>noice.nvim</Q> and{" "}
+        <Q>flash.nvim</Q>. I also replaced <Q>alpha.nvim</Q> with{" "}
+        <Q>dashboard.nvim</Q>
       </FancyContent>
       <br />
       <FancyContent>
@@ -139,6 +140,34 @@ nvim
       <br />
       <FancyContent>That's it!</FancyContent>
       <FancyGap />
+      <FancyHeader title="using-neovim-zen" />
+      <FancyContent>
+        For using neovim, the keymappings are the most important thing, which
+        applies to all neovim configs. So I'll talk about how I set up my
+        keymappings first.
+      </FancyContent>
+      <FancyGap />
+      <FancyContent>
+        I tried to keep all the keymaps easy to remember. I follow a pattern,
+        keymaps starting with <Q>{"<leader>s"}</Q> are for managing splits,{" "}
+        <Q>{"<leader>t"}</Q> is for managing tabs, and so on.
+      </FancyContent>
+      <FancyGap />
+      <FancyContent>
+        I also made it so the most common actions are done by pressing the key
+        twice. Like pressing <Q>{"<leader><leader>"}</Q> opens telescope,{" "}
+        <Q>{"<leader>ss"}</Q> creates a new vertical split,
+        <Q>{"<leader>tt"}</Q> creates a tab. So pressing a key twice is usually
+        for creating or opening something new. Except for the file tree,{" "}
+        <Q>nvim-tree</Q> which is opened with <Q>{"<leader>e"}</Q>
+      </FancyContent>
+      <FancyGap />
+      <FancyContent>
+        Next, I made it so pressing a key then <Q>l</Q> closes it. For example
+        closing the current focused split is just <Q>{"<leader>sl"}</Q> and
+        closing a tab is just <Q>{"<leader>tl"}</Q>. I usually remember it as l
+        stands for `lose` and l is also easier to press than x for me.
+      </FancyContent>
     </PageContainer>
   );
 };

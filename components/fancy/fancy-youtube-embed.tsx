@@ -7,7 +7,7 @@ interface FancyYoutubeEmbedProps {
 export const FancyYoutubeEmbed: FC<FancyYoutubeEmbedProps> = ({ videoId }) => {
   return (
     <div>
-      <br />
+      <br className="select-none" />
       <div className="w-full aspect-video bg-neutral-300 dark:bg-neutral-800 rounded-md overflow-hidden">
         <iframe
           className="w-full aspect-video"
@@ -15,7 +15,7 @@ export const FancyYoutubeEmbed: FC<FancyYoutubeEmbedProps> = ({ videoId }) => {
           allowFullScreen
         ></iframe>
       </div>
-      <br />
+      <br className="select-none" />
     </div>
   );
 };
