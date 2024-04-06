@@ -95,10 +95,12 @@ export const Navbar: FC = () => {
         )}
         />
       */}
-      <Separator
-        orientation="horizontal"
-        className={cn("transition-all duration-500 mx-auto")}
-      />
+      {pathname !== "/" && (
+        <Separator
+          orientation="horizontal"
+          className={cn("transition-all duration-500 mx-auto")}
+        />
+      )}
     </nav>
   );
 };
