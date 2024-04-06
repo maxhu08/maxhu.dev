@@ -14,7 +14,7 @@ export const NeovimZenText: FC = () => {
       </div>
       <div className="block md:hidden">
         <br />
-        <p className="text-teal-700">~/neovim-zen</p>
+        <p className="text-teal-700 font-semibold">~/neovim-zen</p>
         <br />
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { OtherText } from "~/components/ascii-art/other-text";
 import { FancyContent } from "~/components/fancy/fancy-content";
 import { FancyHeader } from "~/components/fancy/fancy-header";
 import { FancyInternalLink } from "~/components/fancy/fancy-internal-link";
@@ -7,6 +8,7 @@ import { PageContainer } from "~/components/page-container";
 const Page: NextPage = () => {
   return (
     <PageContainer>
+      <OtherText />
       <FancyHeader title="info" />
       <FancyContent>
         This page contains links to stuff that I don't consider as projects but

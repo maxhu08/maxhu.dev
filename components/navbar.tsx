@@ -77,10 +77,11 @@ export const Navbar: FC = () => {
       return <div></div>;
     } else {
       return (
-        <div className="grid grid-cols-[max-content_max-content] gap-1 place-items-center font-semibold">
+        <div className="grid grid-cols-[repeat(3,max-content)] place-items-center font-semibold">
           <span className="text-sky-500">~</span>
+          <span className="text-orange-500">/</span>
           <p className="text-orange-500 max-w-40 md:max-w-none truncate overflow-hidden">
-            {pathname}
+            {pathname.slice(1)}
           </p>
         </div>
       );
