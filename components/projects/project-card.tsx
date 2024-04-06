@@ -23,9 +23,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info }) => {
 
   return (
     <Link href={`/projects/${info.title}`} className="cursor-pointer">
-      <div className="relative rounded-md overflow-hidden border-zinc-400 dark:border-border border-[1px]">
+      <div className="relative rounded-md overflow-hidden border-zinc-400 dark:border-border border-[1px] h-full min-h-40">
         <div className="hover:bg-black/20 dark:hover:bg-white/20 w-full h-full absolute duration-300 ease-in-out"></div>
-        <div className="bg-neutral-200 dark:bg-neutral-900 p-2 grid grid-flow-row">
+        <div className="bg-neutral-200 dark:bg-neutral-900 p-2 grid grid-flow-row h-full">
           <p className="font-semibold text-cyan-500">{info.title}</p>
           <div className="grid grid-flow-col w-max gap-1">
             {technologies.map((technology, index: number) => {
@@ -57,7 +57,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info }) => {
             })}
           </div>
           <p className="pt-2">{info.description}</p>
-          <div className="pt-2 grid grid-flow-col gap-4 w-max">
+          <div className="mt-auto grid grid-flow-col gap-4 w-max">
             {info.demoLink && (
               <a href={info.demoLink} target="_blank">
                 <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">

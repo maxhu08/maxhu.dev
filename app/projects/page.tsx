@@ -24,6 +24,21 @@ const Page: NextPage = () => {
             codeLink: "https://github.com/maxhu08/tomb-of-the-mask-clone",
           }}
         />
+        <ProjectCard
+          info={{
+            title: "create-neutrino-app",
+            description:
+              "create a lightweight template which has hmr, typescript, tailwind & sass",
+            technologies: [
+              "html",
+              "sass",
+              "tailwindcss",
+              "typescript",
+              "nodejs",
+            ],
+            codeLink: "https://github.com/maxhu08/tomb-of-the-mask-clone",
+          }}
+        />
       </div>
     </PageContainer>
   );
