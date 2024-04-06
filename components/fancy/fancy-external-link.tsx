@@ -1,5 +1,4 @@
 import { ExternalLinkIcon } from "lucide-react";
-import Link from "next/link";
 import { FC } from "react";
 
 interface FancyExternalLinkProps {
@@ -14,6 +13,7 @@ export const FancyExternalLink: FC<FancyExternalLinkProps> = ({
   return (
     <a
       href={href}
+      target="_blank"
       className="cursor-pointer text-blue-500 hover:text-blue-600 ease-in-out duration-300 inline-flex items-center gap-1"
     >
       <ExternalLinkIcon className="w-4 h-4" />
