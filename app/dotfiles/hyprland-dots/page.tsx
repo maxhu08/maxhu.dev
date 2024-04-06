@@ -9,7 +9,7 @@ const Page: NextPage = () => {
     <PageContainer>
       <HyprlandDotsText />
       <FancyHeader title="info" />
-      <FancyContent>this setup uses the following programs:</FancyContent>
+      <FancyContent>hyprland-dots page (page wip)</FancyContent>
     </PageContainer>
   );
 };

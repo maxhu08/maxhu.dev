@@ -6,7 +6,7 @@ interface PageContainerProps {
 
 export const PageContainer: FC<PageContainerProps> = ({ children }) => {
   return (
-    <main className="grid grid-flow-row mx-auto mt-20 mb-40 w-[95%] lg:w-[60%] xl:w-[40%]">
+    <main className="grid grid-flow-row mx-auto mt-20 mb-60 w-[95%] lg:w-[60%] xl:w-[40%]">
       {children}
     </main>
   );
