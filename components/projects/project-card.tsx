@@ -25,16 +25,16 @@ export const ProjectCard: FC<ProjectCardProps> = (props) => {
   return (
     <div
       className={cn(
-        "relative rounded-md overflow-hidden border-zinc-400 dark:border-border border-[1px] h-full min-h-40",
+        "relative rounded-md overflow-hidden border-zinc-300 dark:border-border border-[1px] h-full min-h-40",
         styles["animate-up-bouncy"],
       )}
       style={{ animationDelay: (props.delay ?? 0) + "ms" }}
     >
       <Link href={`/projects/${props.title}`} className="cursor-pointer">
-        <div className="hover:bg-black/20 dark:hover:bg-white/20 w-full h-full absolute duration-300 ease-in-out"></div>
+        <div className="hover:bg-neutral-500/20 w-full h-full absolute duration-300 ease-in-out"></div>
       </Link>
       <div className="bg-neutral-200 dark:bg-neutral-900 p-2 grid grid-flow-row h-full">
-        <p className="font-semibold text-cyan-500">{props.title}</p>
+        <p className="font-semibold text-lime-500">{props.title}</p>
         <div className="grid grid-flow-col w-max gap-1">
           {technologies.map((technology, index: number) => {
             if (props.technologies.includes(technology.name)) {
