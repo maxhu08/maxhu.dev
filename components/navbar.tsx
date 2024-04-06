@@ -35,7 +35,7 @@ export const Navbar: FC = () => {
       );
     } else if (pathname === "/dotfiles" || pathname === "/neovim-zen") {
       return (
-        <Link href="/">
+        <Link href="/other">
           <div className="hidden md:grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
             <ChevronLeft className="w-4 h-4" />
             <span>Other</span>
