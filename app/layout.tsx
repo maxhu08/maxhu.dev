@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fira_Mono } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 import { cn } from "~/utils/cn";
 import { ThemeProvider } from "~/components/providers/theme-provider";
 
