@@ -5,7 +5,7 @@ import { cn } from "~/utils/cn";
 import { Technologies } from "~/components/home/technologies";
 import { ContactMeButton } from "~/components/home/contact-me-button";
 import { ProjectsButton } from "~/components/home/projects-button";
-import { MoreButton } from "~/components/home/more-button";
+import { OtherButton } from "~/components/home/other-button";
 import { Footer } from "~/components/home/footer";
 
 const Page: NextPage = () => {
@@ -50,7 +50,7 @@ const Page: NextPage = () => {
             className={cn("pt-2 z-[5]", styles["bouncing-animation"])}
             style={{ animationDelay: "1400ms" }}
           >
-            <MoreButton />
+            <OtherButton />
           </div>
           <div className="grid place-items-center grid-flow-row gap-1 pt-10 md:pt-20">
             <span

@@ -1,0 +1,13 @@
+.technologies-container {
+  &::-webkit-scrollbar {
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #00000000;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #00000000;
+  }
+}
