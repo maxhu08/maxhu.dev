@@ -7,30 +7,37 @@ import { useTheme } from "next-themes";
 import { technologies } from "~/constants/technologies";
 import { Paperclip, Code2 } from "lucide-react";
 import Link from "next/link";
+import { cn } from "~/utils/cn";
+import styles from "~/components/projects/project-card.module.scss";
 
-interface ProjectCardProps {
-  info: {
-    title: string;
-    description: string;
-    technologies: string[];
-    codeLink?: string;
-    demoLink?: string;
-  };
+export interface ProjectCardProps {
+  title: string;
+  description: string;
+  technologies: string[];
+  codeLink?: string;
+  demoLink?: string;
+  delay?: number;
 }
 
-export const ProjectCard: FC<ProjectCardProps> = ({ info }) => {
+export const ProjectCard: FC<ProjectCardProps> = (props) => {
   const { theme } = useTheme();
 
   return (
-    <div className="relative rounded-md overflow-hidden border-zinc-400 dark:border-border border-[1px] h-full min-h-40">
-      <Link href={`/projects/${info.title}`} className="cursor-pointer">
+    <div
+      className={cn(
+        "relative rounded-md overflow-hidden border-zinc-400 dark:border-border border-[1px] h-full min-h-40",
+        styles["animate-up-bouncy"],
+      )}
+      style={{ animationDelay: (props.delay ?? 0) + "ms" }}
+    >
+      <Link href={`/projects/${props.title}`} className="cursor-pointer">
         <div className="hover:bg-black/20 dark:hover:bg-white/20 w-full h-full absolute duration-300 ease-in-out"></div>
       </Link>
       <div className="bg-neutral-200 dark:bg-neutral-900 p-2 grid grid-flow-row h-full">
-        <p className="font-semibold text-cyan-500">{info.title}</p>
+        <p className="font-semibold text-cyan-500">{props.title}</p>
         <div className="grid grid-flow-col w-max gap-1">
           {technologies.map((technology, index: number) => {
-            if (info.technologies.includes(technology.name)) {
+            if (props.technologies.includes(technology.name)) {
               return (
                 <ActionTooltip
                   label={technology.name}
@@ -53,18 +60,18 @@ export const ProjectCard: FC<ProjectCardProps> = ({ info }) => {
             }
           })}
         </div>
-        <p className="pt-2">{info.description}</p>
+        <p className="pt-2">{props.description}</p>
         <div className="mt-auto grid grid-flow-col gap-4 w-max">
-          {info.demoLink && (
-            <a href={info.demoLink} target="_blank" className="z-[500]">
+          {props.demoLink && (
+            <a href={props.demoLink} target="_blank" className="z-[500]">
               <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
                 <Paperclip className="w-4 h-4" />
                 <span>View demo</span>
               </div>
             </a>
           )}
-          {info.codeLink && (
-            <a href={info.codeLink} target="_blank" className="z-[500]">
+          {props.codeLink && (
+            <a href={props.codeLink} target="_blank" className="z-[500]">
               <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
                 <Code2 className="w-4 h-4" />
                 <span>View code</span>
