@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { PageContainer } from "~/components/page-container";
 import {
   ProjectCard,
   ProjectCardProps,
@@ -31,13 +30,13 @@ const projects: ProjectCardProps[] = [
 
 const Page: NextPage = () => {
   return (
-    <PageContainer>
-      <div className="grid grid-flow-row md:grid-cols-2 gap-2">
+    <main className="grid grid-flow-row mx-auto mt-20 mb-20 md:mb-60 w-[95%] lg:w-[75%]">
+      <div className="grid grid-flow-row md:grid-cols-2 xl:grid-cols-4 gap-2">
         {projects.map((project: ProjectCardProps, index) => (
           <ProjectCard {...project} key={project.title} delay={index * 50} />
         ))}
       </div>
-    </PageContainer>
+    </main>
   );
 };
 
