@@ -5,6 +5,7 @@ import { FancyCommandContainer } from "~/components/fancy/fancy-command-containe
 import { FancyContent } from "~/components/fancy/fancy-content";
 import { FancyGap } from "~/components/fancy/fancy-gap";
 import { FancyHeader } from "~/components/fancy/fancy-header";
+import { FancyImage } from "~/components/fancy/fancy-image";
 import { FancyList } from "~/components/fancy/fancy-list";
 import { Q } from "~/components/fancy/fancy-quote";
 import { FancySyntaxHighlighter } from "~/components/fancy/fancy-syntax-highlight";
@@ -20,7 +21,7 @@ const Page: NextPage = () => {
         This page contains info about my neovim config, called <Q>neovim-zen</Q>
         .
       </FancyContent>
-      <br />
+      <FancyImage src="/assets/neovim-zen/1.png" />
       <FancyContent>
         <Q>neovim-zen</Q> is my first attempt at doing neovim from scratch
       </FancyContent>
@@ -57,6 +58,7 @@ const Page: NextPage = () => {
         In the next section, I will go over how to install my setup,{" "}
         <Q>neovim-zen</Q>
       </FancyContent>
+      <FancyImage src="/assets/neovim-zen/2.png" />
       <FancyGap />
       <FancyHeader title="quick-start" />
       <FancyContent>
@@ -144,6 +146,7 @@ nvim
       <FancyContent>That's it!</FancyContent>
       <FancyGap />
       <FancyHeader title="using-neovim-zen" />
+      <FancyImage src="/assets/neovim-zen/3.png" />
       <FancyContent>
         For using neovim, the keymappings are the most important thing, which
         applies to all neovim configs. So I'll talk about how I set up my

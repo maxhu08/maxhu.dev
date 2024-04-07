@@ -1,6 +1,6 @@
 "use client";
 
-import { Ghost, Moon, Settings, Sun, SunMoon } from "lucide-react";
+import { Moon, Settings, Sun, SunMoon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { FC } from "react";
 import {
