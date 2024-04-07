@@ -4,10 +4,10 @@ import "./globals.scss";
 import { cn } from "~/utils/cn";
 import { ThemeProvider } from "~/components/providers/theme-provider";
 import { Navbar } from "~/components/navbar";
+import { websiteName } from "~/constants/website-name";
+import { Rice } from "~/components/rice";
 
 const fira = Fira_Mono({ subsets: ["latin"], weight: "400" });
-
-const websiteName = "maxhu.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maxhu.dev/"),
@@ -43,6 +43,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Rice />
         </ThemeProvider>
       </body>
     </html>

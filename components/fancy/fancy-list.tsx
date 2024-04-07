@@ -10,7 +10,7 @@ export const FancyList: FC<FancyListProps> = ({ name, items }) => {
     <div>
       {name && <p className="text-cyan-500 font-semibold">{name}</p>}
       {items.map((item, index) => (
-        <p key={index}>
+        <p key={`fancy-list-item-${index}`}>
           <span className="text-orange-500 font-semibold">- </span>
           <span>{item}</span>
         </p>
