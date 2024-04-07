@@ -6,6 +6,7 @@ import { ThemeProvider } from "~/components/providers/theme-provider";
 import { Navbar } from "~/components/navbar";
 import { websiteName } from "~/constants/website-name";
 import { Rice } from "~/components/rice";
+import { LoadingBar } from "~/components/loading-bar";
 
 const fira = Fira_Mono({ subsets: ["latin"], weight: "400" });
 
@@ -41,6 +42,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <LoadingBar />
           <Navbar />
           {children}
           <Rice />
