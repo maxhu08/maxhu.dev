@@ -168,6 +168,20 @@ nvim
         closing a tab is just <Q>{"<leader>tl"}</Q>. I usually remember it as l
         stands for `lose` and l is also easier to press than x for me.
       </FancyContent>
+      <FancyGap />
+      <FancyContent>Here are some other important keybinds:</FancyContent>
+      <br />
+      <FancyList
+        name="other important keybinds"
+        items={[
+          "<leader>ca - code actions",
+          "<leader>srn - smart rename",
+          "<C-space> - cmp",
+          "g? - show documentation",
+          "J & K move current line up and down",
+          "H & L move to prev or next tab",
+        ]}
+      />
     </PageContainer>
   );
 };
