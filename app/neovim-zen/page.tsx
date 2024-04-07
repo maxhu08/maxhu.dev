@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { NeovimZenText } from "~/components/ascii-art/neovim-zen-text";
+import { FancyCommand } from "~/components/fancy/fancy-command";
 import { FancyCommandContainer } from "~/components/fancy/fancy-command-container";
 import { FancyContent } from "~/components/fancy/fancy-content";
 import { FancyGap } from "~/components/fancy/fancy-gap";
@@ -81,7 +82,7 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyCommandContainer>
-        <span>paru -S kitty</span>
+        <FancyCommand>paru -S kitty</FancyCommand>
       </FancyCommandContainer>
       <br />
       <FancyContent>
@@ -91,7 +92,9 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyCommandContainer>
-        <span>paru -S ttf-fira-code ttf-firacode-nerd ttf-apple-emoji</span>
+        <FancyCommand>
+          paru -S ttf-fira-code ttf-firacode-nerd ttf-apple-emoji
+        </FancyCommand>
       </FancyCommandContainer>
       <br />
       <FancyContent>
@@ -100,7 +103,7 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyCommandContainer>
-        <span>paru -S nodejs npm</span>
+        <FancyCommand>paru -S nodejs npm</FancyCommand>
       </FancyCommandContainer>
       <br />
       <FancyContent>
@@ -108,7 +111,7 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyCommandContainer>
-        <span>paru -S ripgrep</span>
+        <FancyCommand>paru -S ripgrep</FancyCommand>
       </FancyCommandContainer>
       <FancyGap />
       <FancyContent>
