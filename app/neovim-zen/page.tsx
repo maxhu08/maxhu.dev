@@ -3,6 +3,7 @@ import { NeovimZenText } from "~/components/ascii-art/neovim-zen-text";
 import { FancyCommand } from "~/components/fancy/fancy-command";
 import { FancyCommandContainer } from "~/components/fancy/fancy-command-container";
 import { FancyContent } from "~/components/fancy/fancy-content";
+import { FancyExternalLink } from "~/components/fancy/fancy-external-link";
 import { FancyGap } from "~/components/fancy/fancy-gap";
 import { FancyHeader } from "~/components/fancy/fancy-header";
 import { FancyImage } from "~/components/fancy/fancy-image";
@@ -20,7 +21,11 @@ const Page: NextPage = () => {
       <FancyHeader title="info" />
       <FancyContent>
         This page contains info about my neovim config, called <Q>neovim-zen</Q>
-        .
+        . You can find the repo for my config at{" "}
+        <FancyExternalLink
+          alias="neovim-zen"
+          href="https://github.com/maxhu08/neovim-zen"
+        />
       </FancyContent>
       <FancyImage src="/assets/neovim-zen/1.png" />
       <FancyContent>
