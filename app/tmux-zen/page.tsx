@@ -1,7 +1,10 @@
 import { NextPage } from "next";
 import { TmuxZenText } from "~/components/ascii-art/tmux-zen-text";
+import { FancyCommand } from "~/components/fancy/fancy-command";
+import { FancyCommandContainer } from "~/components/fancy/fancy-command-container";
 import { FancyContent } from "~/components/fancy/fancy-content";
 import { FancyExternalLink } from "~/components/fancy/fancy-external-link";
+import { FancyFileDisplay } from "~/components/fancy/fancy-file-display";
 import { FancyGap } from "~/components/fancy/fancy-gap";
 import { FancyHeader } from "~/components/fancy/fancy-header";
 import { FancyImage } from "~/components/fancy/fancy-image";
@@ -22,12 +25,43 @@ const Page: NextPage = () => {
         />
       </FancyContent>
       <FancyImage src="/assets/tmux-zen/1.png" />
+      <FancyHeader title="installing" />
       <FancyContent>
-        My <Q>tmux</Q> setup is pretty simple. I just customized some keybinds
-        and the colors.
+        To setup first install <Q>tmux</Q>:
       </FancyContent>
-      <FancyHeader title="keybinds" />
+      <br />
+      <FancyCommandContainer>
+        <FancyCommand>paru -S tmux</FancyCommand>
+      </FancyCommandContainer>
+      <br />
+      <FancyContent>
+        Then copy create this your <Q>.tmux.conf</Q> and copy this config:
+      </FancyContent>
+      <br />
+      <FancyCommandContainer>
+        <FancyCommand>touch ~/.tmux.conf</FancyCommand>
+      </FancyCommandContainer>
+      <br />
+      <FancyCommandContainer>
+        <FancyFileDisplay
+          language="conf"
+          url="https://raw.githubusercontent.com/maxhu08/tmux-zen/master/.tmux.conf"
+        />
+      </FancyCommandContainer>
       <FancyGap />
+      <FancyHeader title="about" />
+      <FancyContent>
+        My <Q>tmux</Q> setup is pretty simple. I just customized some of the
+        keybinds, the colors, and added some qol stuff.
+      </FancyContent>
+      <FancyGap />
+      <FancyContent>
+        I added some qol stuff to my setup like auto start in the current
+        directory when creating new windows or panes. I also changed some of to
+        keybinds to be more intuitive.
+      </FancyContent>
+      <FancyGap />
+      <FancyHeader title="keybinds" />
       <FancyContent>
         I left the prefix key as <Q>{"<C-b>"}</Q>. But I changed the key for
         creating windows to be <Q>{"-"}</Q> & <Q>{"\\"}</Q> because - and |
