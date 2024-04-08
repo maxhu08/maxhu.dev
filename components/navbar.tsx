@@ -33,7 +33,11 @@ export const Navbar: FC = () => {
           <span>maxhu.dev</span>
         </div>
       );
-    } else if (pathname === "/dotfiles" || pathname === "/neovim-zen") {
+    } else if (
+      pathname === "/dotfiles" ||
+      pathname === "/neovim-zen" ||
+      pathname === "/tmux-zen"
+    ) {
       return (
         <Link href="/other">
           <div className="hidden md:grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
