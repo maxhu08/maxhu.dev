@@ -1,3 +1,5 @@
+"use client";
+
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { FC } from "react";
@@ -15,6 +17,7 @@ export const FancyInternalLink: FC<FancyInternalLinkProps> = ({
     <Link
       href={href}
       className="cursor-pointer text-blue-500 hover:text-blue-600 ease-in-out duration-300 inline-flex items-center gap-1"
+      onClick={() => window.scrollTo(0, 0)}
     >
       <ExternalLinkIcon className="w-4 h-4" />
       <span>{alias}</span>
