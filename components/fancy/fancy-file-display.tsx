@@ -3,6 +3,7 @@
 import axios from "axios";
 import { FC, useEffect, useState } from "react";
 import { FancySyntaxHighlighter } from "./fancy-syntax-highlight";
+import { Separator } from "../separator";
 
 interface FancyFileDisplayProps {
   language: string;
@@ -43,6 +44,10 @@ export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
       <pre className="text-pink-500 font-semibold">
         in <span className="text-sky-500">{elapsedTime.toFixed(3)}ms</span>
       </pre>
+      <Separator
+        orientation="horizontal"
+        className="!bg-zinc-400 !dark:bg-neutral-500 my-2"
+      />
       <FancySyntaxHighlighter language={language}>
         {rawData}
       </FancySyntaxHighlighter>
