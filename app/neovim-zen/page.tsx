@@ -6,6 +6,7 @@ import { FancyContent } from "~/components/fancy/fancy-content";
 import { FancyGap } from "~/components/fancy/fancy-gap";
 import { FancyHeader } from "~/components/fancy/fancy-header";
 import { FancyImage } from "~/components/fancy/fancy-image";
+import { FancyInternalLink } from "~/components/fancy/fancy-internal-link";
 import { FancyList } from "~/components/fancy/fancy-list";
 import { Q } from "~/components/fancy/fancy-quote";
 import { FancySyntaxHighlighter } from "~/components/fancy/fancy-syntax-highlight";
@@ -27,15 +28,18 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyContent>
-        I wanted to have a minimal text editor that I actually understood it
-        worked. I had tried community setups like <Q>LazyVim</Q> but disliked
-        them becuase they had a bunch of keymaps that I didn't make I didn't
-        understand what was actually happening.
+        I wanted to have a minimal text editor that I actually understood how it
+        worked. I tried community setups like <Q>LazyVim</Q> but disliked them
+        becuase they had a bunch of keymaps that I didn't make so I didn't
+        understand what was actually happening and often had to search how to do
+        something.
       </FancyContent>
       <br />
       <FancyContent>
         This is why I wanted to neovim from scratch, so I could customize
-        everything the way I wanted to and only have plugins I wanted.
+        everything the way I wanted to and only have plugins I wanted. Creating
+        my own neovim config would mean I wouldn't have to search how do
+        something in it since I'm the person who made it.
       </FancyContent>
       <FancyGap />
       <FancyContent>
@@ -48,10 +52,10 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyContent>
-        While following the video, I customized things such keymaps and how
-        plugins are configured. I also added plugins like <Q>noice.nvim</Q> and{" "}
-        <Q>flash.nvim</Q>. I also replaced <Q>alpha.nvim</Q> with{" "}
-        <Q>dashboard.nvim</Q>
+        While following the video, I customized things such as the keymaps and
+        how plugins are configured. I also added plugins I wanted like{" "}
+        <Q>noice.nvim</Q> and <Q>flash.nvim</Q>. I also replaced{" "}
+        <Q>alpha.nvim</Q> with <Q>dashboard.nvim</Q>
       </FancyContent>
       <br />
       <FancyContent>
@@ -184,10 +188,20 @@ nvim
           "<leader>srn - smart rename",
           "<C-space> - cmp",
           "g? - show documentation",
-          "J & K move current line up and down",
-          "H & L move to prev or next tab",
+          "J & K - move current line up and down",
+          "H & L - move to prev or next tab",
+          "<leader>nh - clear highlight after search",
         ]}
       />
+      <FancyGap />
+      <FancyContent>
+        Lastly, for using the terminal I use <Q>tmux</Q>. I know there are
+        plugins that allow a terminal in neovim, but I went with <Q>tmux</Q>{" "}
+        because it's more flexible and it also has sessions which are pretty
+        useful. To check out my tmux workflow see{" "}
+        <FancyInternalLink alias="tmux-zen" href="/tmux-zen" />
+      </FancyContent>
+      <FancyImage src="/assets/neovim-zen/4.png" />
     </PageContainer>
   );
 };
