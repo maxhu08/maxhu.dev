@@ -26,6 +26,8 @@ const Page: NextPage = () => {
         <FancyInternalLink alias="dotfiles" href="/dotfiles" />
         <br />
         <FancyInternalLink alias="neovim-zen" href="/neovim-zen" />
+        <br />
+        <FancyInternalLink alias="tmux-zen" href="/tmux-zen" />
       </FancyContent>
       <br />
     </PageContainer>
