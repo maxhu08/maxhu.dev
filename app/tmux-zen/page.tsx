@@ -46,6 +46,7 @@ const Page: NextPage = () => {
       <FancyCommandContainer>
         <FancyFileDisplay
           language="conf"
+          alias="github.com/maxhu08/tmux-zen/.tmux.conf"
           url="https://raw.githubusercontent.com/maxhu08/tmux-zen/master/.tmux.conf"
         />
       </FancyCommandContainer>

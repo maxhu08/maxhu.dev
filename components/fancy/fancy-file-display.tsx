@@ -8,10 +8,12 @@ import { Separator } from "../separator";
 interface FancyFileDisplayProps {
   language: string;
   url: string;
+  alias: string;
 }
 
 export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
   language,
+  alias,
   url,
 }) => {
   const [rawData, setRawData] = useState("");
@@ -39,7 +41,7 @@ export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
   return (
     <div>
       <pre className="text-pink-500 font-semibold">
-        {"=>"} fetched from <span className="text-sky-500">{url} </span>
+        {"=>"} fetched from <span className="text-sky-500">{alias} </span>
       </pre>
       <pre className="text-pink-500 font-semibold">
         in <span className="text-sky-500">{elapsedTime.toFixed(3)}ms</span>
