@@ -41,7 +41,10 @@ export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
   return (
     <div>
       <pre className="text-pink-500 font-semibold">
-        {"=>"} fetched from <span className="text-sky-500">{alias} </span>
+        {"=>"} fetched from{" "}
+        <a href={alias} target="_blank">
+          <span className="text-sky-500">{alias}</span>
+        </a>
       </pre>
       <pre className="text-pink-500 font-semibold">
         in <span className="text-sky-500">{elapsedTime.toFixed(3)}ms</span>
