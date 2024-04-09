@@ -9,6 +9,7 @@ import { FancyGap } from "~/components/fancy/fancy-gap";
 import { FancyHeader } from "~/components/fancy/fancy-header";
 import { FancyImage } from "~/components/fancy/fancy-image";
 import { Q } from "~/components/fancy/fancy-quote";
+import { FancySyntaxHighlighter } from "~/components/fancy/fancy-syntax-highlight";
 import { PageContainer } from "~/components/page-container";
 
 const Page: NextPage = () => {
@@ -48,6 +49,18 @@ const Page: NextPage = () => {
           url="https://raw.githubusercontent.com/maxhu08/tmux-zen/master/.tmux.conf"
         />
       </FancyCommandContainer>
+      <br />
+      <FancyContent>Lastly run these commands:</FancyContent>
+      <br />
+      <FancyCommandContainer>
+        <FancySyntaxHighlighter language="bash">{`# source config
+tmux source-file ~/.tmux.conf
+
+# start tmux !
+tmux
+`}</FancySyntaxHighlighter>
+      </FancyCommandContainer>
+
       <FancyGap />
       <FancyHeader title="about" />
       <FancyContent>
