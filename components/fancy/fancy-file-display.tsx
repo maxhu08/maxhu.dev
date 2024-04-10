@@ -20,6 +20,7 @@ export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
 }) => {
   const [rawData, setRawData] = useState("");
   const [elapsedTime, setElapsedTime] = useState(0);
+  const [shown, setShown] = useState(true);
 
   useEffect(() => {
     const fetchRawData = async () => {
@@ -55,15 +56,25 @@ export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
         </a>
       </pre>
       <pre className="text-pink-500 font-semibold">
-        in <span className="text-sky-500">{elapsedTime.toFixed(3)}ms</span>
+        in <span className="text-sky-500">{elapsedTime.toFixed(3)}ms</span>{" "}
+        <button
+          className="outline-none"
+          onClick={() => setShown((prev) => !prev)}
+        >
+          <span className="text-neutral-500">hide/show</span>
+        </button>
       </pre>
-      <Separator
-        orientation="horizontal"
-        className="!bg-zinc-400 !dark:bg-neutral-500 my-2"
-      />
-      <FancySyntaxHighlighter language={language}>
-        {rawData}
-      </FancySyntaxHighlighter>
+      {shown && (
+        <>
+          <Separator
+            orientation="horizontal"
+            className="!bg-zinc-400 !dark:bg-neutral-500 my-2"
+          />
+          <FancySyntaxHighlighter language={language}>
+            {rawData}
+          </FancySyntaxHighlighter>
+        </>
+      )}
     </div>
   );
 };
