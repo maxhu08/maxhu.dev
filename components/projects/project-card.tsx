@@ -63,7 +63,7 @@ export const ProjectCard: FC<ProjectCardProps> = (props) => {
         <p className="pt-2">{props.description}</p>
         <div className="mt-auto grid grid-flow-col gap-4 w-max">
           {props.demoLink && (
-            <a href={props.demoLink} target="_blank" className="z-[500]">
+            <a href={props.demoLink} target="_blank" className="z-[2]">
               <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
                 <Paperclip className="w-4 h-4" />
                 <span>View demo</span>
@@ -71,7 +71,7 @@ export const ProjectCard: FC<ProjectCardProps> = (props) => {
             </a>
           )}
           {props.codeLink && (
-            <a href={props.codeLink} target="_blank" className="z-[500]">
+            <a href={props.codeLink} target="_blank" className="z-[2]">
               <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
                 <Code2 className="w-4 h-4" />
                 <span>View code</span>
