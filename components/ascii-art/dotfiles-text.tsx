@@ -5,7 +5,7 @@ export const DotfilesText: FC = () => {
     <div className="grid place-items-center">
       <div className="hidden md:block">
         {/* prettier-ignore */}
-        <pre className="whitespace-pre text-[#6A9955] leading-4">
+        <pre className="ascii-art text-[#6A9955]">
 ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗<br/>
 ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝<br/>
 ██║  ██║██║   ██║   ██║   █████╗  ██║██║     █████╗  ███████╗<br/>

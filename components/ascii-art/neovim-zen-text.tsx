@@ -5,7 +5,7 @@ export const NeovimZenText: FC = () => {
     <div className="grid place-items-center">
       <div className="hidden md:block">
         {/* prettier-ignore */}
-        <pre className="whitespace-pre text-orange-500 leading-4">
+        <pre className="ascii-art text-orange-500">
 █▀▀▄░█▀▀░▄▀▀▄░▄░░░▄░░▀░░█▀▄▀█░░░░▀▀█░█▀▀░█▀▀▄<br />
 █░▒█░█▀▀░█░░█░░█▄█░░░█▀░█░▀░█░▀▀░▄▀▒░█▀▀░█░▒█<br />
 ▀░░▀░▀▀▀░░▀▀░░░░▀░░░▀▀▀░▀░░▒▀░░░░▀▀▀░▀▀▀░▀░░▀

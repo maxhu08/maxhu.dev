@@ -5,7 +5,7 @@ export const TmuxZenText: FC = () => {
     <div className="grid place-items-center">
       <div className="hidden md:block">
         {/* prettier-ignore */}
-        <pre className="whitespace-pre text-indigo-500 leading-4">
+        <pre className="ascii-art text-indigo-500">
 ▀█▀░█▀▄▀█░█░▒█░█░█░░░░▀▀█░█▀▀░█▀▀▄<br />
 ░█░░█░▀░█░█░▒█░▄▀▄░▀▀░▄▀▒░█▀▀░█░▒█<br />
 ░▀░░▀░░▒▀░░▀▀▀░▀░▀░░░░▀▀▀░▀▀▀░▀░░▀

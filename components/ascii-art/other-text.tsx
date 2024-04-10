@@ -5,7 +5,7 @@ export const OtherText: FC = () => {
     <div className="grid place-items-center">
       <div className="hidden md:block">
         {/* prettier-ignore */}
-        <pre className="whitespace-pre text-sky-300 leading-4">
+        <pre className="ascii-art text-sky-300">
 {" "}██████╗ ████████╗██╗  ██╗███████╗██████╗ <br/>
 ██╔═══██╗╚══██╔══╝██║  ██║██╔════╝██╔══██╗<br/>
 ██║   ██║   ██║   ███████║█████╗  ██████╔╝<br/>

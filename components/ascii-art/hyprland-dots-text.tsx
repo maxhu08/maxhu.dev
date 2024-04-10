@@ -5,7 +5,7 @@ export const HyprlandDotsText: FC = () => {
     <div className="grid place-items-center">
       <div className="hidden md:block">
         {/* prettier-ignore */}
-        <pre className="whitespace-pre text-teal-700 leading-4">
+        <pre className="ascii-art text-teal-700">
 ░█░░░░█░░█░▄▀▀▄░█▀▀▄░█░░█▀▀▄░█▀▀▄░█▀▄░░░░█▀▄░▄▀▀▄░▀█▀░█▀▀<br/>
 ░█▀▀█░█▄▄█░█▄▄█░█▄▄▀░█░░█▄▄█░█░▒█░█░█░▀▀░█░█░█░░█░░█░░▀▀▄<br/>
 ░▀░░▀░▄▄▄▀░█░░░░▀░▀▀░▀▀░▀░░▀░▀░░▀░▀▀░░░░░▀▀░░░▀▀░░░▀░░▀▀▀
