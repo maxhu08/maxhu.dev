@@ -9,12 +9,14 @@ interface FancyFileDisplayProps {
   language: string;
   url: string;
   alias: string;
+  isJSON?: boolean;
 }
 
 export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
   language,
   alias,
   url,
+  isJSON,
 }) => {
   const [rawData, setRawData] = useState("");
   const [elapsedTime, setElapsedTime] = useState(0);
@@ -25,7 +27,13 @@ export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
         const startTime = performance.now();
         const res = await axios.get(url);
 
-        setRawData(res.data);
+        console.log(res);
+
+        if (isJSON) {
+          setRawData(JSON.stringify(res.data, null, 2));
+        } else {
+          setRawData(res.data);
+        }
 
         const endTime = performance.now();
         const elapsedTime = endTime - startTime;
@@ -36,7 +44,7 @@ export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
     };
 
     fetchRawData();
-  }, [url]);
+  }, [url, isJSON]);
 
   return (
     <div>

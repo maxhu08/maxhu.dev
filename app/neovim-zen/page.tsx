@@ -4,6 +4,7 @@ import { FancyCommand } from "~/components/fancy/fancy-command";
 import { FancyCommandContainer } from "~/components/fancy/fancy-command-container";
 import { FancyContent } from "~/components/fancy/fancy-content";
 import { FancyExternalLink } from "~/components/fancy/fancy-external-link";
+import { FancyFileDisplay } from "~/components/fancy/fancy-file-display";
 import { FancyGap } from "~/components/fancy/fancy-gap";
 import { FancyHeader } from "~/components/fancy/fancy-header";
 import { FancyImage } from "~/components/fancy/fancy-image";
@@ -46,6 +47,21 @@ const Page: NextPage = () => {
         my own neovim config would mean I wouldn't have to search how do
         something in it since I'm the person who made it.
       </FancyContent>
+      <br />
+      <FancyContent>
+        Here are the plugins in my neovim setup as of{" "}
+        <span className="font-semibold text-indigo-500">right now</span>. (from
+        my lazy-lock.json)
+      </FancyContent>
+      <br />
+      <FancyCommandContainer>
+        <FancyFileDisplay
+          language="json"
+          alias="https://github.com/maxhu08/neovim-zen/blob/master/lazy-lock.json"
+          url="https://raw.githubusercontent.com/maxhu08/neovim-zen/master/lazy-lock.json"
+          isJSON
+        />
+      </FancyCommandContainer>
       <FancyGap />
       <FancyContent>
         I used this video as a rough guide to do neovim from scratch:
@@ -93,7 +109,7 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyCommandContainer>
-        <FancyCommand>paru -S kitty</FancyCommand>
+        <FancyCommand>pacman -S kitty</FancyCommand>
       </FancyCommandContainer>
       <br />
       <FancyContent>
@@ -103,9 +119,15 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyCommandContainer>
-        <FancyCommand>
-          paru -S ttf-fira-code ttf-firacode-nerd ttf-apple-emoji
-        </FancyCommand>
+        <FancyCommand>pacman -S ttf-fira-code ttf-firacode-nerd</FancyCommand>
+      </FancyCommandContainer>
+      <br />
+      <FancyContent>
+        <Q>ttf-apple-emoji</Q> is from the aur
+      </FancyContent>
+      <br />
+      <FancyCommandContainer>
+        <FancyCommand>paru -S ttf-apple-emoji</FancyCommand>
       </FancyCommandContainer>
       <br />
       <FancyContent>
@@ -114,7 +136,7 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyCommandContainer>
-        <FancyCommand>paru -S nodejs npm</FancyCommand>
+        <FancyCommand>pacman -S nodejs npm</FancyCommand>
       </FancyCommandContainer>
       <br />
       <FancyContent>
@@ -122,7 +144,7 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyCommandContainer>
-        <FancyCommand>paru -S ripgrep</FancyCommand>
+        <FancyCommand>pacman -S ripgrep</FancyCommand>
       </FancyCommandContainer>
       <FancyGap />
       <FancyContent>
