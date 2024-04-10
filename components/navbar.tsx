@@ -25,6 +25,8 @@ export const Navbar: FC = () => {
     };
   }, []);
 
+  if (pathname.startsWith("/text-hidden")) return null;
+
   const navigationControls = () => {
     if (pathname === "/") {
       return (

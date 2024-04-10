@@ -6,9 +6,9 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { technologies } from "~/constants/technologies";
 import { Paperclip, Code2 } from "lucide-react";
-import Link from "next/link";
 import { cn } from "~/utils/cn";
 import styles from "~/components/projects/project-card.module.scss";
+import Link from "next/link";
 
 export interface ProjectCardProps {
   title: string;
