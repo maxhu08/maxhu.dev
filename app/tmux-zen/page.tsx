@@ -57,6 +57,8 @@ const Page: NextPage = () => {
         <FancySyntaxHighlighter language="bash">{`# source config
 tmux source-file ~/.tmux.conf
 
+press <prefix>I to install plugins
+
 # start tmux !
 tmux
 `}</FancySyntaxHighlighter>
