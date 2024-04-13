@@ -9,6 +9,7 @@ import { FancyHeader } from "~/components/fancy/fancy-header";
 import { FancyInternalLink } from "~/components/fancy/fancy-internal-link";
 import { FancyMapLinks } from "~/components/fancy/fancy-map-links";
 import { Q } from "~/components/fancy/fancy-quote";
+import { FancySyntaxHighlighter } from "~/components/fancy/fancy-syntax-highlight";
 import { FancyYoutubeEmbed } from "~/components/fancy/fancy-youtube-embed";
 import { PageContainer } from "~/components/page-container";
 
@@ -182,6 +183,76 @@ const Page: NextPage = () => {
         />
         .
       </FancyContent>
+      <FancyGap />
+      <FancyHeader title="hyprland-screenshotting" />
+      <FancyContent>
+        You will also probably want to setup screenshotting. To do so just
+        install <Q>grim</Q> and <Q>slurp</Q>
+      </FancyContent>
+      <FancyCommandContainer>
+        <FancyCommand>sudo pacman -S grim slurp</FancyCommand>
+      </FancyCommandContainer>
+      <FancyContent>
+        Then add these lines to your <Q>hyprland.conf</Q>
+      </FancyContent>
+      <FancyCommandContainer>
+        <FancySyntaxHighlighter language="conf">
+          {/* prettier-ignore */}
+          {`# screenshot keybind (change DP-1 to your display name)
+# also make sure you created a directory called screenshots in Pictures/ otherwise the screenshots won't appear anywhere
+bind = $mainMod, S, exec, grim -o DP-1 "\${HOME}/Pictures/screenshots/screenshot-$(date +%F-%T).png"
+# screenshot + crop keybind
+bind = $mainMod SHIFT, S, exec, grim -g "$(slurp)" "\${HOME}/Pictures/screenshots/screenshot-$(date +%F-%T).png"
+
+...
+
+# Example special workspace (scratchpad) COMMENT THIS OUT FOR SCREENSHOT KEYBIND
+# bind = $mainMod, S, togglespecialworkspace, magic
+# bind = $mainMod SHIFT, S, movetoworkspace, special:magic`}
+        </FancySyntaxHighlighter>
+      </FancyCommandContainer>
+      <FancyGap />
+      <FancyHeader title="setting-wallpapers" />
+      <FancyContent>
+        To set a wallpapers, I used a program called <Q>hyprpaper</Q>, which
+        works well with hyprland
+      </FancyContent>
+      <FancyCommandContainer>
+        <FancyCommand>sudo pacman -S hyprpaper</FancyCommand>
+      </FancyCommandContainer>
+      <FancyContent>
+        To actually set the wallpaper, edit the <Q>hyprpaper.conf</Q> file in{" "}
+        <Q>~/.config/hypr</Q>, you may need to create this file yourself.
+        <br />
+        <br />
+        set preload to and wallpaper to whatever you named your wallpaper file.
+        you can also choose a wallpaper to set for each monitor.
+      </FancyContent>
+      <FancyCommandContainer>
+        <FancySyntaxHighlighter language="conf">
+          {`# make sure you to change the wallpaper location to be where you put your wallpaper
+preload = ~/.wallpapers/wall0.jpg
+
+wallpaper = DP-1,~/.wallpapers/wall0.jpg
+wallpaper = DP-2,~/.wallpapers/wall0.jpg
+# ... more monitors
+
+# disable messages on bottom
+splash = false
+
+# fully disable ipc
+# ipc = off`}
+        </FancySyntaxHighlighter>
+      </FancyCommandContainer>
+      <FancyContent>
+        After, just add this line in your <Q>hyprland.conf</Q> to execute
+        hyprpaper as hyprland starts
+      </FancyContent>
+      <FancyCommandContainer>
+        <FancySyntaxHighlighter language="conf">
+          {`exec-once = hyprpaper`}
+        </FancySyntaxHighlighter>
+      </FancyCommandContainer>
       <FancyGap />
       <FancyHeader title="obs" />
       <FancyContent>
