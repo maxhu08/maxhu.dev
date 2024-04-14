@@ -53,7 +53,6 @@ const Page: NextPage = () => {
         <span className="font-semibold text-indigo-500">right now</span>. (from
         my lazy-lock.json)
       </FancyContent>
-      <br />
       <FancyCommandContainer>
         <FancyFileDisplay
           language="json"
@@ -132,26 +131,29 @@ const Page: NextPage = () => {
       <br />
       <FancyContent>
         Install <Q>nodejs</Q> and <Q>npm</Q> which will be needed for some
-        plugins
+        plugins. I also installed <Q>pnpm</Q> since it's faster than <Q>npm</Q>
       </FancyContent>
-      <br />
       <FancyCommandContainer>
-        <FancyCommand>pacman -S nodejs npm</FancyCommand>
+        <FancyCommand>pacman -S nodejs npm pnpm</FancyCommand>
       </FancyCommandContainer>
-      <br />
       <FancyContent>
         Lastly, install <Q>ripgrep</Q> which is needed for telescope
       </FancyContent>
-      <br />
       <FancyCommandContainer>
         <FancyCommand>pacman -S ripgrep</FancyCommand>
+      </FancyCommandContainer>
+      <FancyContent>
+        I'll also install <Q>eslint</Q> and <Q>biome</Q> which will be using for
+        linting.
+      </FancyContent>
+      <FancyCommandContainer>
+        <FancyCommand>pnpm i -g eslint biome</FancyCommand>
       </FancyCommandContainer>
       <FancyGap />
       <FancyContent>
         After that just follow these commands to copy my config into your{" "}
         <Q>~/.config/nvim</Q>
       </FancyContent>
-      <br />
       <FancyCommandContainer>
         <FancySyntaxHighlighter language="bash">
           {`# backup old neovim config
@@ -173,7 +175,6 @@ nvim
 `}
         </FancySyntaxHighlighter>
       </FancyCommandContainer>
-      <br />
       <FancyContent>That's it!</FancyContent>
       <FancyGap />
       <FancyHeader title="using-neovim-zen" />

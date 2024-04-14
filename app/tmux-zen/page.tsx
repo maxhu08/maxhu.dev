@@ -30,19 +30,15 @@ const Page: NextPage = () => {
       <FancyContent>
         To setup first install <Q>tmux</Q>:
       </FancyContent>
-      <br />
       <FancyCommandContainer>
         <FancyCommand>paru -S tmux</FancyCommand>
       </FancyCommandContainer>
-      <br />
       <FancyContent>
         Then copy create this your <Q>.tmux.conf</Q> and copy this config:
       </FancyContent>
-      <br />
       <FancyCommandContainer>
         <FancyCommand>touch ~/.tmux.conf</FancyCommand>
       </FancyCommandContainer>
-      <br />
       <FancyCommandContainer>
         <FancyFileDisplay
           language="conf"
@@ -50,9 +46,7 @@ const Page: NextPage = () => {
           url="https://raw.githubusercontent.com/maxhu08/tmux-zen/master/.tmux.conf"
         />
       </FancyCommandContainer>
-      <br />
       <FancyContent>Lastly run these commands:</FancyContent>
-      <br />
       <FancyCommandContainer>
         <FancySyntaxHighlighter language="bash">{`# source config
 tmux source-file ~/.tmux.conf
