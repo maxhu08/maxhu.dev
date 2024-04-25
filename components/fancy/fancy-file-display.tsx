@@ -10,6 +10,7 @@ interface FancyFileDisplayProps {
   url: string;
   alias: string;
   isJSON?: boolean;
+  defaultHidden?: boolean;
 }
 
 export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
@@ -17,10 +18,11 @@ export const FancyFileDisplay: FC<FancyFileDisplayProps> = ({
   alias,
   url,
   isJSON,
+  defaultHidden,
 }) => {
   const [rawData, setRawData] = useState("");
   const [elapsedTime, setElapsedTime] = useState(0);
-  const [shown, setShown] = useState(true);
+  const [shown, setShown] = useState(!defaultHidden);
 
   useEffect(() => {
     const fetchRawData = async () => {

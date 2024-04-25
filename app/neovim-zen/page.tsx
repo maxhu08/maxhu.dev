@@ -59,6 +59,7 @@ const Page: NextPage = () => {
           alias="https://github.com/maxhu08/neovim-zen/blob/master/lazy-lock.json"
           url="https://raw.githubusercontent.com/maxhu08/neovim-zen/master/lazy-lock.json"
           isJSON
+          defaultHidden
         />
       </FancyCommandContainer>
       <FancyGap />
@@ -144,10 +145,10 @@ const Page: NextPage = () => {
       </FancyCommandContainer>
       <FancyContent>
         I'll also install <Q>eslint</Q> and <Q>biome</Q> which will be using for
-        linting.
+        linting. Use (npm/yarn/pnpm/bun)
       </FancyContent>
       <FancyCommandContainer>
-        <FancyCommand>pnpm i -g eslint biome</FancyCommand>
+        <FancyCommand>bun i -g eslint biome</FancyCommand>
       </FancyCommandContainer>
       <FancyGap />
       <FancyContent>
