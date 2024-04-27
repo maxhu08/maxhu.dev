@@ -35,42 +35,32 @@ export const Navbar: FC = () => {
           <span>maxhu.dev</span>
         </div>
       );
-    } else if (
-      pathname === "/dotfiles" ||
-      pathname === "/neovim-zen" ||
-      pathname === "/tmux-zen"
-    ) {
+    } else {
+      let route = "/";
+      let text = "Home";
+
+      if (
+        pathname === "/dotfiles" ||
+        pathname === "/neovim-zen" ||
+        pathname === "/tmux-zen"
+      ) {
+        route = "/other";
+        text = "Other";
+      } else if (pathname.startsWith("/projects") && pathname === "/projects") {
+        route = "/projects";
+        text = "Projects";
+      } else if (pathname.startsWith("/dotfiles") && pathname === "/dotfiles") {
+        route = "/dotfiles";
+        text = "Dotfiles";
+      }
+
       return (
-        <Link href="/other">
+        <Link href={route}>
           <div className="hidden md:grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
             <ChevronLeft className="w-4 h-4" />
-            <span>Other</span>
+            <span>{text}</span>
           </div>
           <div className="grid md:hidden text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
-            <ChevronLeft className="w-4 h-4" />
-          </div>
-        </Link>
-      );
-    } else if (pathname.startsWith("/projects") && pathname !== "/projects") {
-      return (
-        <Link href="/projects">
-          <div className="hidden md:grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
-            <ChevronLeft className="w-4 h-4" />
-            <span>Projects</span>
-          </div>
-          <div className="grid md:hidden h-full text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
-            <ChevronLeft className="w-4 h-4" />
-          </div>
-        </Link>
-      );
-    } else {
-      return (
-        <Link href="/">
-          <div className="hidden md:grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
-            <ChevronLeft className="w-4 h-4" />
-            <span>Home</span>
-          </div>
-          <div className="grid md:hidden h-full text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
             <ChevronLeft className="w-4 h-4" />
           </div>
         </Link>
