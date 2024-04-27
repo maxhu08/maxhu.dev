@@ -86,6 +86,7 @@ const Page: NextPage = () => {
           },
         ]}
       />
+      <br />
       <FancyContent>Here is a quick showcase of my setup:</FancyContent>
       <FancyYoutubeEmbed videoId="XK7gal3Wrtk" />
       <FancyContent>
@@ -238,124 +239,133 @@ splash = false
       </FancyCommandContainer>
       <FancyGap />
       <FancyHeader title="configuring-wofi" />
-      <p>
+      <FancyContent>
         To configure wofi copy my <Q>config</Q> and <Q>style.css</Q> from my
         dotfiles repo into <Q>~/.config/wofi/config</Q> and{" "}
         <Q>~/.config/wofi/style.css</Q>.
-      </p>
+      </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>cd ~/.config</FancyCommand>
         <FancyCommand>mkdir -p waybar</FancyCommand>
         <FancyCommand>touch config</FancyCommand>
         <FancyCommand>touch style.css</FancyCommand>
       </FancyCommandContainer>
-      <p>
+      <FancyContent>
         The wofi window should automatically change when pressing <Q>SUPER+R</Q>{" "}
         or whatever you set the keybind to, no need to refresh.
-      </p>
+      </FancyContent>
+      <FancyGap />
       <FancyHeader title="installing-waybar" />
-      <p>
+      <FancyContent>
         For the taskbar, I used <Q>waybar</Q> which works well with hyprland
-      </p>
+      </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>sudo pacman -S waybar</FancyCommand>
       </FancyCommandContainer>
-      <p>Now run waybar with</p>
+      <FancyContent>Now run waybar with</FancyContent>
       <FancyCommandContainer>
         <FancyCommand>waybar</FancyCommand>
       </FancyCommandContainer>
-      <p>
+      <FancyContent>
         Or add it to your exec-once in your <Q>hyprland.conf</Q>
-      </p>
+      </FancyContent>
       <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">{`exec-once = waybar`}</FancySyntaxHighlighter>
       </FancyCommandContainer>
+      <FancyGap />
       <FancyHeader title="configuring-waybar" />
-      <p>
+      <FancyContent>
         To use my dotfiles for waybar, copy my <Q>config</Q> and{" "}
         <Q>style.css</Q>
-      </p>
+      </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>cd ~/.config</FancyCommand>
         <FancyCommand>mkdir -p waybar</FancyCommand>
         <FancyCommand>touch config</FancyCommand>
         <FancyCommand>touch style.css</FancyCommand>
       </FancyCommandContainer>
-      <p>
+      <FancyContent>
         Then copy the configs in <Q>waybar</Q> from the dotfiles on my github in
         branch <Q>alpha</Q>{" "}
-      </p>
-      <p>
+      </FancyContent>
+      <FancyContent>
         It would also be good to install a font since some of the icons might
         not render properly if you don't have it installed. You should also
         install wlogout to get a logout menu from the power button. Need aur
         helper like <Q>yay</Q> or <Q>paru</Q> installed
-      </p>
+      </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>paru -S ttf-firacode-nerd</FancyCommand>
         <FancyCommand>sudo pacman -S wlogout</FancyCommand>
       </FancyCommandContainer>
-      <p>Then you can reboot to see changes</p>
+      <FancyContent>Then you can reboot to see changes</FancyContent>
       <FancyCommandContainer>
         <FancyCommand>reboot</FancyCommand>
       </FancyCommandContainer>
-      <p>After this, most of the desktop environment stuff is setup</p>
+      <FancyContent>
+        After this, most of the desktop environment stuff is setup
+      </FancyContent>
+      <FancyGap />
       <FancyHeader title="fish" />
-      <p>Setting up fish is pretty simple. First install fish</p>
+      <FancyContent>
+        Setting up fish is pretty simple. First install fish
+      </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>sudo pacman -S fish</FancyCommand>
       </FancyCommandContainer>
-      <p>Then set fish as default shell</p>
+      <FancyContent>Then set fish as default shell</FancyContent>
       <FancyCommandContainer>
         <FancyCommand>chsh -s /usr/bin/fish</FancyCommand>
       </FancyCommandContainer>
-      <p>
+      <FancyContent>
         To get my fish setup, which includes vim mode through keybind <Q>kj</Q>,
         tokyonight colorscheme, custom prompt, and more. It also sets some env
         vars for wayland. Just copy the config.fish file from my dotfiles repo.
         The fish config should be located in <Q>~/.config/fish/config.fish</Q>.
         That's it.
-      </p>
+      </FancyContent>
+      <FancyGap />
       <FancyHeader title="kitty" />
-      <p>
+      <FancyContent>
         You should already have kitty installed from setting up hyprland. For
         kitty, my setup is pretty simple, just a config file. Copy my kitty.conf
         from my dotfiles file into your <Q>~/.config/kitty/kitty.conf</Q>. My
         kitty.conf file just sets font size, transparency, and colorscheme
-      </p>
+      </FancyContent>
+      <FancyGap />
       <FancyHeader title="vscode" />
-      <p>
+      <FancyContent>
         Setting up VSCode should be pretty simple, first run this command to
         install:
-      </p>
+      </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>paru -S visual-studio-code-bin</FancyCommand>
       </FancyCommandContainer>
-      <p>
+      <FancyContent>
         VSCode should not automatically appear in the wofi menu. The top bar may
         also look a little different than normal, don't worry it should be fixed
         after copying my configs
-      </p>
-      <p>
+      </FancyContent>
+      <FancyContent>
         To get my configs just copy the <Q>settings.json</Q> and{" "}
         <Q>keybindings.json</Q> file from my dotfiles repo in <Q>vscode</Q>.
-      </p>
-      <p>
+      </FancyContent>
+      <FancyContent>
         To set the settings.json file press{" "}
         <Q>CTRL+SHIFT+P {`>`} Preferences: Open User Settings (JSON)</Q>
-      </p>
-      <p>
+      </FancyContent>
+      <FancyContent>
         To set the keybindings.json file press{" "}
         <Q>CTRL+SHIFT+P {`>`} Preferences: Open Keyboards Shortcuts (JSON)</Q>
-      </p>
-      <p>
+      </FancyContent>
+      <FancyContent>
         If VSCode feels laggy or your cursor is off, VSCode may not be using
         wayland
-      </p>
-      <p>
+      </FancyContent>
+      <FancyContent>
         To fix that, create a <Q>code-flags.conf</Q> in <Q>.config</Q>, then add
         this to it
-      </p>
+      </FancyContent>
       <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">
           {`# put in ~/.config/code-flags.conf
@@ -363,33 +373,37 @@ splash = false
 --ozone-platform=wayland`}
         </FancySyntaxHighlighter>
       </FancyCommandContainer>
-      <p>
+      <FancyContent>
         Lastly, installing the extensions on VSCode should be pretty easy, just
         search for extensions in VSCode and install them
-      </p>
+      </FancyContent>
+      <FancyGap />
       <FancyHeader title="chrome" />
-      <p>Installing chrome should be pretty simple just use your aur helper</p>
+      <FancyContent>
+        Installing chrome should be pretty simple just use your aur helper
+      </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>paru -S google-chrome</FancyCommand>
       </FancyCommandContainer>
-      <p>
+      <FancyContent>
         I thought I would mention you should go to the url,{" "}
         <Q>chrome://flags</Q>, there you can set ozone layer to wayland to make
         things run smoother
-      </p>
+      </FancyContent>
+      <FancyGap />
       <FancyHeader title="theming" />
-      <p>
+      <FancyContent>
         To set up themes for stuff like nemo install a gtk theme. I'm using the
         catpuccin theme from{" "}
-      </p>
+      </FancyContent>
       <FancyExternalLink
-        alias="catppuccincatppuccin--gtk-theme-mocha"
+        alias="catppuccin-gtk-theme-mocha"
         href="https://aur.archlinux.org/packages/catppuccin-gtk-theme-mocha"
       />
-      <p>
+      <FancyContent>
         For my folder icons I used papirus folders along with the catpuccin
         papirus folders to color them.
-      </p>
+      </FancyContent>
       <FancyExternalLink
         alias="papirus-folders"
         href="https://aur.archlinux.org/packages/papirus-folders"
@@ -398,6 +412,7 @@ splash = false
         alias="catppuccin-papirus-folders"
         href="https://github.com/catppuccin/papirus-folders"
       />
+      <FancyGap />
       <FancyHeader title="obs" />
       <FancyContent>
         use <Q>wlrobs-hg</Q> which is less laggy than <Q>pipewire</Q> and select

@@ -11,16 +11,16 @@ const Page: NextPage = () => {
       <OtherText />
       <FancyHeader title="info" />
       <FancyContent>
-        This page contains links to stuff that I don't consider as projects but
-        I wanted to put on my website anyway.
+        This page contains links to stuff that I don't think is important enough
+        to put on the home page but still wanted to include on my website.
       </FancyContent>
       <br />
       <FancyContent>
-        This page mainly consists of stuff like my dotfiles and neovim config
+        This page mainly consists of stuff like my dotfiles and other configs
       </FancyContent>
       <br />
       <FancyHeader title="links" />
-      <FancyContent>Other links: </FancyContent>
+      <FancyContent>You can find the links here</FancyContent>
       <br />
       <FancyContent>
         <FancyInternalLink alias="dotfiles" href="/dotfiles" />

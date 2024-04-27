@@ -46,10 +46,10 @@ export const Navbar: FC = () => {
       ) {
         route = "/other";
         text = "Other";
-      } else if (pathname.startsWith("/projects") && pathname === "/projects") {
+      } else if (pathname.startsWith("/projects") && pathname !== "/projects") {
         route = "/projects";
         text = "Projects";
-      } else if (pathname.startsWith("/dotfiles") && pathname === "/dotfiles") {
+      } else if (pathname.startsWith("/dotfiles") && pathname !== "/dotfiles") {
         route = "/dotfiles";
         text = "Dotfiles";
       }
