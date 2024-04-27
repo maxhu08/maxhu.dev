@@ -155,7 +155,7 @@ const Page: NextPage = () => {
         After that just follow these commands to copy my config into your{" "}
         <Q>~/.config/nvim</Q>
       </FancyContent>
-      <FancyCommandContainer>
+      <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="bash">
           {`# backup old neovim config
 mv ~/.config/nvim{,.bak}

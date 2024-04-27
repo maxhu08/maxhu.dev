@@ -187,7 +187,7 @@ const Page: NextPage = () => {
       <FancyContent>
         Then add these lines to your <Q>hyprland.conf</Q>
       </FancyContent>
-      <FancyCommandContainer>
+      <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">
           {/* prettier-ignore */}
           {`# screenshot keybind (change DP-1 to your display name)
@@ -216,7 +216,7 @@ bind = $mainMod SHIFT, S, exec, grim -g "$(slurp)" "\${HOME}/Pictures/screenshot
         preload to and wallpaper to whatever you named your wallpaper file. you
         can also choose a wallpaper to set for each monitor.
       </FancyContent>
-      <FancyCommandContainer>
+      <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">
           {`# make sure you to change the wallpaper location to be where you put your wallpaper
 preload = ~/.wallpapers/wall0.jpg
@@ -233,11 +233,11 @@ splash = false
         After, just add this line in your <Q>hyprland.conf</Q> to execute
         hyprpaper as hyprland starts
       </FancyContent>
-      <FancyCommandContainer>
+      <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">{`exec-once = hyprpaper`}</FancySyntaxHighlighter>
       </FancyCommandContainer>
       <FancyGap />
-      <FancyHeader name="configuring-wofi" />
+      <FancyHeader title="configuring-wofi" />
       <p>
         To configure wofi copy my <Q>config</Q> and <Q>style.css</Q> from my
         dotfiles repo into <Q>~/.config/wofi/config</Q> and{" "}
@@ -267,7 +267,7 @@ splash = false
       <p>
         Or add it to your exec-once in your <Q>hyprland.conf</Q>
       </p>
-      <FancyCommandContainer>
+      <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">{`exec-once = waybar`}</FancySyntaxHighlighter>
       </FancyCommandContainer>
       <FancyHeader title="configuring-waybar" />
@@ -356,7 +356,7 @@ splash = false
         To fix that, create a <Q>code-flags.conf</Q> in <Q>.config</Q>, then add
         this to it
       </p>
-      <FancyCommandContainer>
+      <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">
           {`# put in ~/.config/code-flags.conf
 --enable-features=UseOzonePlatform

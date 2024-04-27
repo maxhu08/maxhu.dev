@@ -17,7 +17,7 @@ export const FancySyntaxHighlighter: FC<FancySyntaxHighlighterProps> = ({
     <SyntaxHighlighter
       language={language}
       style={atomOneDark}
-      customStyle={{ background: "#00000000", padding: 0 }}
+      customStyle={{ background: "#00000000", padding: "0.5rem" }}
     >
       {children}
     </SyntaxHighlighter>
