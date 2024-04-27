@@ -28,8 +28,12 @@ const Page = () => {
       </p>
       <br />
       <div className="grid grid-cols-[max-content_max-content] gap-2">
-        <p className="text-teal-500">hyprland-dots</p>
+        <p className="text-teal-700 font-semibold">hyprland-dots</p>
         <FancyInternalLink alias="info" href="/dotfiles/hyprland-dots" />
+      </div>
+      <div className="grid grid-cols-[max-content_max-content] gap-2">
+        <p className="text-sky-500 font-semibold">awesome-dots</p>
+        <FancyInternalLink alias="info" href="/dotfiles/awesome-dots" />
       </div>
     </div>
   );

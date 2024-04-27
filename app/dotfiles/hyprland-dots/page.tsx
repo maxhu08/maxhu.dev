@@ -12,6 +12,7 @@ import { Q } from "~/components/fancy/fancy-quote";
 import { FancySyntaxHighlighter } from "~/components/fancy/fancy-syntax-highlight";
 import { FancyYoutubeEmbed } from "~/components/fancy/fancy-youtube-embed";
 import { PageContainer } from "~/components/page-container";
+
 const Page: NextPage = () => {
   return (
     <PageContainer>
@@ -406,4 +407,5 @@ splash = false
     </PageContainer>
   );
 };
+
 export default Page;
