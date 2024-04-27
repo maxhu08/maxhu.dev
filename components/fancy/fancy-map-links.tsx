@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { FancyExternalLink } from "./fancy-external-link";
+import { FancyInternalLink } from "./fancy-internal-link";
 
 interface FancyMapLinksProps {
   items: {
@@ -25,7 +25,7 @@ export const FancyMapLinks: FC<FancyMapLinksProps> = ({ items }) => {
               {" ==> "}
             </span>
             <div className="mr-auto">
-              <FancyExternalLink
+              <FancyInternalLink
                 alias={item.right.name}
                 href={item.right.url}
               />
@@ -41,7 +41,7 @@ export const FancyMapLinks: FC<FancyMapLinksProps> = ({ items }) => {
                 {"└── "}
               </span>
               <div className="mr-auto">
-                <FancyExternalLink
+                <FancyInternalLink
                   alias={item.right.name}
                   href={item.right.url}
                 />
