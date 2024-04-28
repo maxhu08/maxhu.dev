@@ -9,15 +9,11 @@ import { Paperclip, Code2 } from "lucide-react";
 import { cn } from "~/utils/cn";
 import styles from "~/components/projects/project-card.module.scss";
 import Link from "next/link";
+import { Project } from "~/constants/projects";
 
-export interface ProjectCardProps {
-  title: string;
-  description: string;
-  technologies: string[];
-  codeLink?: string;
-  demoLink?: string;
+type ProjectCardProps = Project & {
   delay?: number;
-}
+};
 
 export const ProjectCard: FC<ProjectCardProps> = (props) => {
   const { theme } = useTheme();
