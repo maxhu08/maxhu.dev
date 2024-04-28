@@ -1,23 +1,16 @@
-"use client";
-
 import { FC } from "react";
-import { ActionTooltip } from "~/components/action-tooltip";
-import Image from "next/image";
-import { useTheme } from "next-themes";
-import { technologies } from "~/constants/technologies";
 import { Paperclip, Code2 } from "lucide-react";
 import { cn } from "~/utils/cn";
 import styles from "~/components/projects/project-card.module.scss";
 import Link from "next/link";
 import { Project } from "~/constants/projects";
+import { ProjectTechnologies } from "~/components/projects/project-technologies";
 
 type ProjectCardProps = Project & {
   delay?: number;
 };
 
 export const ProjectCard: FC<ProjectCardProps> = (props) => {
-  const { theme } = useTheme();
-
   return (
     <div
       className={cn(
@@ -31,31 +24,7 @@ export const ProjectCard: FC<ProjectCardProps> = (props) => {
       </Link>
       <div className="bg-neutral-200 dark:bg-neutral-900 p-2 grid grid-flow-row h-full">
         <p className="font-semibold text-lime-500">{props.title}</p>
-        <div className="grid grid-flow-col w-max gap-1">
-          {technologies.map((technology, index: number) => {
-            if (props.technologies.includes(technology.name)) {
-              return (
-                <ActionTooltip
-                  label={technology.name}
-                  side="bottom"
-                  key={index}
-                >
-                  <div className="h-6 relative aspect-square">
-                    {technology.iconLight && theme === "light" ? (
-                      <Image
-                        src={technology.iconLight}
-                        alt={technology.name}
-                        fill
-                      />
-                    ) : (
-                      <Image src={technology.icon} alt={technology.name} fill />
-                    )}
-                  </div>
-                </ActionTooltip>
-              );
-            }
-          })}
-        </div>
+        <ProjectTechnologies ptechnologies={props.technologies} />
         <p className="pt-2">{props.description}</p>
         <div className="mt-auto grid grid-flow-col gap-4 w-max">
           {props.demoLink && (

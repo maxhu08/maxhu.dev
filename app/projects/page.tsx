@@ -7,6 +7,7 @@ const Page: NextPage = () => {
     <main className="grid grid-flow-row mx-auto mt-20 mb-20 md:mb-60 w-[95%] lg:w-[75%]">
       <div className="grid grid-flow-row md:grid-cols-2 xl:grid-cols-4 gap-2">
         {Object.keys(projects).map((key, index) => {
+          // @ts-expect-error
           const project = projects[key];
 
           return (
