@@ -10,7 +10,12 @@ const Page: NextPage = () => {
   return (
     <PageContainer>
       <ProjectHeader project={project} />
-      <FancyContent>mtab page coming soon</FancyContent>
+      <FancyContent>
+        mtab is an extension that offers a modern new tab page, prioritizing
+        customizability such as choosing wallpapers, bookmarks, and more.
+        Additionally, it emphasizes a smooth user experience through its
+        animations on the new page.
+      </FancyContent>
     </PageContainer>
   );
 };

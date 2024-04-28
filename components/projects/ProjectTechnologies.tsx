@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { technologies } from "~/constants/technologies";
-import { ActionTooltip } from "~/components/action-tooltip";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { ActionTooltip } from "~/components/action-tooltip";
 
 interface ProjectTechnologiesProps {
   ptechnologies: string[];

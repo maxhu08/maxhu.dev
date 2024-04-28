@@ -1,8 +1,7 @@
 import { FC } from "react";
-import { Separator } from "~/components/separator";
 
 interface FancyContentProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const FancyContent: FC<FancyContentProps> = ({ children }) => {

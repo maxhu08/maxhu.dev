@@ -3,6 +3,7 @@ import { Project } from "~/constants/projects";
 import { FancyHeader } from "~/components/fancy/fancy-header";
 import { ProjectTechnologies } from "~/components/projects/project-technologies";
 import { Code2, Paperclip } from "lucide-react";
+import { FancyGap } from "~/components/fancy/fancy-gap";
 
 interface ProjectHeaderProps {
   project: Project;
@@ -10,7 +11,7 @@ interface ProjectHeaderProps {
 
 export const ProjectHeader: FC<ProjectHeaderProps> = ({ project }) => {
   return (
-    <div className="pb-2">
+    <div>
       <FancyHeader title={project.title} />
       <div className="grid sm:grid-cols-[auto_max-content] gap-2">
         <div>
@@ -35,6 +36,7 @@ export const ProjectHeader: FC<ProjectHeaderProps> = ({ project }) => {
           )}
         </div>
       </div>
+      <FancyGap />
     </div>
   );
 };
