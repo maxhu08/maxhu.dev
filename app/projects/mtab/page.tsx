@@ -4,6 +4,7 @@ import { FancyExternalLink } from "~/components/fancy/fancy-external-link";
 import { FancyGap } from "~/components/fancy/fancy-gap";
 import { FancyImage } from "~/components/fancy/fancy-image";
 import { Q } from "~/components/fancy/fancy-quote";
+import { FancyYoutubeEmbed } from "~/components/fancy/fancy-youtube-embed";
 import { PageContainer } from "~/components/page-container";
 import { ProjectHeader } from "~/components/projects/project-header";
 import { projects } from "~/constants/projects";
@@ -19,8 +20,9 @@ const Page: NextPage = () => {
         mtab is an extension that offers a modern new tab page, prioritizing
         customizability such as choosing wallpapers, bookmarks, and more.
         Additionally, it emphasizes a smooth user experience through its
-        animations on the new page.
+        animations on the new page. Here's a video talking about it:
       </FancyContent>
+      <FancyYoutubeEmbed videoId="1GjMzk65HvQ" />
       <FancyGap />
       <FancyContent>
         I made mtab because I wanted to have a clean startup page for my browser
@@ -34,6 +36,7 @@ const Page: NextPage = () => {
         animations.
       </FancyContent>
       <FancyImage src="/assets/projects/mtab/demo-2.png" />
+      <FancyGap />
       <FancyContent>
         I used parcel to bundle and transpile the code since I used typescript
         and tailwind which need a build step. I wanted typescript and tailwind
