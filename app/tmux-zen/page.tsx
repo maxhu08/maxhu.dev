@@ -31,7 +31,7 @@ const Page: NextPage = () => {
         To setup first install <Q>tmux</Q>:
       </FancyContent>
       <FancyCommandContainer>
-        <FancyCommand>paru -S tmux</FancyCommand>
+        <FancyCommand>sudo pacman -S tmux</FancyCommand>
       </FancyCommandContainer>
       <FancyContent>Then clone tmp, the tmux plugin manager</FancyContent>
       <FancyCommandContainer>

@@ -60,8 +60,8 @@ const Page: NextPage = () => {
           {
             left: "File Manager",
             right: {
-              name: "thunar",
-              url: "https://wiki.archlinux.org/title/Thunar",
+              name: "nemo",
+              url: "https://wiki.archlinux.org/title/Nemo",
             },
           },
           {
