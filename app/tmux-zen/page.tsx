@@ -33,6 +33,12 @@ const Page: NextPage = () => {
       <FancyCommandContainer>
         <FancyCommand>paru -S tmux</FancyCommand>
       </FancyCommandContainer>
+      <FancyContent>Then clone tmp, the tmux plugin manager</FancyContent>
+      <FancyCommandContainer>
+        <FancyCommand>
+          git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        </FancyCommand>
+      </FancyCommandContainer>
       <FancyContent>
         Then copy create this your <Q>.tmux.conf</Q> and copy this config:
       </FancyContent>
@@ -62,7 +68,8 @@ tmux
       <FancyHeader title="about" />
       <FancyContent>
         My <Q>tmux</Q> setup is pretty simple. I just customized some of the
-        keybinds, the colors, and added some qol stuff.
+        keybinds, the colors, and added some qol stuff. I also made it have
+        proper undercurl support for stuff like neovim.
       </FancyContent>
       <FancyGap />
       <FancyContent>
