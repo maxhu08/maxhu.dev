@@ -1,6 +1,5 @@
 import { FancyHeader } from "~/components/fancy/fancy-header";
 import { FancyExternalLink } from "~/components/fancy/fancy-external-link";
-import { FancyInternalLink } from "~/components/fancy/fancy-internal-link";
 import { DotfilesText } from "~/components/ascii-art/dotfiles-text";
 import { FancyContent } from "~/components/fancy/fancy-content";
 import { FancyMapLinks } from "~/components/fancy/fancy-map-links";
