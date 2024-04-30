@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, Sliders, Webhook, Zap } from "lucide-react";
+import { ChevronLeft, Zap } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, useEffect, useState } from "react";
