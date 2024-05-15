@@ -93,6 +93,7 @@ const Page: NextPage = () => {
       <FancyList
         name="requirements:"
         items={[
+          "neovim",
           "a true color terminal (e.g. kitty)",
           "a nerd font like (ttf-firacode-nerd)",
           "nodejs and npm",
@@ -100,6 +101,9 @@ const Page: NextPage = () => {
         ]}
       />
       <br />
+      <FancyCommandContainer>
+        <FancyCommand>pacman -S neovim</FancyCommand>
+      </FancyCommandContainer>
       <FancyContent>
         First install a true color like <Q>kitty</Q>, I prefer kitty over
         alacritty because it supports ligatures like this{" "}
@@ -107,29 +111,23 @@ const Page: NextPage = () => {
           {"-> => >= <= == !="}
         </span>
       </FancyContent>
-      <br />
       <FancyCommandContainer>
         <FancyCommand>pacman -S kitty</FancyCommand>
       </FancyCommandContainer>
-      <br />
       <FancyContent>
         Next install a nerd font to display icons properly. I use{" "}
         <Q>ttf-firacode-nerd</Q>. I'll also install <Q>ttf-apple-emoji</Q> for
         displaying emojis.
       </FancyContent>
-      <br />
       <FancyCommandContainer>
         <FancyCommand>pacman -S ttf-fira-code ttf-firacode-nerd</FancyCommand>
       </FancyCommandContainer>
-      <br />
       <FancyContent>
         <Q>ttf-apple-emoji</Q> is from the aur
       </FancyContent>
-      <br />
       <FancyCommandContainer>
         <FancyCommand>paru -S ttf-apple-emoji</FancyCommand>
       </FancyCommandContainer>
-      <br />
       <FancyContent>
         Install <Q>nodejs</Q> and <Q>npm</Q> which will be needed for some
         plugins. I also installed <Q>pnpm</Q> since it's faster than <Q>npm</Q>
