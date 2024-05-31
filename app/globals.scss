@@ -1,10 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
 * {
-  font-family: "Fira Code", monospace !important;
+  font-family: "Jetbrains Mono", monospace !important;
 }
 
 html,
@@ -37,7 +38,6 @@ body {
   line-height: 1rem;
   letter-spacing: -0.5px;
 }
-
 
 @layer base {
   :root {
