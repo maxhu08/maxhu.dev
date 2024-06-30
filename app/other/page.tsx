@@ -13,8 +13,8 @@ const Page: NextPage = () => {
       <OtherText />
       <FancyHeader title="info" />
       <FancyContent>
-        This page contains links to stuff that I don't think is important enough
-        to put on the home page but still wanted to include on my website.
+        This page contains links to stuff that I don't think is important enough to put on the home
+        page but still wanted to include on my website.
       </FancyContent>
       <br />
       <FancyContent>
@@ -22,15 +22,14 @@ const Page: NextPage = () => {
       </FancyContent>
       <br />
       <FancyHeader title="dotfiles" />
-      <FancyContent>
-        You can find the page with all my dotfiles here:
-      </FancyContent>
+      <FancyContent>You can find the page with all my dotfiles here:</FancyContent>
       <FancyInternalLink alias="dotfiles" href="/dotfiles" />
+      <FancyInternalLink alias="dotfiles-old" href="/dotfiles-old" />
       <FancyGap />
       <FancyHeader title="dev-environment" />
       <FancyContent>
-        You can find the pages for all my dev environment stuff that's mostly in
-        the terminal like <Q>neovim</Q> & <Q>tmux</Q>
+        You can find the pages for all my dev environment stuff that's mostly in the terminal like{" "}
+        <Q>neovim</Q> & <Q>tmux</Q>
       </FancyContent>
       <FancyContent>
         <br />
@@ -40,9 +39,7 @@ const Page: NextPage = () => {
       </FancyContent>
       <FancyGap />
       <FancyHeader title="other-stuff" />
-      <FancyContent>
-        You can find any other stuff on my website through these links:
-      </FancyContent>
+      <FancyContent>You can find any other stuff on my website through these links:</FancyContent>
       <FancyContent>
         <br />
       </FancyContent>
