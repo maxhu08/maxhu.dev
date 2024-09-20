@@ -1,4 +1,6 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useEffect, useRef } from "react";
 import { Paperclip, Code2 } from "lucide-react";
 import { cn } from "~/utils/cn";
 import styles from "~/components/projects/project-card.module.scss";
@@ -11,14 +13,30 @@ type ProjectCardProps = Project & {
 };
 
 export const ProjectCard: FC<ProjectCardProps> = (props) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cardEl = cardRef.current;
+
+    if (cardEl) {
+      const handleAnimationEnd = () => {
+        cardEl.classList.remove("opacity-0");
+      };
+
+      cardEl.addEventListener("animationend", handleAnimationEnd);
+
+      return () => cardEl.removeEventListener("animationend", handleAnimationEnd);
+    }
+  }, []);
+
   return (
     <div
+      ref={cardRef}
       className={cn(
-        "relative rounded-md overflow-hidden border-zinc-300 dark:border-border border-[1px] h-full min-h-40",
-        styles["animate-up-bouncy"],
+        "relative rounded-md overflow-hidden border-zinc-300 dark:border-border border-[1px] h-full min-h-40 opacity-0",
+        styles["animate-up-bouncy"]
       )}
-      style={{ animationDelay: (props.delay ?? 0) + "ms" }}
-    >
+      style={{ animationDelay: (props.delay ?? 0) + "ms" }}>
       <Link href={`/projects/${props.title}`} className="cursor-pointer">
         <div className="hover:bg-neutral-500/20 w-full h-full absolute duration-300 ease-in-out"></div>
       </Link>
