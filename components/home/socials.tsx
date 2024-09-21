@@ -1,4 +1,5 @@
 import { Github, Twitter, Youtube } from "lucide-react";
+import Link from "next/link";
 import { FC } from "react";
 import { ActionTooltip } from "~/components/action-tooltip";
 
@@ -6,18 +7,18 @@ const socials = [
   {
     name: "github",
     icon: <Github className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
-    href: "https://github.com/maxhu08",
+    href: "/redirect/github"
   },
   {
     name: "youtube",
     icon: <Youtube className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
-    href: "https://www.youtube.com/@maxhudotdev",
+    href: "/redirect/youtube"
   },
   {
-    name: "twitter | x",
+    name: "twitter/x",
     icon: <Twitter className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
-    href: "https://twitter.com/maxhu08",
-  },
+    href: "/redirect/twitter"
+  }
 ];
 
 export const Socials: FC = () => {
@@ -26,9 +27,9 @@ export const Socials: FC = () => {
       {socials.map((social) => {
         return (
           <ActionTooltip label={social.name} key={`social-${social.name}`}>
-            <a href={social.href} target="_blank" className="cursor-pointer">
+            <Link href={social.href} target="_blank" className="cursor-pointer">
               {social.icon}
-            </a>
+            </Link>
           </ActionTooltip>
         );
       })}
