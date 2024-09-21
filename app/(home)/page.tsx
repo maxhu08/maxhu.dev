@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { Metadata, NextPage } from "next";
 import styles from "~/app/(home)/page.module.scss";
 import { cn } from "~/utils/cn";
 
@@ -7,6 +7,19 @@ import { ContactMeButton } from "~/components/home/contact-me-button";
 import { ProjectsButton } from "~/components/home/projects-button";
 import { OtherButton } from "~/components/home/other-button";
 import { Footer } from "~/components/home/footer";
+import { websiteName } from "~/constants/website-name";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://maxhu.dev/"),
+  title: `${websiteName}`,
+  description: "This is my website",
+  openGraph: {
+    title: `🌴 ${websiteName}`,
+    description: "This is my website",
+    images: "/assets/palm_tree.png",
+  },
+  authors: [{ name: "Max Hu", url: "https://maxhu.dev" }],
+};
 
 const Page: NextPage = () => {
   return (

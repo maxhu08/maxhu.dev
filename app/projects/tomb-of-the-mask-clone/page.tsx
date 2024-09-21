@@ -12,8 +12,9 @@ const Page: NextPage = () => {
     <PageContainer>
       <ProjectHeader project={project} />
       <FancyContent>
-        tomb-of-the-mask page is a small game I made in java for class that is supposed to be like a
-        very simple implementation of the game, tomb of the mask.
+        tomb-of-the-mask page is a small game I made in java for class that is
+        supposed to be like a very simple implementation of the game, tomb of
+        the mask.
         <br />
         You can find a demo here:
       </FancyContent>

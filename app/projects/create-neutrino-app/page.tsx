@@ -14,8 +14,8 @@ const Page: NextPage = () => {
       <ProjectHeader project={project} />
       <FancyYoutubeEmbed videoId="GaxSwBDmsbM" />
       <FancyContent>
-        <Q>create-neutrino-app</Q> is a cli tool I made to setup a parcel app with nodejs,
-        typescript & tailwind.
+        <Q>create-neutrino-app</Q> is a cli tool I made to setup a parcel app
+        with nodejs, typescript & tailwind.
       </FancyContent>
     </PageContainer>
   );

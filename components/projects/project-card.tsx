@@ -25,7 +25,8 @@ export const ProjectCard: FC<ProjectCardProps> = (props) => {
 
       cardEl.addEventListener("animationend", handleAnimationEnd);
 
-      return () => cardEl.removeEventListener("animationend", handleAnimationEnd);
+      return () =>
+        cardEl.removeEventListener("animationend", handleAnimationEnd);
     }
   }, []);
 
@@ -34,9 +35,10 @@ export const ProjectCard: FC<ProjectCardProps> = (props) => {
       ref={cardRef}
       className={cn(
         "relative rounded-md overflow-hidden border-zinc-300 dark:border-border border-[1px] h-full min-h-40 opacity-0",
-        styles["animate-up-bouncy"]
+        styles["animate-up-bouncy"],
       )}
-      style={{ animationDelay: (props.delay ?? 0) + "ms" }}>
+      style={{ animationDelay: (props.delay ?? 0) + "ms" }}
+    >
       <Link href={`/projects/${props.title}`} className="cursor-pointer">
         <div className="hover:bg-neutral-500/20 w-full h-full absolute duration-300 ease-in-out"></div>
       </Link>
