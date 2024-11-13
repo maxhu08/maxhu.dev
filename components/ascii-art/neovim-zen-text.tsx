@@ -15,7 +15,7 @@ export const NeovimZenText: FC<{ className?: string }> = ({ className }) => {
       </div>
       <div className="block md:hidden">
         <br />
-        <p className="text-orange-500 font-semibold">~/neovim-zen</p>
+        <p className="font-semibold text-orange-500">~/neovim-zen</p>
         <br />
       </div>
     </div>

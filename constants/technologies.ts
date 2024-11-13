@@ -10,11 +10,11 @@ export const technologies = [
   {
     name: "nextjs",
     icon: "/assets/technologies/nextjs_dark.svg",
-    iconLight: "/assets/technologies/nextjs_light.svg",
+    iconLight: "/assets/technologies/nextjs_light.svg"
   },
   { name: "graphql", icon: "/assets/technologies/graphql.svg" },
   { name: "apollo", icon: "/assets/technologies/apollo.svg" },
   { name: "trpc", icon: "/assets/technologies/trpc.svg" },
   { name: "prisma", icon: "/assets/technologies/prisma.svg" },
-  { name: "java", icon: "/assets/technologies/java.svg" },
+  { name: "java", icon: "/assets/technologies/java.svg" }
 ];

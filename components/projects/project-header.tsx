@@ -13,23 +13,23 @@ export const ProjectHeader: FC<ProjectHeaderProps> = ({ project }) => {
   return (
     <div>
       <FancyHeader title={project.title} />
-      <div className="grid sm:grid-cols-[auto_max-content] gap-2">
+      <div className="grid gap-2 sm:grid-cols-[auto_max-content]">
         <div>
           <ProjectTechnologies ptechnologies={project.technologies} />
         </div>
-        <div className="mt-auto grid grid-flow-col gap-4 w-max">
+        <div className="mt-auto grid w-max grid-flow-col gap-4">
           {project.demoLink && (
             <a href={project.demoLink} target="_blank" className="z-[2]">
-              <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
-                <Paperclip className="w-4 h-4" />
+              <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 duration-300 ease-in-out hover:text-blue-600">
+                <Paperclip className="h-4 w-4" />
                 <span>View demo</span>
               </div>
             </a>
           )}
           {project.codeLink && (
             <a href={project.codeLink} target="_blank" className="z-[2]">
-              <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
-                <Code2 className="w-4 h-4" />
+              <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 duration-300 ease-in-out hover:text-blue-600">
+                <Code2 className="h-4 w-4" />
                 <span>View code</span>
               </div>
             </a>

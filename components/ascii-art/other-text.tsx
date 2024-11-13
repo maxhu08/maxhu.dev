@@ -17,7 +17,7 @@ export const OtherText: FC = () => {
       </div>
       <div className="block md:hidden">
         <br />
-        <p className="text-sky-300 font-semibold">~/other</p>
+        <p className="font-semibold text-sky-300">~/other</p>
         <br />
       </div>
     </div>

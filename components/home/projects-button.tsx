@@ -11,8 +11,8 @@ export const ProjectsButton: FC = () => {
   return (
     <ActionTooltip label="view projects" side="bottom">
       <Link href="/projects" className={styles.button}>
-        <div className="text-white grid grid-cols-[max-content_max-content] place-items-center gap-1 bg-pink-500 hover:bg-pink-700 duration-300 ease-in-out p-2 rounded-md">
-          <Webhook className={cn("w-4 h-4", styles.icon)} />
+        <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md bg-pink-500 p-2 text-white duration-300 ease-in-out hover:bg-pink-700">
+          <Webhook className={cn("h-4 w-4", styles.icon)} />
           <span>projects</span>
         </div>
       </Link>

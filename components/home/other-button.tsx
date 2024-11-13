@@ -11,8 +11,8 @@ export const OtherButton: FC = () => {
   return (
     <ActionTooltip label="other links" side="bottom">
       <Link href="/other" className={styles.button}>
-        <div className="text-white grid grid-cols-[max-content_max-content] place-items-center gap-1 bg-sky-500 hover:bg-sky-700 duration-300 ease-in-out p-2 rounded-md">
-          <Boxes className={cn("w-4 h-4", styles.boxes)} />
+        <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md bg-sky-500 p-2 text-white duration-300 ease-in-out hover:bg-sky-700">
+          <Boxes className={cn("h-4 w-4", styles.boxes)} />
           <span>other links</span>
         </div>
       </Link>

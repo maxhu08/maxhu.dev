@@ -30,8 +30,8 @@ export const Navbar: FC = () => {
   const navigationControls = () => {
     if (pathname === "/") {
       return (
-        <div className="grid grid-cols-[max-content_max-content] gap-1 text-blue-500 place-items-center select-none">
-          <Zap className="w-4 h-4" />
+        <div className="grid select-none grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500">
+          <Zap className="h-4 w-4" />
           <span>maxhu.dev</span>
         </div>
       );
@@ -39,11 +39,7 @@ export const Navbar: FC = () => {
       let route = "/";
       let text = "Home";
 
-      if (
-        pathname === "/dotfiles" ||
-        pathname === "/neovim-zen" ||
-        pathname === "/tmux-zen"
-      ) {
+      if (pathname === "/dotfiles" || pathname === "/neovim-zen" || pathname === "/tmux-zen") {
         route = "/other";
         text = "Other";
       } else if (pathname.startsWith("/projects") && pathname !== "/projects") {
@@ -56,12 +52,12 @@ export const Navbar: FC = () => {
 
       return (
         <Link href={route}>
-          <div className="hidden md:grid grid-cols-[max-content_max-content] gap-1 text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
-            <ChevronLeft className="w-4 h-4" />
+          <div className="hidden cursor-pointer grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 duration-300 ease-in-out hover:text-blue-700 md:grid">
+            <ChevronLeft className="h-4 w-4" />
             <span>{text}</span>
           </div>
-          <div className="grid md:hidden text-blue-500 hover:text-blue-700 duration-300 ease-in-out place-items-center cursor-pointer">
-            <ChevronLeft className="w-4 h-4" />
+          <div className="grid cursor-pointer place-items-center text-blue-500 duration-300 ease-in-out hover:text-blue-700 md:hidden">
+            <ChevronLeft className="h-4 w-4" />
           </div>
         </Link>
       );
@@ -76,7 +72,7 @@ export const Navbar: FC = () => {
         <div className="grid grid-cols-[repeat(3,max-content)] place-items-center font-semibold">
           <span className="text-sky-500">~</span>
           <span className="text-orange-500">/</span>
-          <p className="text-orange-500 max-w-40 md:max-w-none truncate overflow-hidden">
+          <p className="max-w-40 overflow-hidden truncate text-orange-500 md:max-w-none">
             {pathname.slice(1)}
           </p>
         </div>
@@ -86,8 +82,8 @@ export const Navbar: FC = () => {
 
   return (
     // <nav className="fixed z-[3] w-full top-0 ease-in-out backdrop-blur-2xl">
-    <nav className="fixed z-[3] w-full top-0 ease-in-out bg-neutral-200 dark:bg-neutral-900">
-      <div className="py-2 px-2 md:px-4 grid grid-cols-[1fr_auto_1fr] w-full">
+    <nav className="fixed top-0 z-[3] w-full bg-neutral-200 ease-in-out dark:bg-neutral-900">
+      <div className="grid w-full grid-cols-[1fr_auto_1fr] px-2 py-2 md:px-4">
         <div className="w-max">{navigationControls()}</div>
         {currentPage()}
         <div className="ml-auto">
@@ -104,10 +100,7 @@ export const Navbar: FC = () => {
         />
       */}
       {pathname !== "/" && (
-        <Separator
-          orientation="horizontal"
-          className={cn("transition-all duration-500 mx-auto")}
-        />
+        <Separator orientation="horizontal" className={cn("mx-auto transition-all duration-500")} />
       )}
     </nav>
   );

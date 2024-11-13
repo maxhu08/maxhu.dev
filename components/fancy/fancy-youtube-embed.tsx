@@ -8,9 +8,9 @@ export const FancyYoutubeEmbed: FC<FancyYoutubeEmbedProps> = ({ videoId }) => {
   return (
     <div>
       <br className="select-none" />
-      <div className="w-full aspect-video bg-neutral-300 dark:bg-neutral-800 rounded-md overflow-hidden">
+      <div className="aspect-video w-full overflow-hidden rounded-md bg-neutral-300 dark:bg-neutral-800">
         <iframe
-          className="w-full aspect-video"
+          className="aspect-video w-full"
           src={`https://www.youtube.com/embed/${videoId}`}
           allowFullScreen
         ></iframe>

@@ -16,8 +16,8 @@ export const ContactMeButton: FC = () => {
   return (
     <ActionTooltip label="email hello@maxhu.dev" side="bottom">
       <button onClick={openEmail} className={styles.button}>
-        <div className="text-white grid grid-cols-[max-content_max-content] place-items-center gap-1 bg-emerald-500 hover:bg-emerald-700 duration-300 ease-in-out p-2 rounded-md">
-          <ChevronRight className={cn("w-4 h-4", styles.arrow)} />
+        <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md bg-emerald-500 p-2 text-white duration-300 ease-in-out hover:bg-emerald-700">
+          <ChevronRight className={cn("h-4 w-4", styles.arrow)} />
           <span>contact me</span>
         </div>
       </button>

@@ -14,7 +14,7 @@ export const HyprlandDotsText: FC = () => {
       </div>
       <div className="block md:hidden">
         <br />
-        <p className="text-teal-700 font-semibold">~/dotfiles/hyprland-dots</p>
+        <p className="font-semibold text-teal-700">~/dotfiles/hyprland-dots</p>
         <br />
       </div>
     </div>

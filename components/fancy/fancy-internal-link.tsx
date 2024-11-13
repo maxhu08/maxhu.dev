@@ -9,17 +9,14 @@ interface FancyInternalLinkProps {
   alias: string;
 }
 
-export const FancyInternalLink: FC<FancyInternalLinkProps> = ({
-  href,
-  alias,
-}) => {
+export const FancyInternalLink: FC<FancyInternalLinkProps> = ({ href, alias }) => {
   return (
     <Link
       href={href}
-      className="cursor-pointer text-blue-500 hover:text-blue-600 ease-in-out duration-300 inline-flex items-center gap-1"
+      className="inline-flex cursor-pointer items-center gap-1 text-blue-500 duration-300 ease-in-out hover:text-blue-600"
       onClick={() => window.scrollTo(0, 0)}
     >
-      <ExternalLinkIcon className="w-4 h-4" />
+      <ExternalLinkIcon className="h-4 w-4" />
       <span>{alias}</span>
     </Link>
   );

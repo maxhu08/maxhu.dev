@@ -17,31 +17,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: `🌴 ${websiteName}`,
     description: "This is my website",
-    images: "/assets/palm_tree.png",
+    images: "/assets/palm_tree.png"
   },
-  authors: [{ name: "Max Hu", url: "https://maxhu.dev" }],
+  authors: [{ name: "Max Hu", url: "https://maxhu.dev" }]
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={
-          (cn(fira.className),
-          "bg-neutral-200 dark:bg-neutral-900 min-h-screen")
-        }
+        className={(cn(fira.className), "min-h-screen bg-neutral-200 dark:bg-neutral-900")}
         dir="ltr"
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <LoadingBar />
           <Navbar />
           {children}

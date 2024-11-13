@@ -17,7 +17,7 @@ export const DotfilesText: FC = () => {
       </div>
       <div className="block md:hidden">
         <br />
-        <p className="text-[#6A9955] font-semibold">~/dotfiles</p>
+        <p className="font-semibold text-[#6A9955]">~/dotfiles</p>
         <br />
       </div>
     </div>

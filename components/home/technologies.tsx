@@ -15,13 +15,13 @@ const technologies = [
   {
     name: "nextjs",
     icon: "/assets/technologies/nextjs_dark.svg",
-    iconLight: "/assets/technologies/nextjs_light.svg",
+    iconLight: "/assets/technologies/nextjs_light.svg"
   },
   { name: "graphql", icon: "/assets/technologies/graphql.svg" },
   { name: "apollo", icon: "/assets/technologies/apollo.svg" },
   { name: "trpc", icon: "/assets/technologies/trpc.svg" },
   { name: "prisma", icon: "/assets/technologies/prisma.svg" },
-  { name: "java", icon: "/assets/technologies/java.svg" },
+  { name: "java", icon: "/assets/technologies/java.svg" }
 ];
 
 const learning = [
@@ -37,7 +37,7 @@ const learning = [
   "nextjs",
   "graphql",
   "apollo",
-  "prisma",
+  "prisma"
 ];
 
 export const Technologies: FC = () => {
@@ -46,8 +46,8 @@ export const Technologies: FC = () => {
   return (
     <div
       className={cn(
-        "p-2 flex place-items-start gap-1 md:gap-2 max-w-[100vw] overflow-x-scroll",
-        styles["technologies-container"],
+        "flex max-w-[100vw] place-items-start gap-1 overflow-x-scroll p-2 md:gap-2",
+        styles["technologies-container"]
       )}
     >
       {technologies.map((technology) => {

@@ -25,65 +25,65 @@ const Page: NextPage = () => {
             left: "Distro",
             right: {
               name: "EndeavourOS",
-              url: "https://endeavouros.com/",
-            },
+              url: "https://endeavouros.com/"
+            }
           },
           {
             left: "DE/WM/Compositor",
             right: {
               name: "Hyprland",
-              url: "https://hyprland.org/",
-            },
+              url: "https://hyprland.org/"
+            }
           },
           {
             left: "Terminal Emulator",
             right: {
               name: "kitty",
-              url: "https://github.com/kovidgoyal/kitty",
-            },
+              url: "https://github.com/kovidgoyal/kitty"
+            }
           },
           {
             left: "Shell",
             right: {
               name: "fish",
-              url: "https://fishshell.com/",
-            },
+              url: "https://fishshell.com/"
+            }
           },
           {
             left: "App Launcher",
             right: {
               name: "wofi",
-              url: "https://man.archlinux.org/man/wofi.1.en",
-            },
+              url: "https://man.archlinux.org/man/wofi.1.en"
+            }
           },
           {
             left: "Taskbar",
             right: {
               name: "waybar",
-              url: "https://github.com/Alexays/Waybar",
-            },
+              url: "https://github.com/Alexays/Waybar"
+            }
           },
           {
             left: "File Manager",
             right: {
               name: "nemo",
-              url: "https://wiki.archlinux.org/title/Nemo",
-            },
+              url: "https://wiki.archlinux.org/title/Nemo"
+            }
           },
           {
             left: "Editor",
             right: {
               name: "VSCode",
-              url: "https://code.visualstudio.com/",
-            },
+              url: "https://code.visualstudio.com/"
+            }
           },
           {
             left: "Editor",
             right: {
               name: "neovim",
-              url: "https://neovim.io/",
-            },
-          },
+              url: "https://neovim.io/"
+            }
+          }
         ]}
       />
       <br />
@@ -95,29 +95,27 @@ const Page: NextPage = () => {
           href="https://github.com/maxhu08/dotfiles"
           alias="github.com/maxhu08/dotfiles"
         />
-        , under the <Q>hyprland-dots</Q> branch. Keep in mind the file
-        strucuture in the dotfiles repo are not the exact structure you should
-        have on your system. Most of these files should go in the <Q>.config</Q>{" "}
-        directory. I kept like it this to keep it simple so all you have to set
-        everything is copy and paste some configs. For heavier stuff like my{" "}
-        <Q>neovim</Q> setup I have a separate repo and I guide on how to set it
-        up. For that, check out my{" "}
+        , under the <Q>hyprland-dots</Q> branch. Keep in mind the file strucuture in the dotfiles
+        repo are not the exact structure you should have on your system. Most of these files should
+        go in the <Q>.config</Q> directory. I kept like it this to keep it simple so all you have to
+        set everything is copy and paste some configs. For heavier stuff like my <Q>neovim</Q> setup
+        I have a separate repo and I guide on how to set it up. For that, check out my{" "}
         <FancyInternalLink href="/neovim-zen" alias="neovim-zen" /> page.
       </FancyContent>
       <FancyGap />
       <FancyHeader title="getting-started" />
       <FancyContent>
         {" "}
-        If you want to follow along exactly, install <Q>EndeavourOS</Q>, but any
-        arch based distro should work. I used <Q>EndeavourOS</Q> because it
-        works well with nvidia and is less hassle to set up.
+        If you want to follow along exactly, install <Q>EndeavourOS</Q>, but any arch based distro
+        should work. I used <Q>EndeavourOS</Q> because it works well with nvidia and is less hassle
+        to set up.
       </FancyContent>
       <FancyGap />
       <FancyHeader title="installing-hyprland" />
       <FancyContent>
-        Once you have <Q>EndeavourOS</Q> installed, boot into it and press{" "}
-        <Q>CTRL+ALT+F2</Q> to open the tty. The first thing to install is
-        Hyprland which is going to be the DE. To install Hyprland just run:
+        Once you have <Q>EndeavourOS</Q> installed, boot into it and press <Q>CTRL+ALT+F2</Q> to
+        open the tty. The first thing to install is Hyprland which is going to be the DE. To install
+        Hyprland just run:
       </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>sudo pacman -S hyprland</FancyCommand>
@@ -129,10 +127,9 @@ const Page: NextPage = () => {
       <FancyGap />
       <FancyHeader title="hyprland-troubleshooting" />
       <FancyContent>
-        If your cursor isn't showing up and you're using a NVIDIA graphics card,
-        follow the fish setup instructions and use my config, which sets the{" "}
-        <Q>WLR_NO_HARDWARE_CURSORS</Q> env var to be <Q>1</Q> to fix this. For
-        more info, see{" "}
+        If your cursor isn't showing up and you're using a NVIDIA graphics card, follow the fish
+        setup instructions and use my config, which sets the <Q>WLR_NO_HARDWARE_CURSORS</Q> env var
+        to be <Q>1</Q> to fix this. For more info, see{" "}
         <FancyExternalLink
           alias="wiki.hyprland.org"
           href="https://wiki.hyprland.org/FAQ/#me-cursor-no-render"
@@ -145,31 +142,28 @@ const Page: NextPage = () => {
       <FancyGap />
       <FancyHeader title="configuring-hyprland" />
       <FancyContent>
-        I have a <Q>hyprland.conf</Q> in my dotfiles repo but I don't recommend
-        to copy everything because some things might not work for you, such my
-        monitors setup. For monitors use something like <Q>xrandr</Q> or{" "}
-        <Q>hyprctl monitors</Q> to help you.
+        I have a <Q>hyprland.conf</Q> in my dotfiles repo but I don't recommend to copy everything
+        because some things might not work for you, such my monitors setup. For monitors use
+        something like <Q>xrandr</Q> or <Q>hyprctl monitors</Q> to help you.
       </FancyContent>
       <FancyGap />
       <FancyContent>
-        You will also need to install some programs like kitty (terminal
-        emulator), nemo (file manager), and wofi (app launcher) so exit hyprland
-        with <Q>SUPER+M</Q> and install:
+        You will also need to install some programs like kitty (terminal emulator), nemo (file
+        manager), and wofi (app launcher) so exit hyprland with <Q>SUPER+M</Q> and install:
       </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>sudo pacman -S kitty nemo wofi</FancyCommand>
       </FancyCommandContainer>
       <FancyContent>
-        You will also need to update your <Q>hyprland.conf</Q> so it knows to
-        use these programs. To do this just copy my <Q>hyprland.conf</Q> in my
-        dotfiles github repo under the <Q>hyprland-dots</Q> branch in{" "}
-        <Q>hypr/hyprland.conf</Q>
+        You will also need to update your <Q>hyprland.conf</Q> so it knows to use these programs. To
+        do this just copy my <Q>hyprland.conf</Q> in my dotfiles github repo under the{" "}
+        <Q>hyprland-dots</Q> branch in <Q>hypr/hyprland.conf</Q>
       </FancyContent>
       <FancyGap />
       <FancyContent>
         {" "}
-        If you have multiple monitors and want to have separate workspaces for
-        each monitor you can use a program called hyprsome by sopa0, see here:
+        If you have multiple monitors and want to have separate workspaces for each monitor you can
+        use a program called hyprsome by sopa0, see here:
         <FancyExternalLink
           alias="github.com/sopa0/hyprsome"
           href="https://github.com/sopa0/hyprsome"
@@ -179,8 +173,8 @@ const Page: NextPage = () => {
       <FancyGap />
       <FancyHeader title="hyprland-screenshotting" />
       <FancyContent>
-        You will also probably want to setup screenshotting. To do so just
-        install <Q>grim</Q> and <Q>slurp</Q>
+        You will also probably want to setup screenshotting. To do so just install <Q>grim</Q> and{" "}
+        <Q>slurp</Q>
       </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>sudo pacman -S grim slurp</FancyCommand>
@@ -205,17 +199,16 @@ bind = $mainMod SHIFT, S, exec, grim -g "$(slurp)" "\${HOME}/Pictures/screenshot
       <FancyGap />
       <FancyHeader title="setting-wallpapers" />
       <FancyContent>
-        To set a wallpapers, I used a program called <Q>hyprpaper</Q>, which
-        works well with hyprland
+        To set a wallpapers, I used a program called <Q>hyprpaper</Q>, which works well with
+        hyprland
       </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>sudo pacman -S hyprpaper</FancyCommand>
       </FancyCommandContainer>
       <FancyContent>
-        To actually set the wallpaper, edit the <Q>hyprpaper.conf</Q> file in{" "}
-        <Q>~/.config/hypr</Q>, you may need to create this file yourself. set
-        preload to and wallpaper to whatever you named your wallpaper file. you
-        can also choose a wallpaper to set for each monitor.
+        To actually set the wallpaper, edit the <Q>hyprpaper.conf</Q> file in <Q>~/.config/hypr</Q>,
+        you may need to create this file yourself. set preload to and wallpaper to whatever you
+        named your wallpaper file. you can also choose a wallpaper to set for each monitor.
       </FancyContent>
       <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">
@@ -231,8 +224,8 @@ splash = false
         </FancySyntaxHighlighter>
       </FancyCommandContainer>
       <FancyContent>
-        After, just add this line in your <Q>hyprland.conf</Q> to execute
-        hyprpaper as hyprland starts
+        After, just add this line in your <Q>hyprland.conf</Q> to execute hyprpaper as hyprland
+        starts
       </FancyContent>
       <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">{`exec-once = hyprpaper`}</FancySyntaxHighlighter>
@@ -240,9 +233,8 @@ splash = false
       <FancyGap />
       <FancyHeader title="configuring-wofi" />
       <FancyContent>
-        To configure wofi copy my <Q>config</Q> and <Q>style.css</Q> from my
-        dotfiles repo into <Q>~/.config/wofi/config</Q> and{" "}
-        <Q>~/.config/wofi/style.css</Q>.
+        To configure wofi copy my <Q>config</Q> and <Q>style.css</Q> from my dotfiles repo into{" "}
+        <Q>~/.config/wofi/config</Q> and <Q>~/.config/wofi/style.css</Q>.
       </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>cd ~/.config</FancyCommand>
@@ -251,8 +243,8 @@ splash = false
         <FancyCommand>touch style.css</FancyCommand>
       </FancyCommandContainer>
       <FancyContent>
-        The wofi window should automatically change when pressing <Q>SUPER+R</Q>{" "}
-        or whatever you set the keybind to, no need to refresh.
+        The wofi window should automatically change when pressing <Q>SUPER+R</Q> or whatever you set
+        the keybind to, no need to refresh.
       </FancyContent>
       <FancyGap />
       <FancyHeader title="installing-waybar" />
@@ -275,8 +267,7 @@ splash = false
       <FancyGap />
       <FancyHeader title="configuring-waybar" />
       <FancyContent>
-        To use my dotfiles for waybar, copy my <Q>config</Q> and{" "}
-        <Q>style.css</Q>
+        To use my dotfiles for waybar, copy my <Q>config</Q> and <Q>style.css</Q>
       </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>cd ~/.config</FancyCommand>
@@ -285,14 +276,12 @@ splash = false
         <FancyCommand>touch style.css</FancyCommand>
       </FancyCommandContainer>
       <FancyContent>
-        Then copy the configs in <Q>waybar</Q> from the dotfiles on my github in
-        branch <Q>alpha</Q>{" "}
+        Then copy the configs in <Q>waybar</Q> from the dotfiles on my github in branch <Q>alpha</Q>{" "}
       </FancyContent>
       <FancyContent>
-        It would also be good to install a font since some of the icons might
-        not render properly if you don't have it installed. You should also
-        install wlogout to get a logout menu from the power button. Need aur
-        helper like <Q>yay</Q> or <Q>paru</Q> installed
+        It would also be good to install a font since some of the icons might not render properly if
+        you don't have it installed. You should also install wlogout to get a logout menu from the
+        power button. Need aur helper like <Q>yay</Q> or <Q>paru</Q> installed
       </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>paru -S ttf-firacode-nerd</FancyCommand>
@@ -302,14 +291,10 @@ splash = false
       <FancyCommandContainer>
         <FancyCommand>reboot</FancyCommand>
       </FancyCommandContainer>
-      <FancyContent>
-        After this, most of the desktop environment stuff is setup
-      </FancyContent>
+      <FancyContent>After this, most of the desktop environment stuff is setup</FancyContent>
       <FancyGap />
       <FancyHeader title="fish" />
-      <FancyContent>
-        Setting up fish is pretty simple. First install fish
-      </FancyContent>
+      <FancyContent>Setting up fish is pretty simple. First install fish</FancyContent>
       <FancyCommandContainer>
         <FancyCommand>sudo pacman -S fish</FancyCommand>
       </FancyCommandContainer>
@@ -318,37 +303,34 @@ splash = false
         <FancyCommand>chsh -s /usr/bin/fish</FancyCommand>
       </FancyCommandContainer>
       <FancyContent>
-        To get my fish setup, which includes vim mode through keybind <Q>kj</Q>,
-        tokyonight colorscheme, custom prompt, and more. It also sets some env
-        vars for wayland. Just copy the config.fish file from my dotfiles repo.
-        The fish config should be located in <Q>~/.config/fish/config.fish</Q>.
-        That's it.
+        To get my fish setup, which includes vim mode through keybind <Q>kj</Q>, tokyonight
+        colorscheme, custom prompt, and more. It also sets some env vars for wayland. Just copy the
+        config.fish file from my dotfiles repo. The fish config should be located in{" "}
+        <Q>~/.config/fish/config.fish</Q>. That's it.
       </FancyContent>
       <FancyGap />
       <FancyHeader title="kitty" />
       <FancyContent>
-        You should already have kitty installed from setting up hyprland. For
-        kitty, my setup is pretty simple, just a config file. Copy my kitty.conf
-        from my dotfiles file into your <Q>~/.config/kitty/kitty.conf</Q>. My
-        kitty.conf file just sets font size, transparency, and colorscheme
+        You should already have kitty installed from setting up hyprland. For kitty, my setup is
+        pretty simple, just a config file. Copy my kitty.conf from my dotfiles file into your{" "}
+        <Q>~/.config/kitty/kitty.conf</Q>. My kitty.conf file just sets font size, transparency, and
+        colorscheme
       </FancyContent>
       <FancyGap />
       <FancyHeader title="vscode" />
       <FancyContent>
-        Setting up VSCode should be pretty simple, first run this command to
-        install:
+        Setting up VSCode should be pretty simple, first run this command to install:
       </FancyContent>
       <FancyCommandContainer>
         <FancyCommand>paru -S visual-studio-code-bin</FancyCommand>
       </FancyCommandContainer>
       <FancyContent>
-        VSCode should not automatically appear in the wofi menu. The top bar may
-        also look a little different than normal, don't worry it should be fixed
-        after copying my configs
+        VSCode should not automatically appear in the wofi menu. The top bar may also look a little
+        different than normal, don't worry it should be fixed after copying my configs
       </FancyContent>
       <FancyContent>
-        To get my configs just copy the <Q>settings.json</Q> and{" "}
-        <Q>keybindings.json</Q> file from my dotfiles repo in <Q>vscode</Q>.
+        To get my configs just copy the <Q>settings.json</Q> and <Q>keybindings.json</Q> file from
+        my dotfiles repo in <Q>vscode</Q>.
       </FancyContent>
       <FancyContent>
         To set the settings.json file press{" "}
@@ -359,12 +341,10 @@ splash = false
         <Q>CTRL+SHIFT+P {`>`} Preferences: Open Keyboards Shortcuts (JSON)</Q>
       </FancyContent>
       <FancyContent>
-        If VSCode feels laggy or your cursor is off, VSCode may not be using
-        wayland
+        If VSCode feels laggy or your cursor is off, VSCode may not be using wayland
       </FancyContent>
       <FancyContent>
-        To fix that, create a <Q>code-flags.conf</Q> in <Q>.config</Q>, then add
-        this to it
+        To fix that, create a <Q>code-flags.conf</Q> in <Q>.config</Q>, then add this to it
       </FancyContent>
       <FancyCommandContainer noPadding>
         <FancySyntaxHighlighter language="conf">
@@ -374,8 +354,8 @@ splash = false
         </FancySyntaxHighlighter>
       </FancyCommandContainer>
       <FancyContent>
-        Lastly, installing the extensions on VSCode should be pretty easy, just
-        search for extensions in VSCode and install them
+        Lastly, installing the extensions on VSCode should be pretty easy, just search for
+        extensions in VSCode and install them
       </FancyContent>
       <FancyGap />
       <FancyHeader title="chrome" />
@@ -386,23 +366,21 @@ splash = false
         <FancyCommand>paru -S google-chrome</FancyCommand>
       </FancyCommandContainer>
       <FancyContent>
-        I thought I would mention you should go to the url,{" "}
-        <Q>chrome://flags</Q>, there you can set ozone layer to wayland to make
-        things run smoother
+        I thought I would mention you should go to the url, <Q>chrome://flags</Q>, there you can set
+        ozone layer to wayland to make things run smoother
       </FancyContent>
       <FancyGap />
       <FancyHeader title="theming" />
       <FancyContent>
-        To set up themes for stuff like nemo install a gtk theme. I'm using the
-        catpuccin theme from{" "}
+        To set up themes for stuff like nemo install a gtk theme. I'm using the catpuccin theme from{" "}
       </FancyContent>
       <FancyExternalLink
         alias="catppuccin-gtk-theme-mocha"
         href="https://aur.archlinux.org/packages/catppuccin-gtk-theme-mocha"
       />
       <FancyContent>
-        For my folder icons I used papirus folders along with the catpuccin
-        papirus folders to color them.
+        For my folder icons I used papirus folders along with the catpuccin papirus folders to color
+        them.
       </FancyContent>
       <FancyExternalLink
         alias="papirus-folders"
@@ -415,8 +393,7 @@ splash = false
       <FancyGap />
       <FancyHeader title="obs" />
       <FancyContent>
-        use <Q>wlrobs-hg</Q> which is less laggy than <Q>pipewire</Q> and select
-        `Wayland
+        use <Q>wlrobs-hg</Q> which is less laggy than <Q>pipewire</Q> and select `Wayland
       </FancyContent>
       output(dmabuf)`
     </PageContainer>

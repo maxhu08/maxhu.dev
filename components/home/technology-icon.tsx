@@ -7,8 +7,7 @@ import styles from "./technology-icon.module.scss";
 import { useTheme } from "next-themes";
 import { ActionTooltip } from "~/components/action-tooltip";
 
-export interface TechnologyIconProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface TechnologyIconProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
   icon: string;
   iconLight?: string;
@@ -29,16 +28,16 @@ export const TechnologyIcon: FC<TechnologyIconProps> = ({
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return <div className="w-8 h-8"></div>;
+  if (!isMounted) return <div className="h-8 w-8"></div>;
 
   return (
     <ActionTooltip label={name} side="bottom">
       <div
         {...props}
         className={cn(
-          "w-8 h-8 relative cursor-pointer !aspect-square",
+          "relative !aspect-square h-8 w-8 cursor-pointer",
           styles["fade-in-right"],
-          props.className,
+          props.className
         )}
         style={{ animationDelay: `${delay.toString()}ms` }}
       >

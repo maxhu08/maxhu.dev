@@ -16,62 +16,56 @@ export const metadata: Metadata = {
   openGraph: {
     title: `🌴 ${websiteName}`,
     description: "This is my website",
-    images: "/assets/palm_tree.png",
+    images: "/assets/palm_tree.png"
   },
-  authors: [{ name: "Max Hu", url: "https://maxhu.dev" }],
+  authors: [{ name: "Max Hu", url: "https://maxhu.dev" }]
 };
 
 const Page: NextPage = () => {
   return (
     <>
-      <main className="w-full h-screen grid place-items-center overflow-hidden">
-        <div className="grid place-items-center grid-flow-row pb-[5%] h-max gap-2">
+      <main className="grid h-screen w-full place-items-center overflow-hidden">
+        <div className="grid h-max grid-flow-row place-items-center gap-2 pb-[5%]">
           <div
             className={cn(
               "grid grid-cols-[repeat(3,max-content)] place-items-center gap-2",
-              styles["fade-in-down"],
+              styles["fade-in-down"]
             )}
           >
             <span
-              className={cn(
-                "text-2xl md:text-4xl select-none",
-                styles["wave-animation"],
-              )}
+              className={cn("select-none text-2xl md:text-4xl", styles["wave-animation"])}
               style={{ animationDelay: "1800ms" }}
             >
               👋
             </span>
             <span> </span>
-            <span className="text-2xl md:text-4xl dark:text-white">
+            <span className="text-2xl dark:text-white md:text-4xl">
               Hi! I'm <span className={styles["special-text"]}>Max Hu</span>
             </span>
           </div>
           <div className="grid grid-cols-[max-content_max-content] gap-2">
             <div
-              className={cn("pt-2 z-10", styles["bouncing-animation"])}
+              className={cn("z-10 pt-2", styles["bouncing-animation"])}
               style={{ animationDelay: "1000ms" }}
             >
               <ContactMeButton />
             </div>
             <div
-              className={cn("pt-2 z-10", styles["bouncing-animation"])}
+              className={cn("z-10 pt-2", styles["bouncing-animation"])}
               style={{ animationDelay: "1200ms" }}
             >
               <ProjectsButton />
             </div>
           </div>
           <div
-            className={cn("pt-2 z-[5]", styles["bouncing-animation"])}
+            className={cn("z-[5] pt-2", styles["bouncing-animation"])}
             style={{ animationDelay: "1400ms" }}
           >
             <OtherButton />
           </div>
-          <div className="grid place-items-center grid-flow-row gap-1 pt-10 md:pt-20">
+          <div className="grid grid-flow-row place-items-center gap-1 pt-10 md:pt-20">
             <span
-              className={cn(
-                "text-zinc-500 dark:text-zinc-400 !delay-300",
-                styles["fade-in-left"],
-              )}
+              className={cn("text-zinc-500 !delay-300 dark:text-zinc-400", styles["fade-in-left"])}
             >
               technologies i'm learning
             </span>

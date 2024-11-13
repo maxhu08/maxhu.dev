@@ -25,8 +25,7 @@ export const ProjectCard: FC<ProjectCardProps> = (props) => {
 
       cardEl.addEventListener("animationend", handleAnimationEnd);
 
-      return () =>
-        cardEl.removeEventListener("animationend", handleAnimationEnd);
+      return () => cardEl.removeEventListener("animationend", handleAnimationEnd);
     }
   }, []);
 
@@ -34,31 +33,31 @@ export const ProjectCard: FC<ProjectCardProps> = (props) => {
     <div
       ref={cardRef}
       className={cn(
-        "relative rounded-md overflow-hidden border-zinc-300 dark:border-border border-[1px] h-full min-h-40 opacity-0",
-        styles["animate-up-bouncy"],
+        "relative h-full min-h-40 overflow-hidden rounded-md border-[1px] border-zinc-300 opacity-0 dark:border-border",
+        styles["animate-up-bouncy"]
       )}
       style={{ animationDelay: (props.delay ?? 0) + "ms" }}
     >
       <Link href={`/projects/${props.title}`} className="cursor-pointer">
-        <div className="hover:bg-neutral-500/20 w-full h-full absolute duration-300 ease-in-out"></div>
+        <div className="absolute h-full w-full duration-300 ease-in-out hover:bg-neutral-500/20"></div>
       </Link>
-      <div className="bg-neutral-200 dark:bg-neutral-900 p-2 grid grid-flow-row h-full">
+      <div className="grid h-full grid-flow-row bg-neutral-200 p-2 dark:bg-neutral-900">
         <p className="font-semibold text-lime-500">{props.title}</p>
         <ProjectTechnologies ptechnologies={props.technologies} />
         <p className="pt-2">{props.description}</p>
-        <div className="mt-auto grid grid-flow-col gap-4 w-max">
+        <div className="mt-auto grid w-max grid-flow-col gap-4">
           {props.demoLink && (
             <a href={props.demoLink} target="_blank" className="z-[2]">
-              <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
-                <Paperclip className="w-4 h-4" />
+              <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 duration-300 ease-in-out hover:text-blue-600">
+                <Paperclip className="h-4 w-4" />
                 <span>View demo</span>
               </div>
             </a>
           )}
           {props.codeLink && (
             <a href={props.codeLink} target="_blank" className="z-[2]">
-              <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 hover:text-blue-600 duration-300 ease-in-out">
-                <Code2 className="w-4 h-4" />
+              <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 text-blue-500 duration-300 ease-in-out hover:text-blue-600">
+                <Code2 className="h-4 w-4" />
                 <span>View code</span>
               </div>
             </a>

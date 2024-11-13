@@ -6,17 +6,14 @@ interface FancyExternalLinkProps {
   alias: string;
 }
 
-export const FancyExternalLink: FC<FancyExternalLinkProps> = ({
-  href,
-  alias,
-}) => {
+export const FancyExternalLink: FC<FancyExternalLinkProps> = ({ href, alias }) => {
   return (
     <a
       href={href}
       target="_blank"
-      className="cursor-pointer text-blue-500 hover:text-blue-600 ease-in-out duration-300 inline-flex items-center gap-1"
+      className="inline-flex cursor-pointer items-center gap-1 text-blue-500 duration-300 ease-in-out hover:text-blue-600"
     >
-      <ExternalLinkIcon className="w-4 h-4" />
+      <ExternalLinkIcon className="h-4 w-4" />
       <span>{alias}</span>
     </a>
   );

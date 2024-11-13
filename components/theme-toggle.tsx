@@ -7,7 +7,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "~/components/ui/dropdown-menu";
 
 export const ThemeToggle: FC = () => {
@@ -17,36 +17,27 @@ export const ThemeToggle: FC = () => {
     <div>
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
-          <div className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white duration-200 ease-in-out cursor-pointer">
-            <SunMoon className="w-6 h-6" />
+          <div className="cursor-pointer text-zinc-500 duration-200 ease-in-out hover:text-black dark:text-zinc-400 dark:hover:text-white">
+            <SunMoon className="h-6 w-6" />
           </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem
-            onClick={() => setTheme("light")}
-            className="cursor-pointer"
-          >
-            <div className="flex place-items-center w-full gap-2">
+          <DropdownMenuItem onClick={() => setTheme("light")} className="cursor-pointer">
+            <div className="flex w-full place-items-center gap-2">
               <span>Light</span>
-              <Sun className="w-4 h-4 ml-auto" />
+              <Sun className="ml-auto h-4 w-4" />
             </div>
           </DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={() => setTheme("dark")}
-            className="cursor-pointer"
-          >
-            <div className="flex place-items-center w-full gap-2">
+          <DropdownMenuItem onClick={() => setTheme("dark")} className="cursor-pointer">
+            <div className="flex w-full place-items-center gap-2">
               <span>Dark</span>
-              <Moon className="w-4 h-4 ml-auto" />
+              <Moon className="ml-auto h-4 w-4" />
             </div>
           </DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={() => setTheme("system")}
-            className="cursor-pointer"
-          >
-            <div className="flex place-items-center w-full gap-2">
+          <DropdownMenuItem onClick={() => setTheme("system")} className="cursor-pointer">
+            <div className="flex w-full place-items-center gap-2">
               <span>System</span>
-              <Settings className="w-4 h-4 ml-auto" />
+              <Settings className="ml-auto h-4 w-4" />
             </div>
           </DropdownMenuItem>
         </DropdownMenuContent>

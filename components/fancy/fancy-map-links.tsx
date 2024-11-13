@@ -13,38 +13,24 @@ interface FancyMapLinksProps {
 
 export const FancyMapLinks: FC<FancyMapLinksProps> = ({ items }) => {
   return (
-    <div className="grid grid-flow-row w-max">
+    <div className="grid w-max grid-flow-row">
       {items.map((item, index) => (
         <div key={`fancy-map-item-${index}`}>
           {/* large-screen */}
-          <div className="hidden sm:grid grid-cols-[1fr_auto_1fr] place-items-center">
-            <span className="text-pink-500 font-semibold mr-auto">
-              {item.left}
-            </span>
-            <span className="text-lime-500 font-semibold whitespace-pre">
-              {" ==> "}
-            </span>
+          <div className="hidden grid-cols-[1fr_auto_1fr] place-items-center sm:grid">
+            <span className="mr-auto font-semibold text-pink-500">{item.left}</span>
+            <span className="whitespace-pre font-semibold text-lime-500">{" ==> "}</span>
             <div className="mr-auto">
-              <FancyInternalLink
-                alias={item.right.name}
-                href={item.right.url}
-              />
+              <FancyInternalLink alias={item.right.name} href={item.right.url} />
             </div>
           </div>
           {/* small-screen */}
-          <div className="grid sm:hidden grid-rows-2">
-            <span className="text-pink-500 font-semibold mr-auto">
-              {item.left}
-            </span>
+          <div className="grid grid-rows-2 sm:hidden">
+            <span className="mr-auto font-semibold text-pink-500">{item.left}</span>
             <div className="grid grid-cols-[max-content_auto]">
-              <span className="text-lime-500 font-semibold whitespace-pre">
-                {"└── "}
-              </span>
+              <span className="whitespace-pre font-semibold text-lime-500">{"└── "}</span>
               <div className="mr-auto">
-                <FancyInternalLink
-                  alias={item.right.name}
-                  href={item.right.url}
-                />
+                <FancyInternalLink alias={item.right.name} href={item.right.url} />
               </div>
             </div>
           </div>

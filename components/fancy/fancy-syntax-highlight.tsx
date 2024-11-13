@@ -9,10 +9,7 @@ interface FancySyntaxHighlighterProps {
   children: string;
 }
 
-export const FancySyntaxHighlighter: FC<FancySyntaxHighlighterProps> = ({
-  language,
-  children,
-}) => {
+export const FancySyntaxHighlighter: FC<FancySyntaxHighlighterProps> = ({ language, children }) => {
   return (
     <SyntaxHighlighter
       language={language}

@@ -9,7 +9,7 @@ export const FancyHeader: FC<FancyHeaderProps> = ({ title }) => {
   return (
     <>
       <a href={`#${title}`} id={title}>
-        <span className="font-semibold text-lg"># {title}</span>
+        <span className="text-lg font-semibold"># {title}</span>
       </a>
       <Separator orientation="horizontal" className="mb-2" />
     </>

@@ -6,7 +6,7 @@ import { FancyMapLinks } from "~/components/fancy/fancy-map-links";
 
 const Page = () => {
   return (
-    <div className="grid grid-flow-row mx-auto w-[95%] lg:w-[60%] xl:w-[40%] py-20">
+    <div className="mx-auto grid w-[95%] grid-flow-row py-20 lg:w-[60%] xl:w-[40%]">
       <DotfilesText />
       <FancyHeader title="info" />
       <FancyContent>This page is under construction.</FancyContent>

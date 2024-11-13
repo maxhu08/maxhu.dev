@@ -6,24 +6,24 @@ import { ActionTooltip } from "~/components/action-tooltip";
 const socials = [
   {
     name: "github",
-    icon: <Github className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
+    icon: <Github className="h-6 w-6 text-blue-500 hover:text-blue-600" />,
     href: "/redirect/github"
   },
   {
     name: "youtube",
-    icon: <Youtube className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
+    icon: <Youtube className="h-6 w-6 text-blue-500 hover:text-blue-600" />,
     href: "/redirect/youtube"
   },
   {
     name: "twitter/x",
-    icon: <Twitter className="w-6 h-6 text-blue-500 hover:text-blue-600" />,
+    icon: <Twitter className="h-6 w-6 text-blue-500 hover:text-blue-600" />,
     href: "/redirect/twitter"
   }
 ];
 
 export const Socials: FC = () => {
   return (
-    <div className="grid grid-flow-col place-items-center gap-2 w-max">
+    <div className="grid w-max grid-flow-col place-items-center gap-2">
       {socials.map((social) => {
         return (
           <ActionTooltip label={social.name} key={`social-${social.name}`}>

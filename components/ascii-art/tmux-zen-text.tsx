@@ -14,7 +14,7 @@ export const TmuxZenText: FC = () => {
       </div>
       <div className="block md:hidden">
         <br />
-        <p className="text-indigo-500 font-semibold">~/tmux-zen</p>
+        <p className="font-semibold text-indigo-500">~/tmux-zen</p>
         <br />
       </div>
     </div>

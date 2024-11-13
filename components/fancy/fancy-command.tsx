@@ -27,36 +27,25 @@ export const FancyCommand: FC<FancyCommandProps> = ({ children }) => {
   const words = command.split(" ");
 
   return (
-    <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="grid grid-cols-[auto_max-content] relative">
+    <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <div className="relative grid grid-cols-[auto_max-content]">
         <pre>
-          <span className="font-semibold text-emerald-500 select-none">$ </span>
+          <span className="select-none font-semibold text-emerald-500">$ </span>
           <span>
             <span className="text-cyan-600 dark:text-cyan-500">{words[0]}</span>{" "}
-            <span className="text-indigo-600 dark:text-indigo-400">
-              {words.slice(1).join(" ")}
-            </span>
+            <span className="text-indigo-600 dark:text-indigo-400">{words.slice(1).join(" ")}</span>
           </span>
         </pre>
         <button
           onClick={handleCopy}
           className={cn(
             !isHovered && "opacity-0",
-            "absolute top-0 right-0 bg-neutral-300 dark:bg-neutral-800",
-            "ml-auto border p-1 rounded-sm border-neutral-500 text-neutral-500 duration-200 ease-in-out cursor-pointer",
-            "hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white",
+            "absolute right-0 top-0 bg-neutral-300 dark:bg-neutral-800",
+            "ml-auto cursor-pointer rounded-sm border border-neutral-500 p-1 text-neutral-500 duration-200 ease-in-out",
+            "hover:border-black hover:text-black dark:hover:border-white dark:hover:text-white"
           )}
         >
-          <div>
-            {copied ? (
-              <Check className="w-4 h-4" />
-            ) : (
-              <Copy className="w-4 h-4" />
-            )}
-          </div>
+          <div>{copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}</div>
         </button>
       </div>
     </div>

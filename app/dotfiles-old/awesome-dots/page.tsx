@@ -19,65 +19,65 @@ const Page: NextPage = () => {
             left: "Distro",
             right: {
               name: "Arch",
-              url: "https://archlinux.org/",
-            },
+              url: "https://archlinux.org/"
+            }
           },
           {
             left: "WM",
             right: {
               name: "awesome",
-              url: "https://awesomewm.org/",
-            },
+              url: "https://awesomewm.org/"
+            }
           },
           {
             left: "Terminal Emulator",
             right: {
               name: "kitty",
-              url: "https://github.com/kovidgoyal/kitty",
-            },
+              url: "https://github.com/kovidgoyal/kitty"
+            }
           },
           {
             left: "Shell",
             right: {
               name: "fish",
-              url: "https://fishshell.com/",
-            },
+              url: "https://fishshell.com/"
+            }
           },
           {
             left: "App Launcher",
             right: {
               name: "rofi",
-              url: "https://github.com/davatorium/rofi",
-            },
+              url: "https://github.com/davatorium/rofi"
+            }
           },
           {
             left: "Taskbar",
             right: {
               name: "wibar",
-              url: "https://awesomewm.org/doc/api/classes/awful.wibar.html",
-            },
+              url: "https://awesomewm.org/doc/api/classes/awful.wibar.html"
+            }
           },
           {
             left: "File Manager",
             right: {
               name: "nemo",
-              url: "https://wiki.archlinux.org/title/Nemo",
-            },
+              url: "https://wiki.archlinux.org/title/Nemo"
+            }
           },
           {
             left: "Editor",
             right: {
               name: "VSCode",
-              url: "https://code.visualstudio.com/",
-            },
+              url: "https://code.visualstudio.com/"
+            }
           },
           {
             left: "Editor",
             right: {
               name: "neovim",
-              url: "https://neovim.io/",
-            },
-          },
+              url: "https://neovim.io/"
+            }
+          }
         ]}
       />
       <br />

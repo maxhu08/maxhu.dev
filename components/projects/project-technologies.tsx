@@ -10,24 +10,18 @@ interface ProjectTechnologiesProps {
   ptechnologies: string[];
 }
 
-export const ProjectTechnologies: FC<ProjectTechnologiesProps> = ({
-  ptechnologies,
-}) => {
+export const ProjectTechnologies: FC<ProjectTechnologiesProps> = ({ ptechnologies }) => {
   const { theme } = useTheme();
 
   return (
-    <div className="grid grid-flow-col w-max gap-1">
+    <div className="grid w-max grid-flow-col gap-1">
       {technologies.map((technology, index: number) => {
         if (ptechnologies.includes(technology.name)) {
           return (
             <ActionTooltip label={technology.name} side="bottom" key={index}>
-              <div className="h-6 relative aspect-square">
+              <div className="relative aspect-square h-6">
                 {technology.iconLight && theme === "light" ? (
-                  <Image
-                    src={technology.iconLight}
-                    alt={technology.name}
-                    fill
-                  />
+                  <Image src={technology.iconLight} alt={technology.name} fill />
                 ) : (
                   <Image src={technology.icon} alt={technology.name} fill />
                 )}

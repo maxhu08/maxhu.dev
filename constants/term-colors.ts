@@ -29,5 +29,5 @@ export const tc = {
 
   // white
   col7: "#a6adc8",
-  col15: "#bac2de",
+  col15: "#bac2de"
 };
