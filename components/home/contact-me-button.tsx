@@ -6,15 +6,16 @@ import { ActionTooltip } from "~/components/action-tooltip";
 import styles from "~/components/home/contact-me-button.module.scss";
 import { cn } from "~/utils/cn";
 
+const recipientEmail = "contact@maxhu.dev";
+
 export const ContactMeButton: FC = () => {
   const openEmail = () => {
-    const recipientEmail = "hello@maxhu.dev";
     const mailtoLink = `mailto:${recipientEmail}`;
     window.location.href = mailtoLink;
   };
 
   return (
-    <ActionTooltip label="email hello@maxhu.dev" side="bottom">
+    <ActionTooltip label={`email ${recipientEmail}`} side="bottom">
       <button onClick={openEmail} className={styles.button}>
         <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md bg-emerald-500 p-2 text-white duration-300 ease-in-out hover:bg-emerald-700">
           <ChevronRight className={cn("h-4 w-4", styles.arrow)} />
