@@ -31,11 +31,11 @@ const Page = () => {
         items={[
           {
             left: "hyprland-dots",
-            right: { name: "info", url: "/dotfiles/hyprland-dots" }
+            right: { name: "info", url: "/dotfiles-old/hyprland-dots" }
           },
           {
             left: "awesome-dots",
-            right: { name: "info", url: "/dotfiles/awesome-dots" }
+            right: { name: "info", url: "/dotfiles-old/awesome-dots" }
           }
         ]}
       />
