@@ -1,4 +1,3 @@
 {
-  "buildCommand": "bun run build",
-  "installCommand": "bun i"
+  "installcommand": "bun i"
 }
