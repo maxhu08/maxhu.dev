@@ -24,7 +24,7 @@
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-syntax-highlighter": "^15.6.1",
-    "sass": "^1.83.0",
+    "sass": "^1.83.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"
   },
