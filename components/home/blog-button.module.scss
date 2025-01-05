@@ -1,0 +1,8 @@
+.button * {
+  transition-duration: 250ms;
+}
+
+.button:hover .antenna {
+  transform: translateY(-2px);
+  transition-duration: 250ms;
+}

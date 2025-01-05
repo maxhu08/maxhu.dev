@@ -15,7 +15,7 @@ export const ContactMeButton: FC = () => {
   };
 
   return (
-    <ActionTooltip label={`email ${recipientEmail}`} side="bottom">
+    <ActionTooltip label={`email ${recipientEmail}`} side="top">
       <button onClick={openEmail} className={styles.button}>
         <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md bg-emerald-500 p-2 text-white duration-300 ease-in-out hover:bg-emerald-700">
           <ChevronRight className={cn("h-4 w-4", styles.arrow)} />

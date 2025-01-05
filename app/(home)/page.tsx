@@ -8,6 +8,7 @@ import { ProjectsButton } from "~/components/home/projects-button";
 import { OtherButton } from "~/components/home/other-button";
 import { Footer } from "~/components/home/footer";
 import { websiteName } from "~/constants/website-name";
+import { BlogButton } from "~/components/home/blog-button";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maxhu.dev/"),
@@ -43,18 +44,24 @@ const Page: NextPage = () => {
               Hi! I'm <span className={styles["special-text"]}>Max Hu</span>
             </span>
           </div>
-          <div className="grid grid-cols-[max-content_max-content] gap-2">
+          <div className="grid grid-cols-[repeat(3,max-content)] gap-2">
             <div
               className={cn("z-10 pt-2", styles["bouncing-animation"])}
-              style={{ animationDelay: "1000ms" }}
+              style={{ animationDelay: "800ms" }}
             >
               <ContactMeButton />
             </div>
             <div
               className={cn("z-10 pt-2", styles["bouncing-animation"])}
-              style={{ animationDelay: "1200ms" }}
+              style={{ animationDelay: "1000ms" }}
             >
               <ProjectsButton />
+            </div>
+            <div
+              className={cn("z-10 pt-2", styles["bouncing-animation"])}
+              style={{ animationDelay: "1200ms" }}
+            >
+              <BlogButton />
             </div>
           </div>
           <div
