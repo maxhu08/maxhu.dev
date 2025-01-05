@@ -44,32 +44,33 @@ const Page: NextPage = () => {
               Hi! I'm <span className={styles["special-text"]}>Max Hu</span>
             </span>
           </div>
-          <div className="grid grid-cols-[repeat(3,max-content)] gap-2">
+          <div className="grid w-full grid-flow-row place-content-center gap-2 pt-4 sm:grid-flow-col">
             <div
-              className={cn("z-10 pt-2", styles["bouncing-animation"])}
+              className={cn("z-10 w-full", styles["bouncing-animation"])}
               style={{ animationDelay: "800ms" }}
             >
               <ContactMeButton />
             </div>
             <div
-              className={cn("z-10 pt-2", styles["bouncing-animation"])}
+              className={cn("z-10 w-full", styles["bouncing-animation"])}
               style={{ animationDelay: "1000ms" }}
             >
               <ProjectsButton />
             </div>
             <div
-              className={cn("z-10 pt-2", styles["bouncing-animation"])}
+              className={cn("z-10 w-full", styles["bouncing-animation"])}
               style={{ animationDelay: "1200ms" }}
             >
               <BlogButton />
             </div>
+            <div
+              className={cn("z-10 w-full", styles["bouncing-animation"])}
+              style={{ animationDelay: "1400ms" }}
+            >
+              <OtherButton />
+            </div>
           </div>
-          <div
-            className={cn("z-[5] pt-2", styles["bouncing-animation"])}
-            style={{ animationDelay: "1400ms" }}
-          >
-            <OtherButton />
-          </div>
+
           <div className="grid grid-flow-row place-items-center gap-1 pt-10 md:pt-20">
             <span
               className={cn("text-zinc-500 !delay-300 dark:text-zinc-400", styles["fade-in-left"])}

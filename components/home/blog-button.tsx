@@ -9,8 +9,8 @@ import { Antenna } from "lucide-react";
 
 export const BlogButton: FC = () => {
   return (
-    <ActionTooltip label="other links" side="bottom">
-      <Link href="https://blog.maxhu.dev" target="_blank" className={styles.button}>
+    <ActionTooltip label="open blog" side="top">
+      <Link href="https://blog.maxhu.dev" target="_blank" className={cn("w-full", styles.button)}>
         <div className="grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md bg-indigo-500 p-2 text-white duration-300 ease-in-out hover:bg-indigo-700">
           <Antenna className={cn("h-4 w-4", styles.antenna)} />
           <span>blog</span>
