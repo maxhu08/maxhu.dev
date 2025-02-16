@@ -57,8 +57,7 @@ export const Content: FC = () => {
           </div>
         ))}
       </div>
-
-      <div className="grid grid-flow-row place-items-center gap-1 pt-10 md:pt-20">
+      <div className="grid grid-flow-row place-items-center gap-1 pt-4">
         <span
           className={cn(
             "text-zinc-500 !delay-300 dark:text-zinc-400",
