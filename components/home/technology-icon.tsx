@@ -12,6 +12,7 @@ export interface TechnologyIconProps extends React.HTMLAttributes<HTMLDivElement
   icon: string;
   iconLight?: string;
   delay: number;
+  showAnimations: boolean;
 }
 
 export const TechnologyIcon: FC<TechnologyIconProps> = ({
@@ -19,6 +20,7 @@ export const TechnologyIcon: FC<TechnologyIconProps> = ({
   icon,
   iconLight,
   delay,
+  showAnimations,
   ...props
 }) => {
   const { theme } = useTheme();
@@ -36,7 +38,7 @@ export const TechnologyIcon: FC<TechnologyIconProps> = ({
         {...props}
         className={cn(
           "relative !aspect-square h-8 w-8 cursor-pointer",
-          styles["fade-in-right"],
+          showAnimations && styles["fade-in-right"],
           props.className
         )}
         style={{ animationDelay: `${delay.toString()}ms` }}

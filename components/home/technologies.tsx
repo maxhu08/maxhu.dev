@@ -40,7 +40,11 @@ const learning = [
   "prisma"
 ];
 
-export const Technologies: FC = () => {
+interface TechnologiesProps {
+  showAnimations: boolean;
+}
+
+export const Technologies: FC<TechnologiesProps> = ({ showAnimations }) => {
   let technologiesIndex = 0;
 
   return (
@@ -61,6 +65,7 @@ export const Technologies: FC = () => {
               iconLight={technology.iconLight}
               key={`techonology-${technology.name}`}
               delay={renderedIndex * 50 + 600}
+              showAnimations={showAnimations}
             />
           );
       })}
