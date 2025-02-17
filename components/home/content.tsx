@@ -10,13 +10,12 @@ import { Technologies } from "~/components/home/technologies";
 import { cn } from "~/utils/cn";
 
 export const Content: FC = () => {
-  const [showAnimations, setShowAnimations] = useState(false);
+  const [showAnimations, setShowAnimations] = useState(true);
 
   useEffect(() => {
-    if (!sessionStorage.getItem("visited")) {
-      setShowAnimations(true);
-      sessionStorage.setItem("visited", "true");
-    }
+    if (sessionStorage.getItem("visited")) setShowAnimations(false);
+
+    sessionStorage.setItem("visited", "true");
   }, []);
 
   return (
