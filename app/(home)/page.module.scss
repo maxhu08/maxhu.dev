@@ -95,7 +95,6 @@
 }
 
 @keyframes bounceInDown {
-
   0%,
   60%,
   75%,
@@ -138,7 +137,7 @@ $gradient-end: #d041c2;
 
 @keyframes gradientAnimation {
   0% {
-    background-position: 0px 50%;
+    background-position: 0% 50%;
   }
 
   50% {
@@ -146,40 +145,29 @@ $gradient-end: #d041c2;
   }
 
   100% {
-    background-position: 0px 50%;
+    background-position: 0% 50%;
   }
 }
 
 .special-text {
-  background: linear-gradient(-45deg,
-      $gradient-start,
-      $gradient-start,
-      $gradient-end,
-      $gradient-end );
-  background: -moz-linear-gradient(-45deg,
-      $gradient-start,
-      $gradient-start,
-      $gradient-end,
-      $gradient-end );
-  background: -webkit-gradient(-45deg,
-      $gradient-start,
-      $gradient-start,
-      $gradient-end,
-      $gradient-end );
-
+  display: inline-block;
+  background: linear-gradient(
+    -45deg,
+    $gradient-start,
+    $gradient-start,
+    $gradient-end,
+    $gradient-end
+  );
   background-size: 300%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 10s ease-in-out infinite;
-  -moz-animation: gradientAnimation 10s ease-in-out infinite;
-  -webkit-animation: gradientAnimation 10s ease-in-out infinite;
 
   &::selection {
     color: #fff;
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
+    background: #ffffff20;
     -webkit-text-fill-color: #fff;
   }
 }
