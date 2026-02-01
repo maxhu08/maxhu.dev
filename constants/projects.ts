@@ -12,7 +12,7 @@ export const projects: Record<ProjectName, Project> = {
   mtab: {
     title: "mtab",
     description: "simple new tab page extension for chrome",
-    technologies: ["html", "css", "typescript"],
+    technologies: ["html", "css", "tailwindcss", "typescript"],
     demoLink: "https://chromewebstore.google.com/detail/mtab/fdaphilojaklgkoocegabckfanjoacjg",
     codeLink: "https://github.com/maxhu08/mtab"
   },
