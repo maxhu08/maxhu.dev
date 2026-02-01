@@ -6,7 +6,6 @@ import { BlogButton } from "~/components/home/blog-button";
 import { ContactMeButton } from "~/components/home/contact-me-button";
 import { OtherButton } from "~/components/home/other-button";
 import { ProjectsButton } from "~/components/home/projects-button";
-import { Technologies } from "~/components/home/technologies";
 import { cn } from "~/utils/cn";
 
 export const Content: FC = () => {
@@ -56,7 +55,7 @@ export const Content: FC = () => {
           </div>
         ))}
       </div>
-      <div className="grid grid-flow-row place-items-center gap-1 pt-4">
+      {/* <div className="grid grid-flow-row place-items-center gap-1 pt-4">
         <span
           className={cn(
             "text-zinc-500 dark:text-zinc-400",
@@ -67,7 +66,7 @@ export const Content: FC = () => {
           technologies i'm learning
         </span>
         <Technologies showAnimations={showAnimations} />
-      </div>
+      </div> */}
     </>
   );
 };
