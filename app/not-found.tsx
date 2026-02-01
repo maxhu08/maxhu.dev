@@ -8,7 +8,7 @@ const Page: NextPage = () => {
   return (
     <div className="grid h-screen w-full place-items-center">
       <div className="grid grid-flow-row place-items-center gap-2">
-        <div className={cn("relative h-32 w-32 pb-2", styles["float-animation"])}>
+        <div className={cn("pb-100 relative h-32 w-32 pb-40", styles["float-animation"])}>
           <Image src="/assets/palm_tree.svg" alt="tree" fill />
         </div>
         <p>page not found :/</p>
