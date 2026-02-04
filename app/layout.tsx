@@ -13,11 +13,11 @@ const fira = Fira_Mono({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://maxhu.dev/"),
   title: `${websiteName}`,
-  description: "This is my website",
+  description: "welcome to my website",
   openGraph: {
-    title: `🌴 ${websiteName}`,
-    description: "This is my website",
-    images: "/assets/palm_tree.png"
+    title: `${websiteName}`,
+    description: "welcome to my website",
+    images: "/assets/mh.png"
   },
   authors: [{ name: "Max Hu", url: "https://maxhu.dev" }]
 };
