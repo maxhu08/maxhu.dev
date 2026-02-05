@@ -19,7 +19,8 @@ export const metadata: Metadata = {
     description: "welcome to my website",
     images: "/assets/mh.png"
   },
-  authors: [{ name: "Max Hu", url: "https://maxhu.dev" }]
+  authors: [{ name: "Max Hu", url: "https://maxhu.dev" }],
+  themeColor: "#14b8a6"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
