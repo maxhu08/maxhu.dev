@@ -36,7 +36,6 @@ export const ProjectHeader: FC<ProjectHeaderProps> = ({ project }) => {
           )}
         </div>
       </div>
-      <FancyGap />
     </div>
   );
 };
