@@ -1,3 +1,3 @@
 # maxhu.dev
 
-my personal website 🌴
+my personal website 🏠
