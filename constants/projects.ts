@@ -11,7 +11,7 @@ export const projects = {
   mtab: {
     description: "simple new tab page extension for chrome",
     technologies: ["html", "css", "tailwindcss", "typescript"],
-    demoLink: "https://chromewebstore.google.com/detail/mtab/fdaphilojaklgkoocegabckfanjoacjg",
+    demoLink: "https://get-mtab.vercel.app",
     codeLink: "https://github.com/maxhu08/mtab",
     users: "10,000+",
     stars: "500+"
