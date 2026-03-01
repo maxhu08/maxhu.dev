@@ -12,8 +12,9 @@
     "prettier": "bun run format",
     "lint": "eslint",
     "lint:fix": "bun run lint --fix",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "check": "bun run format:check && bun run lint && bun run typecheck",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -28,6 +29,9 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "husky": "^9.1.7",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
