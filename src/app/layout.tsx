@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider, type Theme } from "~/components/providers/theme-provider";
@@ -13,12 +13,20 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://maxhu.dev"),
   title: WEBSITE_NAME,
-  description: "Welcome to my website.",
+  description: "welcome to my website",
   authors: [{ name: "Max Hu", url: "https://maxhu.dev" }],
+  icons: {
+    icon: "/favicon.ico"
+  },
   openGraph: {
     title: WEBSITE_NAME,
-    description: "Welcome to my website."
+    description: "welcome to my website",
+    images: "/assets/mh.png"
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: "#14b8a6"
 };
 
 function resolveInitialTheme(theme: Theme): "light" | "dark" {
