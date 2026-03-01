@@ -1,7 +1,5 @@
 {
   "name": "maxhu.dev",
-  "version": "0.1.0",
-  "private": true,
   "scripts": {
     "d": "bun dev",
     "dev": "next dev",
