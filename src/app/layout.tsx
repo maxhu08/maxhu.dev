@@ -11,6 +11,7 @@ import {
 import { Navbar } from "~/components/navbar";
 import { ThemeProvider, type Theme } from "~/components/providers/theme-provider";
 import { WEBSITE_NAME } from "~/constants/website-name";
+import { cn } from "~/utils/cn";
 import "./globals.css";
 
 const jetBrainsMono = JetBrains_Mono({
@@ -85,7 +86,10 @@ export default async function RootLayout({
       style={{ colorScheme: initialResolvedTheme }}
     >
       <body
-        className={`${jetBrainsMono.variable} min-h-screen bg-neutral-200 antialiased dark:bg-neutral-900`}
+        className={cn(
+          jetBrainsMono.variable,
+          "min-h-screen bg-neutral-200 antialiased dark:bg-neutral-900"
+        )}
         dir="ltr"
       >
         <Script id="reload-loading-bar-bootstrap" strategy="beforeInteractive">

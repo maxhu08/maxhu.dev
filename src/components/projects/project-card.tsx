@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Code2, Paperclip, Star, Users } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { cn } from "~/lib/utils";
 import type { Project } from "~/constants/projects";
 import { ProjectTechnologies } from "~/components/projects/project-technologies";
+import { cn } from "~/utils/cn";
 import styles from "./project-card.module.css";
 
 type ProjectCardProps = Project & {

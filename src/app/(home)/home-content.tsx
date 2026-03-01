@@ -5,6 +5,7 @@ import Link from "next/link";
 import { RiBlueskyLine, RiGithubLine, RiTwitterXLine, RiYoutubeLine } from "@remixicon/react";
 import { Antenna, ChevronRight, Webhook } from "lucide-react";
 import { ActionTooltip } from "~/components/action-tooltip";
+import { cn } from "~/utils/cn";
 import styles from "./page.module.css";
 
 const buttons = [
@@ -83,13 +84,14 @@ export function HomeContent() {
       <main className="grid h-screen w-full place-items-center overflow-hidden">
         <div className="grid h-max grid-flow-row place-items-center gap-2 pb-[5%]">
           <div
-            className={`grid grid-cols-[repeat(3,max-content)] place-items-center gap-2 ${
-              showAnimations ? styles["fade-in-down"] : ""
-            }`}
+            className={cn(
+              "grid grid-cols-[repeat(3,max-content)] place-items-center gap-2",
+              showAnimations && styles["fade-in-down"]
+            )}
           >
             <span
               aria-hidden="true"
-              className={`text-2xl select-none md:text-4xl ${styles["wave-animation"]}`}
+              className={cn("text-2xl select-none md:text-4xl", styles["wave-animation"])}
               style={{ animationDelay: "1800ms" }}
             >
               👋
@@ -104,7 +106,7 @@ export function HomeContent() {
             {buttons.map(({ label, href, icon: Icon, iconClassName, cardClassName, delay }) => (
               <div
                 key={label}
-                className={`z-10 w-full ${showAnimations ? styles["bouncing-animation"] : ""}`}
+                className={cn("z-10 w-full", showAnimations && styles["bouncing-animation"])}
                 style={{ animationDelay: delay }}
               >
                 <ActionTooltip label={label} side="top">
@@ -112,13 +114,16 @@ export function HomeContent() {
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noreferrer" : undefined}
-                    className={`block w-full ${styles.button}`}
+                    className={cn("block w-full", styles.button)}
                     aria-label={label}
                   >
                     <div
-                      className={`grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md p-2 text-white duration-300 ease-in-out ${cardClassName}`}
+                      className={cn(
+                        "grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md p-2 text-white duration-300 ease-in-out",
+                        cardClassName
+                      )}
                     >
-                      <Icon className={`h-4 w-4 ${styles[iconClassName]}`} />
+                      <Icon className={cn("h-4 w-4", styles[iconClassName])} />
                       <span>{label}</span>
                     </div>
                   </Link>
