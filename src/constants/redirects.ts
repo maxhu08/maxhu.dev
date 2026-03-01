@@ -19,6 +19,11 @@ export const redirects: Redirects = [
     permanent: true
   },
   {
+    source: "/redirect/bluesky",
+    destination: "https://bsky.app/profile/maxhu08.bsky.social",
+    permanent: true
+  },
+  {
     source: "/redirect/discord/mtab",
     destination: "https://discord.gg/JMrDphV5xp",
     permanent: true
