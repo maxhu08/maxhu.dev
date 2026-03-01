@@ -3,10 +3,10 @@ import { FancyContent } from "~/components/fancy/fancy-content";
 import { FancyYoutubeEmbed } from "~/components/fancy/fancy-youtube-embed";
 import { PageContainer } from "~/components/page-container";
 import { ProjectHeader } from "~/components/projects/project-header";
-import { projects } from "~/constants/projects";
+import { getProject } from "~/constants/projects";
 
 const Page: NextPage = () => {
-  const project = projects["tomb-of-the-mask-clone"];
+  const project = getProject("tomb-of-the-mask-clone");
 
   return (
     <PageContainer>

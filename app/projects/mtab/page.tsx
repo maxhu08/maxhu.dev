@@ -7,10 +7,10 @@ import { Q } from "~/components/fancy/fancy-quote";
 import { FancyYoutubeEmbed } from "~/components/fancy/fancy-youtube-embed";
 import { PageContainer } from "~/components/page-container";
 import { ProjectHeader } from "~/components/projects/project-header";
-import { projects } from "~/constants/projects";
+import { getProject } from "~/constants/projects";
 
 const Page: NextPage = () => {
-  const project = projects["mtab"];
+  const project = getProject("mtab");
 
   return (
     <PageContainer>
