@@ -59,18 +59,24 @@ const socials = [
 ] as const;
 
 export function HomeContent() {
-  const [showAnimations, setShowAnimations] = useState(false);
+  const [animationState, setAnimationState] = useState<"pending" | "animate" | "idle">("pending");
 
   useEffect(() => {
     let frameId: number | null = null;
+    const hasVisited = sessionStorage.getItem("visited");
 
-    if (!sessionStorage.getItem("visited")) {
-      frameId = window.requestAnimationFrame(() => {
-        setShowAnimations(true);
-      });
+    frameId = window.requestAnimationFrame(() => {
+      if (hasVisited) {
+        setAnimationState("idle");
+        return;
+      }
+
+      setAnimationState("animate");
+    });
+
+    if (!hasVisited) {
+      sessionStorage.setItem("visited", "true");
     }
-
-    sessionStorage.setItem("visited", "true");
 
     return () => {
       if (frameId !== null) {
@@ -79,6 +85,9 @@ export function HomeContent() {
     };
   }, []);
 
+  const shouldAnimate = animationState === "animate";
+  const isPending = animationState === "pending";
+
   return (
     <>
       <main className="grid h-screen w-full place-items-center overflow-hidden">
@@ -86,7 +95,8 @@ export function HomeContent() {
           <div
             className={cn(
               "grid grid-cols-[repeat(3,max-content)] place-items-center gap-2",
-              showAnimations && styles["fade-in-down"]
+              isPending && styles["pre-fade-in-down"],
+              shouldAnimate && styles["fade-in-down"]
             )}
           >
             <span
@@ -106,7 +116,11 @@ export function HomeContent() {
             {buttons.map(({ label, href, icon: Icon, iconClassName, cardClassName, delay }) => (
               <div
                 key={label}
-                className={cn("z-10 w-full", showAnimations && styles["bouncing-animation"])}
+                className={cn(
+                  "z-10 w-full",
+                  isPending && styles["pre-bouncing-animation"],
+                  shouldAnimate && styles["bouncing-animation"]
+                )}
                 style={{ animationDelay: delay }}
               >
                 <ActionTooltip label={label} side="top">
