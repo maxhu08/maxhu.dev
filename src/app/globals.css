@@ -131,7 +131,7 @@
   }
 
   body {
-    @apply min-h-screen bg-neutral-200 text-foreground dark:bg-neutral-900;
+    @apply bg-background text-foreground;
     font-family: var(--font-jetbrains-mono), monospace;
   }
 

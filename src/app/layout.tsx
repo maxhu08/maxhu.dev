@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { JetBrains_Mono } from "next/font/google";
-import Script from "next/script";
-import { ThemeProvider } from "~/components/providers/theme-provider";
+import { ThemeProvider, type Theme } from "~/components/providers/theme-provider";
+import { WEBSITE_NAME } from "~/constants/website-name";
 import "./globals.css";
 
 const jetBrainsMono = JetBrains_Mono({
@@ -11,38 +12,50 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maxhu.dev"),
-  title: "maxhu.dev",
+  title: WEBSITE_NAME,
   description: "Welcome to my website.",
   authors: [{ name: "Max Hu", url: "https://maxhu.dev" }],
   openGraph: {
-    title: "maxhu.dev",
+    title: WEBSITE_NAME,
     description: "Welcome to my website."
   }
 };
 
-export default function RootLayout({
+function resolveInitialTheme(theme: Theme): "light" | "dark" {
+  if (theme === "light") {
+    return "light";
+  }
+
+  return "dark";
+}
+
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const storedTheme = cookieStore.get("theme")?.value;
+  const initialTheme: Theme =
+    storedTheme === "light" || storedTheme === "dark" || storedTheme === "system"
+      ? storedTheme
+      : "dark";
+  const initialResolvedTheme = resolveInitialTheme(initialTheme);
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${jetBrainsMono.variable} antialiased`}>
-        <Script id="theme-init" strategy="beforeInteractive">
-          {`
-            (() => {
-              const storageKey = "theme";
-              const stored = localStorage.getItem(storageKey);
-              const theme = stored ?? "dark";
-              const resolved = theme === "system"
-                ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
-                : theme;
-              document.documentElement.classList.toggle("dark", resolved === "dark");
-              document.documentElement.style.colorScheme = resolved;
-            })();
-          `}
-        </Script>
-        <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={initialResolvedTheme === "dark" ? "dark" : undefined}
+      style={{ colorScheme: initialResolvedTheme }}
+    >
+      <body
+        className={`${jetBrainsMono.variable} min-h-screen bg-neutral-200 antialiased dark:bg-neutral-900`}
+        dir="ltr"
+      >
+        <ThemeProvider initialTheme={initialTheme} initialResolvedTheme={initialResolvedTheme}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
