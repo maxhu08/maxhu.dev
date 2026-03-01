@@ -40,7 +40,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 z-[3] w-full bg-neutral-200 ease-in-out dark:bg-neutral-900">
-      <div className="grid w-full grid-cols-[1fr_auto_1fr] px-2 py-2 md:px-4">
+      <div className="grid w-full grid-cols-[1fr_auto_1fr] p-2">
         <div className="w-max">{navigationControls}</div>
         {currentPage ?? <div />}
         <div className="ml-auto">

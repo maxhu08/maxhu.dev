@@ -1,6 +1,6 @@
 "use client";
 
-import { Moon, Settings, Sun } from "lucide-react";
+import { Moon, Palette, Settings, Sun } from "lucide-react";
 import { useTheme } from "~/components/providers/theme-provider";
 import {
   DropdownMenu,
@@ -10,8 +10,7 @@ import {
 } from "~/components/ui/dropdown-menu";
 
 export function ThemeToggle() {
-  const { resolvedTheme, setTheme } = useTheme();
-  const TriggerIcon = resolvedTheme === "dark" ? Sun : Moon;
+  const { setTheme } = useTheme();
 
   return (
     <div>
@@ -22,7 +21,7 @@ export function ThemeToggle() {
             aria-label="Toggle theme"
             className="cursor-pointer text-zinc-500 ring-0 duration-200 ease-in-out hover:text-black focus:ring-0 focus-visible:shadow-none focus-visible:ring-0 dark:text-zinc-400 dark:hover:text-white"
           >
-            <TriggerIcon className="h-6 w-6" />
+            <Palette className="h-6 w-6" />
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
