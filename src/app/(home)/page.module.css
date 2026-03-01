@@ -1,0 +1,141 @@
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fade-in-down 1s ease-in-out forwards;
+}
+
+.wave-animation {
+  transform-origin: 70% 70%;
+  animation-name: wave;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+.bouncing-animation {
+  opacity: 0;
+  animation: bounce-in-down 1s ease-in-out forwards;
+}
+
+.special-text {
+  display: inline-block;
+  color: var(--theme-teal);
+}
+
+.special-text::selection {
+  color: #fff;
+  background: rgb(255 255 255 / 0.125);
+}
+
+.button * {
+  transition-duration: 250ms;
+}
+
+.button:hover .arrow {
+  transform: translateX(6px);
+}
+
+.button:hover .icon {
+  transform: rotate(360deg);
+  transition-timing-function: ease-in-out;
+}
+
+.button:hover .antenna,
+.button:hover .boxes {
+  transform: translateY(-2px);
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bounce-in-down {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translateY(-3000px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(25px);
+  }
+
+  75% {
+    transform: translateY(-10px);
+  }
+
+  90% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-down,
+  .wave-animation,
+  .bouncing-animation,
+  .special-text,
+  .button *,
+  .button:hover .arrow,
+  .button:hover .icon,
+  .button:hover .antenna,
+  .button:hover .boxes {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

@@ -13,3 +13,4 @@ for file in $staged_files; do
   git add "$file"
 done
 IFS=$old_ifs
+
