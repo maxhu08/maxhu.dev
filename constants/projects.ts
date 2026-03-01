@@ -11,16 +11,6 @@ export const projects = {
     technologies: ["html", "css", "tailwindcss", "typescript"],
     demoLink: "https://chromewebstore.google.com/detail/mtab/fdaphilojaklgkoocegabckfanjoacjg",
     codeLink: "https://github.com/maxhu08/mtab"
-  },
-  "tomb-of-the-mask-clone": {
-    description: "simple version tomb of the mask written in java",
-    technologies: ["java"],
-    codeLink: "https://github.com/maxhu08/tomb-of-the-mask-clone"
-  },
-  "create-neutrino-app": {
-    description: "create a lightweight template which has hmr, typescript, tailwind & sass",
-    technologies: ["html", "sass", "tailwindcss", "typescript", "nodejs"],
-    codeLink: "https://github.com/maxhu08/tomb-of-the-mask-clone"
   }
 } as const satisfies Record<string, ProjectDefinition>;
 

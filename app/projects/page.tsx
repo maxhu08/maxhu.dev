@@ -6,8 +6,8 @@ const Page: NextPage = () => {
   const projectList = getProjects();
 
   return (
-    <main className="mx-auto mb-20 mt-20 grid w-[95%] grid-flow-row md:mb-60 lg:w-[75%]">
-      <div className="grid grid-flow-row gap-2 md:grid-cols-2 xl:grid-cols-4">
+    <main className="mx-auto mb-20 mt-20 w-[92%] max-w-5xl md:mb-60">
+      <div className="grid grid-flow-row gap-2 md:grid-cols-2">
         {projectList.map((project, index) => {
           return <ProjectCard {...project} key={`project-${project.title}`} delay={index * 50} />;
         })}
