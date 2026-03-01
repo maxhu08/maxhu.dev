@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
+import { redirects } from "./src/constants/redirects";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
+  async redirects() {
+    return redirects;
+  }
 };
 
 export default nextConfig;
