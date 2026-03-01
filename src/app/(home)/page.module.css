@@ -22,8 +22,8 @@
 }
 
 .special-text::selection {
-  color: #fff;
-  background: rgb(255 255 255 / 0.125);
+  color: var(--selection-foreground);
+  background: var(--selection);
 }
 
 .button * {

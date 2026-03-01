@@ -49,8 +49,8 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.192 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: oklch(0.985 0 0);
+  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -84,9 +84,10 @@
   --accent-pink: #d041c2;
   --theme-teal: #14b8a6;
   --focus-outline: #0ea5e9;
-  --selection: rgb(255 255 255 / 0.12);
-  --muted-line: rgb(255 255 255 / 0.06);
-  --surface-glow: rgb(255 255 255 / 0.03);
+  --selection: rgb(0 0 0 / 0.2);
+  --selection-foreground: oklch(0.145 0 0);
+  --muted-line: rgb(0 0 0 / 0.06);
+  --surface-glow: rgb(0 0 0 / 0.03);
 }
 
 .dark {
@@ -121,6 +122,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --selection: rgb(255 255 255 / 0.2);
+  --selection-foreground: oklch(0.985 0 0);
 }
 
 @layer base {
@@ -145,7 +148,7 @@
 
   ::selection {
     background: var(--selection);
-    color: white;
+    color: var(--selection-foreground);
   }
 
   ::-webkit-scrollbar {
