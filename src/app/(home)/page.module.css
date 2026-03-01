@@ -18,19 +18,12 @@
 
 .special-text {
   display: inline-block;
-  background: linear-gradient(-45deg, #4da5fe, #4da5fe, #d041c2, #d041c2);
-  background-size: 300%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-animation 10s ease-in-out infinite;
+  color: var(--theme-teal);
 }
 
 .special-text::selection {
   color: #fff;
   background: rgb(255 255 255 / 0.125);
-  -webkit-text-fill-color: #fff;
 }
 
 .button * {
@@ -127,20 +120,6 @@
   100% {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
   }
 }
 

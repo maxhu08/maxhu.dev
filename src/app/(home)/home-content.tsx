@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { RiGithubLine, RiTwitterXLine, RiYoutubeLine } from "@remixicon/react";
-import { Antenna, Boxes, ChevronRight, Webhook } from "lucide-react";
+import { RiBlueskyLine, RiGithubLine, RiTwitterXLine, RiYoutubeLine } from "@remixicon/react";
+import { Antenna, ChevronRight, Webhook } from "lucide-react";
 import { ActionTooltip } from "~/components/action-tooltip";
 import styles from "./page.module.css";
 
@@ -31,14 +31,6 @@ const buttons = [
     iconClassName: "antenna",
     cardClassName: "bg-indigo-500 hover:bg-indigo-700",
     delay: "1200ms"
-  },
-  {
-    label: "other links",
-    href: "https://maxhu.dev/other",
-    icon: Boxes,
-    iconClassName: "boxes",
-    cardClassName: "bg-sky-500 hover:bg-sky-700",
-    delay: "1400ms"
   }
 ] as const;
 
@@ -57,6 +49,11 @@ const socials = [
     label: "twitter/x",
     href: "https://twitter.com/maxhu08",
     icon: RiTwitterXLine
+  },
+  {
+    label: "bluesky",
+    href: "https://bsky.app/profile/maxhu08.bsky.social",
+    icon: RiBlueskyLine
   }
 ] as const;
 

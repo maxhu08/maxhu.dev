@@ -82,6 +82,8 @@
   --sidebar-ring: oklch(0.708 0 0);
   --accent-blue: #4da5fe;
   --accent-pink: #d041c2;
+  --theme-teal: #14b8a6;
+  --focus-outline: #0ea5e9;
   --selection: rgb(255 255 255 / 0.12);
   --muted-line: rgb(255 255 255 / 0.06);
   --surface-glow: rgb(255 255 255 / 0.03);
@@ -123,7 +125,13 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+  }
+
+  :focus-visible {
+    outline: none;
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 0 2px var(--focus-outline);
   }
 
   html {
