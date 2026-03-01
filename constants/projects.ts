@@ -3,6 +3,8 @@ interface ProjectDefinition {
   technologies: string[];
   codeLink?: string;
   demoLink?: string;
+  stars?: string;
+  users?: string;
 }
 
 export const projects = {
@@ -10,7 +12,9 @@ export const projects = {
     description: "simple new tab page extension for chrome",
     technologies: ["html", "css", "tailwindcss", "typescript"],
     demoLink: "https://chromewebstore.google.com/detail/mtab/fdaphilojaklgkoocegabckfanjoacjg",
-    codeLink: "https://github.com/maxhu08/mtab"
+    codeLink: "https://github.com/maxhu08/mtab",
+    users: "10,000+",
+    stars: "500+"
   }
 } as const satisfies Record<string, ProjectDefinition>;
 
