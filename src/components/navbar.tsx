@@ -29,21 +29,23 @@ export function Navbar() {
 
   const currentPage =
     pathname === "/" ? null : (
-      <div className="grid grid-cols-[repeat(3,max-content)] place-items-center font-semibold">
+      <p className="max-w-40 truncate overflow-hidden font-semibold whitespace-nowrap text-neutral-500 md:max-w-none">
         <span className="text-sky-500">~</span>
         <span className="text-orange-500">/</span>
-        <p className="max-w-40 truncate overflow-hidden text-orange-500 md:max-w-none">
-          {pathname.slice(1)}
-        </p>
-      </div>
+        <span className="text-orange-500">{pathname.slice(1)}</span>
+      </p>
     );
 
   return (
     <nav className="fixed top-0 z-[3] w-full bg-neutral-200 ease-in-out dark:bg-neutral-900">
-      <div className="grid w-full grid-cols-[1fr_auto_1fr] p-2">
-        <div className="w-max">{navigationControls}</div>
-        {currentPage ?? <div />}
-        <div className="ml-auto">
+      <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center p-2">
+        <div className="flex items-center">{navigationControls}</div>
+        {currentPage ? (
+          <div className="flex items-center justify-self-center">{currentPage}</div>
+        ) : (
+          <div />
+        )}
+        <div className="ml-auto flex items-center">
           <ThemeToggle />
         </div>
       </div>
