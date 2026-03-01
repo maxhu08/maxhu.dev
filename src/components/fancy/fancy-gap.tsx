@@ -1,0 +1,9 @@
+import { Slash } from "lucide-react";
+
+export function FancyGap() {
+  return (
+    <div className="grid h-32 w-full place-items-center py-4">
+      <Slash className="h-6 w-6 text-zinc-300 dark:text-neutral-800" />
+    </div>
+  );
+}

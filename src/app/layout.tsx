@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { JetBrains_Mono } from "next/font/google";
 import { LoadingBar } from "~/components/loading-bar";
+import { Navbar } from "~/components/navbar";
 import { ThemeProvider, type Theme } from "~/components/providers/theme-provider";
 import { WEBSITE_NAME } from "~/constants/website-name";
 import "./globals.css";
@@ -64,6 +65,7 @@ export default async function RootLayout({
       >
         <ThemeProvider initialTheme={initialTheme} initialResolvedTheme={initialResolvedTheme}>
           <LoadingBar />
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

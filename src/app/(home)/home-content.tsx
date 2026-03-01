@@ -5,7 +5,6 @@ import Link from "next/link";
 import { RiGithubLine, RiTwitterXLine, RiYoutubeLine } from "@remixicon/react";
 import { Antenna, Boxes, ChevronRight, Webhook } from "lucide-react";
 import { ActionTooltip } from "~/components/action-tooltip";
-import { Navbar } from "~/components/navbar";
 import styles from "./page.module.css";
 
 const buttons = [
@@ -19,7 +18,7 @@ const buttons = [
   },
   {
     label: "projects",
-    href: "https://maxhu.dev/projects",
+    href: "/projects",
     icon: Webhook,
     iconClassName: "icon",
     cardClassName: "bg-pink-500 hover:bg-pink-700",
@@ -84,8 +83,6 @@ export function HomeContent() {
 
   return (
     <>
-      <Navbar />
-
       <main className="grid h-screen w-full place-items-center overflow-hidden">
         <div className="grid h-max grid-flow-row place-items-center gap-2 pb-[5%]">
           <div
