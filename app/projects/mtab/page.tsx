@@ -1,10 +1,6 @@
 import { NextPage } from "next";
 import { FancyContent } from "~/components/fancy/fancy-content";
-import { FancyExternalLink } from "~/components/fancy/fancy-external-link";
 import { FancyGap } from "~/components/fancy/fancy-gap";
-import { FancyImage } from "~/components/fancy/fancy-image";
-import { Q } from "~/components/fancy/fancy-quote";
-import { FancyYoutubeEmbed } from "~/components/fancy/fancy-youtube-embed";
 import { PageContainer } from "~/components/page-container";
 import { ProjectHeader } from "~/components/projects/project-header";
 import { getProject } from "~/constants/projects";
@@ -15,34 +11,85 @@ const Page: NextPage = () => {
   return (
     <PageContainer>
       <ProjectHeader project={project} />
-      <FancyImage src="/assets/projects/mtab/demo-1.png" />
       <FancyContent>
-        mtab is an extension that offers a modern new tab page, prioritizing customizability such as
-        choosing wallpapers, bookmarks, and more. Additionally, it emphasizes a smooth user
-        experience through its animations on the new page. Here's a video talking about it:
+        A modern alternative to the default browser start page, mtab is a highly customizable
+        extension I built to combine speed, aesthetics, and practical daily utility. It replaces the
+        standard new tab with a fast, polished personal dashboard designed to feel intentional
+        rather than empty.
       </FancyContent>
-      <FancyYoutubeEmbed videoId="1GjMzk65HvQ" />
+
       <FancyGap />
+
       <FancyContent>
-        I made mtab because I wanted to have a clean startup page for my browser that allowed me to
-        change my wallpaper by uploading my own files. I also wanted to make it look nice and have
-        big buttons for the bookmarks. I also added stuff I like having keybinds like <Q>x</Q> to
-        close the tab, which works well with the{" "}
-        <FancyExternalLink href="https://vimium.github.io/" alias="vimium" /> extension. I also made
-        it so pressing <Q>SPC</Q> focuses the search bar and <Q>ESC</Q> unfocuses the search bar.
-        Lastly, I added some fancy animations.
+        The project began when I could not find a start page extension that balanced customization,
+        performance, and clean design. After experimenting with prototypes and reading through
+        browser extension documentation, I built my own solution and published it so I could use it
+        across my devices.
+        <br />
+        <br />
+        What started as a personal tool quickly grew beyond that. The extension now has 10,000+
+        users and 500+ GitHub stars. Since launching it, I have continuously maintained and improved
+        it by shipping new features, responding to user feedback, fixing bugs, reviewing pull
+        requests, and managing version migrations. Building and supporting a real user base taught
+        me how to test features properly, iterate based on feedback, and ship production-ready
+        software.
       </FancyContent>
-      <FancyImage src="/assets/projects/mtab/demo-2.png" />
+
       <FancyGap />
+
       <FancyContent>
-        I used parcel to bundle and transpile the code since I used typescript and tailwind which
-        need a build step. I wanted typescript and tailwind since types make coding feel more
-        organized and tailwind allowed me to design everything very quickly in an understandable
-        way. This setup was pretty good since parcel had hot module reloading. I tried to keep
-        everything minimal and make the page load fast. Everything is just html and some javascript
-        to manage the page.
+        Features include:
+        <br />
+        💡 fast and lightweight
+        <br />
+        🔒 privacy-focused (local storage, no tracking)
+        <br />
+        🎨 fully customizable layout and theming
+        <br />
+        🔎 smart search bar with multi-engine support and utilities
+        <br />
+        📕 highly configurable bookmarks with folders, icons, and layout control
+        <br />
+        👋 personalized greeting, date, time, and weather widget
+        <br />
+        🌦️ location-based weather support
+        <br />
+        🖼️ URL, uploaded, random, and mixed wallpapers including video
+        <br />
+        🌟 custom favicon and dynamic tab title effects
+        <br />
+        🧑‍💻 custom CSS styling and custom font support
+        <br />
+        ⌨️ keyboard shortcuts for fast navigation
+        <br />
+        ✈️ shareable configuration import and export
+        <br />✨ polished animations and UI effects
       </FancyContent>
-      <FancyImage src="/assets/projects/mtab/demo-3.png" />
+
+      <FancyGap />
+
+      <FancyContent>
+        The search bar functions as more than a simple query field. It supports multiple search
+        engines, custom engine URLs, direct link detection, and smart assist features such as math
+        evaluation, date calculations, unit and currency conversions, definitions, and password
+        generation. This allows the new tab page to act as a lightweight command utility directly
+        within the browser.
+        <br />
+        <br />
+        Bookmarks are deeply customizable, supporting nested folders, multiple icon systems, browser
+        bookmark integration, pagination, keyboard navigation, and flexible layout controls. The
+        entire interface, from wallpapers and glass effects to animation timing and highlight
+        colors, can be tuned to match a user's workflow and visual preferences.
+      </FancyContent>
+
+      <FancyGap />
+
+      <FancyContent>
+        The extension is built with TypeScript, Tailwind, and Parcel, with configuration stored in
+        chrome.storage.local and supported by versioned migration logic. It runs across
+        Chromium-based and Firefox-based browsers and is structured with dedicated new tab, options,
+        and popup pages.
+      </FancyContent>
     </PageContainer>
   );
 };
