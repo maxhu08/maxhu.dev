@@ -1,3 +1,8 @@
+.pre-fade-in-down {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
 .fade-in-down {
   opacity: 0;
   transform: translateY(-10px);
@@ -9,6 +14,11 @@
   animation-name: wave;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
+}
+
+.pre-bouncing-animation {
+  opacity: 0;
+  transform: translateY(-3000px);
 }
 
 .bouncing-animation {
@@ -125,7 +135,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .fade-in-down,
+  .pre-fade-in-down,
   .wave-animation,
+  .pre-bouncing-animation,
   .bouncing-animation,
   .special-text,
   .button *,
