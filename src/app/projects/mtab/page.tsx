@@ -4,6 +4,7 @@ import { FancyImage } from "~/components/fancy/fancy-image";
 import { PageContainer } from "~/components/page-container";
 import { ProjectHeader } from "~/components/projects/project-header";
 import { getProject } from "~/constants/projects";
+import mtabShowcase from "../../../../public/assets/projects/mtab/showcase.png";
 
 export default function MtabProjectPage() {
   const project = getProject("mtab");
@@ -12,7 +13,7 @@ export default function MtabProjectPage() {
     <PageContainer>
       <ProjectHeader project={project} />
 
-      <FancyImage src="/assets/projects/mtab/showcase.png" alt="mtab showcase" />
+      <FancyImage src={mtabShowcase} alt="mtab showcase" />
 
       <FancyContent>
         A modern alternative to the default browser start page, mtab is a highly customizable
