@@ -40,15 +40,12 @@
   transition-duration: 250ms;
 }
 
-.button:hover .arrow {
-  transform: translateX(6px);
-}
-
 .button:hover .icon {
   transform: rotate(360deg);
   transition-timing-function: ease-in-out;
 }
 
+.button:hover .mail,
 .button:hover .antenna,
 .button:hover .boxes {
   transform: translateY(-2px);
@@ -141,7 +138,7 @@
   .bouncing-animation,
   .special-text,
   .button *,
-  .button:hover .arrow,
+  .button:hover .mail,
   .button:hover .icon,
   .button:hover .antenna,
   .button:hover .boxes {

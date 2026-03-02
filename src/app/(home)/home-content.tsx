@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { RiBlueskyLine, RiGithubLine, RiTwitterXLine, RiYoutubeLine } from "@remixicon/react";
-import { Antenna, ChevronRight, Webhook } from "lucide-react";
+import { Antenna, Mail, Webhook } from "lucide-react";
 import { ActionTooltip } from "~/components/action-tooltip";
 import { cn } from "~/utils/cn";
 import styles from "./page.module.css";
@@ -12,8 +12,8 @@ const buttons = [
   {
     label: "contact me",
     href: "mailto:contact@maxhu.dev",
-    icon: ChevronRight,
-    iconClassName: "arrow",
+    icon: Mail,
+    iconClassName: "mail",
     cardClassName: "bg-emerald-500 hover:bg-emerald-700",
     delay: "800ms"
   },
