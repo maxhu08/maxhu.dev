@@ -27,5 +27,10 @@ export const redirects: Redirects = [
     source: "/redirect/discord/mtab",
     destination: "https://discord.gg/JMrDphV5xp",
     permanent: true
+  },
+  {
+    source: "/redirect/discord/nav",
+    destination: "https://discord.gg/x4YhD2hpe2",
+    permanent: true
   }
 ];
