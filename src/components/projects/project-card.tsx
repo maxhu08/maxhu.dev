@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Code2, Paperclip, Star, Users } from "lucide-react";
-import { useRouter } from "next/navigation";
 import type { Project } from "~/constants/projects";
 import { ProjectTechnologies } from "~/components/projects/project-technologies";
 import { cn } from "~/utils/cn";
@@ -24,7 +23,7 @@ export function ProjectCard({
   users
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
+  const projectHref = `/projects/${title}`;
 
   useEffect(() => {
     const cardEl = cardRef.current;
@@ -49,8 +48,12 @@ export function ProjectCard({
         styles["animate-up-bouncy"]
       )}
       style={{ animationDelay: `${delay}ms` }}
-      onClick={() => router.push(`/projects/${title}`)}
     >
+      <Link
+        href={projectHref}
+        aria-label={`View ${title} project details`}
+        className="absolute inset-0 z-[1]"
+      />
       <div className="pointer-events-none absolute inset-0 duration-300 ease-in-out group-hover:bg-neutral-500/10" />
       <div className="relative z-[2] flex h-full flex-col gap-4 p-4">
         <div className="space-y-3">

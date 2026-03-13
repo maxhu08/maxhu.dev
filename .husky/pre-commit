@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -e
 
-staged_files=$(git diff --cached --name-only --diff-filter=ACMR -- '*.js' '*.jsx' '*.mjs' '*.cjs' '*.ts' '*.tsx' '*.json' '*.html')
+staged_files=$(git diff --cached --name-only --diff-filter=ACMR -- '*.js' '*.jsx' '*.mjs' '*.cjs' '*.ts' '*.tsx' '*.json' '*.html' '*.css' '*.md')
 
 [ -z "$staged_files" ] && exit 0
 
@@ -9,8 +9,7 @@ old_ifs=$IFS
 IFS='
 '
 for file in $staged_files; do
-  bunx prettier --write "$file"
+  bunx oxfmt --write "$file"
   git add "$file"
 done
 IFS=$old_ifs
-

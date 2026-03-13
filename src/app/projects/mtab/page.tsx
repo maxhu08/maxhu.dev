@@ -43,24 +43,17 @@ export default function MtabProjectPage() {
 
       <FancyContent>
         Features include:
-        <br />
-        💡 fast and lightweight
-        <br />
-        🔒 privacy-focused (local storage, no tracking)
-        <br />
-        🎨 fully customizable layout and theming
-        <br />
-        🔎 smart search bar with multi-engine support and utilities
-        <br />
-        📕 highly configurable bookmarks with folders, icons, and layout control
-        <br />
-        👋 personalized greeting, date, time, and weather widget
+        <br />💡 fast and lightweight
+        <br />🔒 privacy-focused (local storage, no tracking)
+        <br />🎨 fully customizable layout and theming
+        <br />🔎 smart search bar with multi-engine support and utilities
+        <br />📕 highly configurable bookmarks with folders, icons, and layout control
+        <br />👋 personalized greeting, date, time, and weather widget
         <br />
         🌦️ location-based weather support
         <br />
         🖼️ URL, uploaded, random, and mixed wallpapers including video
-        <br />
-        🌟 custom favicon and dynamic tab title effects
+        <br />🌟 custom favicon and dynamic tab title effects
         <br />
         🧑‍💻 custom CSS styling and custom font support
         <br />
