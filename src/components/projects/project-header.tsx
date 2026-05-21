@@ -34,7 +34,7 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
         </div>
         <div className="flex flex-wrap items-center gap-4 sm:justify-self-end">
           {project.demoLink && (
-            <Link href={project.demoLink} target="_blank" rel="noreferrer" className="z-[2]">
+            <Link href={project.demoLink} target="_blank" rel="noreferrer" className="z-2">
               <div className="flex items-center gap-1.5 text-blue-500 duration-300 ease-in-out hover:text-blue-600">
                 <Paperclip className="h-4 w-4" />
                 <span>View demo</span>
@@ -42,7 +42,7 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
             </Link>
           )}
           {project.codeLink && (
-            <Link href={project.codeLink} target="_blank" rel="noreferrer" className="z-[2]">
+            <Link href={project.codeLink} target="_blank" rel="noreferrer" className="z-2">
               <div className="flex items-center gap-1.5 text-blue-500 duration-300 ease-in-out hover:text-blue-600">
                 <Code2 className="h-4 w-4" />
                 <span>View code</span>

@@ -37,7 +37,7 @@ export function Navbar() {
     );
 
   return (
-    <nav className="fixed top-0 z-[3] w-full bg-neutral-200 ease-in-out dark:bg-neutral-900">
+    <nav className="fixed top-0 z-3 w-full bg-neutral-200 ease-in-out dark:bg-neutral-900">
       <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center p-2">
         <div className="flex items-center">{navigationControls}</div>
         {currentPage ? (
