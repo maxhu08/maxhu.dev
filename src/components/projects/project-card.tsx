@@ -55,10 +55,12 @@ export function ProjectCard({
         className="absolute inset-0 z-[1]"
       />
       <div className="pointer-events-none absolute inset-0 duration-300 ease-in-out group-hover:bg-neutral-500/10" />
-      <div className="relative z-[2] flex h-full flex-col gap-4 p-4">
+      <div className="pointer-events-none relative z-[2] flex h-full flex-col gap-4 p-4">
         <div className="space-y-3">
           <p className="text-base leading-none font-semibold text-lime-500">{title}</p>
-          <ProjectTechnologies ptechnologies={technologies} />
+          <div className="pointer-events-auto relative z-[3] w-max">
+            <ProjectTechnologies ptechnologies={technologies} />
+          </div>
           {(users || stars) && (
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-base text-neutral-500">
               {users && (
@@ -83,7 +85,7 @@ export function ProjectCard({
               href={demoLink}
               target="_blank"
               rel="noreferrer"
-              className="z-[3]"
+              className="pointer-events-auto z-[3]"
               onClick={(event) => event.stopPropagation()}
             >
               <div className="flex items-center gap-1.5 text-base text-blue-500 duration-300 ease-in-out hover:text-blue-600">
@@ -97,7 +99,7 @@ export function ProjectCard({
               href={codeLink}
               target="_blank"
               rel="noreferrer"
-              className="z-[3]"
+              className="pointer-events-auto z-[3]"
               onClick={(event) => event.stopPropagation()}
             >
               <div className="flex items-center gap-1.5 text-base text-blue-500 duration-300 ease-in-out hover:text-blue-600">
