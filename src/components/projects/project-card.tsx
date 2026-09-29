@@ -52,7 +52,7 @@ export function ProjectCard({
       <Link
         href={projectHref}
         aria-label={`View ${title} project details`}
-        className="absolute inset-0 z-1"
+        className="absolute inset-0 z-1 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
       />
       <div className="pointer-events-none absolute inset-0 duration-300 ease-in-out group-hover:bg-neutral-500/10" />
       <div className="pointer-events-none relative z-2 flex h-full flex-col gap-4 p-4">
@@ -86,7 +86,6 @@ export function ProjectCard({
               target="_blank"
               rel="noreferrer"
               className="pointer-events-auto z-3"
-              onClick={(event) => event.stopPropagation()}
             >
               <div className="flex items-center gap-1.5 text-base text-blue-500 duration-300 ease-in-out hover:text-blue-600">
                 <Paperclip className="h-4 w-4" />
@@ -100,7 +99,6 @@ export function ProjectCard({
               target="_blank"
               rel="noreferrer"
               className="pointer-events-auto z-3"
-              onClick={(event) => event.stopPropagation()}
             >
               <div className="flex items-center gap-1.5 text-base text-blue-500 duration-300 ease-in-out hover:text-blue-600">
                 <Code2 className="h-4 w-4" />
