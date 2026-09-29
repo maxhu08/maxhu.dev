@@ -9,6 +9,7 @@ import {
   RELOAD_PENDING_KEY
 } from "~/components/loading-bar";
 import { Navbar } from "~/components/navbar";
+import { Toaster } from "~/components/ui/sonner";
 import { ThemeProvider, type Theme } from "~/components/providers/theme-provider";
 import { WEBSITE_NAME } from "~/constants/website-name";
 import { cn } from "~/utils/cn";
@@ -99,6 +100,7 @@ export default async function RootLayout({
           <LoadingBar />
           <Navbar />
           {children}
+          <Toaster position="top-center" />
         </ThemeProvider>
       </body>
     </html>

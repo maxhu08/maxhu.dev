@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { RiBlueskyLine, RiGithubLine, RiTwitterXLine, RiYoutubeLine } from "@remixicon/react";
 import { Antenna, Mail, Webhook } from "lucide-react";
+import { toast } from "sonner";
 import { ActionTooltip } from "~/components/action-tooltip";
 import { cn } from "~/utils/cn";
 import styles from "./page.module.css";
@@ -11,7 +12,7 @@ import styles from "./page.module.css";
 const buttons = [
   {
     label: "contact me",
-    href: "mailto:contact@maxhu.dev",
+    href: null,
     icon: Mail,
     iconClassName: "mail",
     cardClassName: "bg-emerald-500 hover:bg-emerald-700",
@@ -62,28 +63,30 @@ export function HomeContent() {
   const [animationState, setAnimationState] = useState<"pending" | "animate" | "idle">("pending");
 
   useEffect(() => {
-    let frameId: number | null = null;
     const hasVisited = sessionStorage.getItem("visited");
-
-    frameId = window.requestAnimationFrame(() => {
+    const frameId = window.requestAnimationFrame(() => {
       if (hasVisited) {
         setAnimationState("idle");
         return;
       }
 
+      sessionStorage.setItem("visited", "true");
       setAnimationState("animate");
     });
 
-    if (!hasVisited) {
-      sessionStorage.setItem("visited", "true");
-    }
-
     return () => {
-      if (frameId !== null) {
-        window.cancelAnimationFrame(frameId);
-      }
+      window.cancelAnimationFrame(frameId);
     };
   }, []);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("contact@maxhu.dev");
+      toast.success("Email copied");
+    } catch {
+      toast.error("Couldn't copy email");
+    }
+  };
 
   const shouldAnimate = animationState === "animate";
   const isPending = animationState === "pending";
@@ -113,37 +116,54 @@ export function HomeContent() {
           </div>
 
           <div className="grid w-full grid-flow-row place-content-center gap-2 pt-4 sm:grid-flow-col">
-            {buttons.map(({ label, href, icon: Icon, iconClassName, cardClassName, delay }) => (
-              <div
-                key={label}
-                className={cn(
-                  "z-10 w-full",
-                  isPending && styles["pre-bouncing-animation"],
-                  shouldAnimate && styles["bouncing-animation"]
-                )}
-                style={{ animationDelay: delay }}
-              >
-                <ActionTooltip label={label} side="top">
-                  <Link
-                    href={href}
-                    target={href.startsWith("http") ? "_blank" : undefined}
-                    rel={href.startsWith("http") ? "noreferrer" : undefined}
-                    className={cn("block w-full", styles.button)}
-                    aria-label={label}
-                  >
-                    <div
-                      className={cn(
-                        "grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md p-2 text-white duration-300 ease-in-out",
-                        cardClassName
-                      )}
-                    >
-                      <Icon className={cn("h-4 w-4", styles[iconClassName])} />
-                      <span>{label}</span>
-                    </div>
-                  </Link>
-                </ActionTooltip>
-              </div>
-            ))}
+            {buttons.map(({ label, href, icon: Icon, iconClassName, cardClassName, delay }) => {
+              const card = (
+                <div
+                  className={cn(
+                    "grid grid-cols-[max-content_max-content] place-items-center gap-1 rounded-md p-2 text-white duration-300 ease-in-out",
+                    cardClassName
+                  )}
+                >
+                  <Icon className={cn("h-4 w-4", styles[iconClassName])} />
+                  <span>{label}</span>
+                </div>
+              );
+
+              return (
+                <div
+                  key={label}
+                  className={cn(
+                    "z-10 w-full",
+                    isPending && styles["pre-bouncing-animation"],
+                    shouldAnimate && styles["bouncing-animation"]
+                  )}
+                  style={{ animationDelay: delay }}
+                >
+                  <ActionTooltip label={label} side="top">
+                    {href ? (
+                      <Link
+                        href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={href.startsWith("http") ? "noreferrer" : undefined}
+                        className={cn("block w-full", styles.button)}
+                        aria-label={label}
+                      >
+                        {card}
+                      </Link>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={copyEmail}
+                        className={cn("block w-full", styles.button)}
+                        aria-label={label}
+                      >
+                        {card}
+                      </button>
+                    )}
+                  </ActionTooltip>
+                </div>
+              );
+            })}
           </div>
         </div>
       </main>
